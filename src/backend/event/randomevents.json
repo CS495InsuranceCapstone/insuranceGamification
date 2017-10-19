@@ -1,0 +1,12 @@
+{
+    "randomEvents": [
+        "{{repeat(2)}}",
+        {
+            "name": "{{firstName()}} {{surname()}}",
+            "text":"{{random('Hey','Now','Sup','This actually works', 'JSON')}}",
+            "img":"{{random('img1','img2','img3','img4','img5')}}"
+
+        }
+
+    ]
+}
