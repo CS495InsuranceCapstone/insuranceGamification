@@ -1,10 +1,12 @@
 export class EventQueue {
   event: Event;
   next: EventQueue;
+  length: number;
 
   constructor(event) {
     this.event = event;
     this.next = null;
+    this.length = 1
   }
 
   add(nextEvent) {
@@ -13,6 +15,7 @@ export class EventQueue {
     } else {
       this.next.add(nextEvent);
     }
+    this.length++;
   }
 
   getNextEvent() {
@@ -27,5 +30,6 @@ export class EventQueue {
       this.next = this.next.next;
       this.next.moveUp();
     }
+    this.length--;
   }
 }
