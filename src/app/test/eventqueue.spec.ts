@@ -48,6 +48,18 @@ describe('eventQueue', () => {
     expect(eventQueue.getNextEvent()).toBe(event3);
   });
 
+  it('should have a length of 2 after adding all events and removing 1', () => {
+    eventQueue.addEvents(remainingEvents);
+    removeNEvents(eventQueue, 1);
+    expect(eventQueue.length).toBe(2);
+  });
+
+  it('should have a length of 1 after adding all events and removing 2', () => {
+    eventQueue.addEvents(remainingEvents);
+    removeNEvents(eventQueue, 2);
+    expect(eventQueue.length).toBe(1);
+  });
+
 });
 
 function removeNEvents(eventQueue, n): void {

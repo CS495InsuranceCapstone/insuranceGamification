@@ -6,7 +6,7 @@ export class RandomEvent extends Event {
   img: HTMLImageElement;
 
   constructor(name, text, img) {
-    super()
+    super();
     this.name = name;
     this.text = text;
     this.img = img;

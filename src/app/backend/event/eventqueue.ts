@@ -32,13 +32,17 @@ export class EventQueue {
 
   private moveUp(): void {
     if (this.next != null && this.next.next != null) {
-      this.event = this.next.event;
-      this.next = this.next.next;
+      this.assignNewProperties();
       this.next.moveUp();
     } else if (this.next != null) {
-      this.event = this.next.event;
-      this.next = this.next.next;
+      this.assignNewProperties();
     }
     this.length--;
   }
+
+  private assignNewProperties(): void {
+    this.event = this.next.event;
+    this.next = this.next.next;
+  }
+
 }
