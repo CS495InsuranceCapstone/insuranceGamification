@@ -11,3 +11,5 @@ export class Event {
 }
 
 export class RandomEvent extends Event {}
+
+export class PredefinedEvent extends Event {}
