@@ -1,7 +1,7 @@
 import { EventQueue } from '../backend/event/eventqueue'
-import { RandomEvent } from '../backend/event/randomevent'
+import { RandomEvent } from '../backend/event/event'
 
-describe('eventQueue', () => {
+describe('EventQueue', () => {
 
   let event1 : RandomEvent;
   let event2 : RandomEvent;

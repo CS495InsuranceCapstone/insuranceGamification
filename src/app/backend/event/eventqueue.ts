@@ -1,4 +1,4 @@
-import { Event, RandomEvent } from './randomevent'
+import { Event, RandomEvent } from './event'
 
 export class EventQueue {
   event: Event;
