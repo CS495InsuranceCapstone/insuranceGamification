@@ -30,11 +30,14 @@ export class EventQueue {
     return retEvent;
   }
 
-  moveUp(): void {
-    if (this.next != null) {
+  private moveUp(): void {
+    if (this.next != null && this.next.next != null) {
       this.event = this.next.event;
       this.next = this.next.next;
       this.next.moveUp();
+    } else if (this.next != null) {
+      this.event = this.next.event;
+      this.next = this.next.next;
     }
     this.length--;
   }
