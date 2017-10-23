@@ -1,8 +1,8 @@
 export class Event {}
 
 export class RandomEvent extends Event {
-  name: String;
-  text: String;
+  name: string;
+  text: string;
   img: HTMLImageElement;
 
   constructor(name, text, img) {

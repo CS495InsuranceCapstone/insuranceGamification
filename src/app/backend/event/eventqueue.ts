@@ -1,3 +1,5 @@
+import { Event, RandomEvent } from './randomevent'
+
 export class EventQueue {
   event: Event;
   next: EventQueue;
@@ -9,22 +11,26 @@ export class EventQueue {
     this.length = 1
   }
 
-  add(nextEvent) {
-    if (this.next != null) {
+  addEvent(nextEvent): void {
+    if (this.next == null) {
       this.next = new EventQueue(nextEvent);
     } else {
-      this.next.add(nextEvent);
+      this.next.addEvent(nextEvent);
     }
     this.length++;
   }
 
-  getNextEvent() {
+  addEvents(nextEvents): void {
+    nextEvents.forEach((event) => this.addEvent(event))
+  }
+
+  getNextEvent(): Event {
     var retEvent = this.event;
     this.moveUp();
     return retEvent;
   }
 
-  moveUp() {
+  moveUp(): void {
     if (this.next != null) {
       this.event = this.next.event;
       this.next = this.next.next;
