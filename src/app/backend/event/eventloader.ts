@@ -2,10 +2,10 @@ import * as randomdata from './randomevents.json';
 import { Event, RandomEvent } from './event'
 
 export class EventLoader {
-  data
+  protected data
 
-  positiveEvents: Event[]
-  negativeEvents: Event[]
+  protected positiveEvents: Event[]
+  protected negativeEvents: Event[]
 
   private getEvent(index, eventList) {
     var event = eventList[index];
@@ -35,6 +35,14 @@ export class EventLoader {
 
   removeEventFromNegativeList(eventList, event) {
     this.negativeEvents = this.removeEventFromList(eventList, event);
+  }
+
+  getPositiveEventList() {
+    return this.positiveEvents;
+  }
+
+  getNegativeEventList() {
+    return this.negativeEvents;
   }
 }
 
