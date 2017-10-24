@@ -25,4 +25,10 @@ describe('RandomEventLoader', () => {
     )));
   });
 
+  it('should no longer hold random event after it\'s been retrieved', () => {
+    let event = eventLoader.getRandomEvent();
+    expect(eventLoader.positiveEvents.includes(event) ||
+           eventLoader.negativeEvents.includes(event)).toBe(false);
+  });
+
 });
