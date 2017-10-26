@@ -1,4 +1,5 @@
 export class Event {
+
   name: string;
   text: string;
   img: HTMLImageElement;
@@ -8,6 +9,9 @@ export class Event {
     this.text = text;
     this.img = img;
   }
+
 }
 
 export class RandomEvent extends Event {}
+
+export class PredefinedEvent extends Event {}

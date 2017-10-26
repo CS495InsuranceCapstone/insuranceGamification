@@ -1,4 +1,4 @@
-{    
+{
     "negativeRandomEvents": [
 
         {
@@ -33,12 +33,11 @@
         }
     ],
     "positiveRandomEvents": [
-        
+
         {
             "name": "Your Bonus Check!",
             "text":"You have just gotten a 10% bonus from work. How will you handle the extra money you have just recieved?",
             "img":"https://www.wikihow.com/images/c/c7/Raise-Money-Step-30.jpg"
-        
         },
 
         {
