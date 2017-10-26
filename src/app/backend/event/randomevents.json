@@ -1,68 +1,67 @@
-{    
+{
     "negativeRandomEvents": [
 
         {
-            "name": "{Billy Johnson}",
-            "text":"{You have gotten into a car accident, that has left your car completely damaged! How will you handle this terrible situation?}",
-            "img":"{https://familydoctor.org/wp-content/uploads/2000/09/24611539_l-705x470.jpg}"
+            "name": "Car Accident",
+            "text":"You have gotten into a car accident, that has left your car completely damaged! How will you handle this terrible situation?",
+            "img":"https://familydoctor.org/wp-content/uploads/2000/09/24611539_l-705x470.jpg"
 
         },
 
         {
-            "name":"{Joey Smith}",
-            "text":"{You just found out that your daughter slipped off the road, while driving, and hit a tree. She is in stable condition, but you are now filled with hospital fees. What do you do now?}",
-            "img":"{http://images.clipartpanda.com/ultrasound-clipart-hospital_bed.gif}"
+            "name":"Medical Emergency",
+            "text":"You just found out that your daughter slipped off the road, while driving, and hit a tree. She is in stable condition, but you are now filled with hospital fees. What do you do now?",
+            "img":"http://images.clipartpanda.com/ultrasound-clipart-hospital_bed.gif"
         },
 
         {
-            "name":"{Kyle Simmons}",
-            "text":"{You have just been laid off! Hopefully, you have a backup plan for a situation like this.}",
-            "img":"{https://thumbs.dreamstime.com/z/fired-man-cartoon-illustration-concept-unhappy-dismissed-34674921.jpg}"
+            "name":"Your Fired!",
+            "text":"You have just been laid off! Hopefully, you have a backup plan for a situation like this.",
+            "img":"https://thumbs.dreamstime.com/z/fired-man-cartoon-illustration-concept-unhappy-dismissed-34674921.jpg"
         },
 
         {
-            "name":"{Kourtney Adams}",
-            "text":"{Your mother has been very sick recently. She has been in and out of the hospital all week. Since she does not have any insurance, her bills are extremely expensive. You need to do something.}",
-            "img":"{http://library.timelesstruths.org/library/texts/S/Songs_and_Stories_Book_1/05_bed.jpg}"
+            "name":"Parents Can Become Sick Too!",
+            "text":"Your mother has been very sick recently. She has been in and out of the hospital all week. Since she does not have any insurance, her bills are extremely expensive. You need to do something.",
+            "img":"http://library.timelesstruths.org/library/texts/S/Songs_and_Stories_Book_1/05_bed.jpg"
         },
 
         {
-            "name":"{Sarah Jones}",
-            "text":"{You have been ROBBED! Your most valuable possessions.}",
-            "img":"{https://s3.amazonaws.com/lowres.cartoonstock.com/law-order-thief-burger-robber-sofa-settee-mba0001_low.jpg}"
+            "name":"The Robbery",
+            "text":"You have been ROBBED! Your most valuable possessions were taken, did you have everything covered?",
+            "img":"https://s3.amazonaws.com/lowres.cartoonstock.com/law-order-thief-burger-robber-sofa-settee-mba0001_low.jpg"
         }
     ],
     "positiveRandomEvents": [
-        
+
         {
-            "name": "{Billy Johnson}",
-            "text":"{You have just gotten a 10% bonus from work. How will you handle the extra money you have just recieved?}",
-            "img":"{https://www.wikihow.com/images/c/c7/Raise-Money-Step-30.jpg}"
-        
+            "name": "Your Bonus Check!",
+            "text":"You have just gotten a 10% bonus from work. How will you handle the extra money you have just recieved?",
+            "img":"https://www.wikihow.com/images/c/c7/Raise-Money-Step-30.jpg"
         },
 
         {
-            "name":"{Maxine Waters}",
-            "text":"{Wedding Bells are RINGING! You have just got married, and now your moving into a new house with the one you love. But shouldn't your new house, and everything in it be insured?}",
-            "img":"{http://www.simplystamps.com/images/product-images/holiday_245_large.png}"
+            "name":"Wedding Bells!",
+            "text":"Wedding Bells are RINGING! You have just got married, and now your moving into a new house with the one you love. But shouldn't your new house, and everything in it be insured?",
+            "img":"http://www.simplystamps.com/images/product-images/holiday_245_large.png"
         },
 
         {
-            "name":"{Tyler Scott}",
-            "text":"{You just graduated from college, and you now need to figure out your financial plan.}",
-            "img":"{https://thumb1.shutterstock.com/display_pic_with_logo/109564/640254667/stock-vector-graduating-students-of-pupil-hands-in-gown-throwing-graduation-caps-in-the-air-vector-illustration-640254667.jpg}"
+            "name":"Graduation Day",
+            "text":"You just graduated from college, and you now need to figure out your financial plan.",
+            "img":"https://thumb1.shutterstock.com/display_pic_with_logo/109564/640254667/stock-vector-graduating-students-of-pupil-hands-in-gown-throwing-graduation-caps-in-the-air-vector-illustration-640254667.jpg"
         },
 
         {
-            "name":"{Loren Jenkins}",
-            "text":"{You have been working at your job about 10 years now, and you enjoy your job. Your boss asked you if you have a retirement plan. Realizing that you do not have a plan at all, what should you do about this situation?}",
-            "img":"{http://images.wisegeek.com/retirement-plan-with-pen-and-glasses.jpg}"
+            "name":"Retirement",
+            "text":"You have been working at your job about 10 years now, and you enjoy your job. Your boss asked you if you have a retirement plan. Realizing that you do not have a plan at all, what should you do about this situation?",
+            "img":"http://images.wisegeek.com/retirement-plan-with-pen-and-glasses.jpg"
         },
 
         {
-            "name":"{Sasha Raymond}",
-            "text":"{You have just witness the birth of your new adorable baby boy! He already bringing you a lot of joy into your life, but what if something happens?}",
-            "img":"{https://i.ytimg.com/vi/t732Tzc52Wk/hqdefault.jpg}"
+            "name":"New Born Baby",
+            "text":"You have just witness the birth of your new adorable baby boy! He already bringing you a lot of joy into your life, but what if something happens?",
+            "img":"https://i.ytimg.com/vi/t732Tzc52Wk/hqdefault.jpg"
         }
     ]
 
