@@ -1,5 +1,5 @@
-import { EventQueue } from '../backend/event/eventqueue'
-import { RandomEvent } from '../backend/event/event'
+import { EventQueue, EventQueueBuilder } from '../backend/event/eventqueue'
+import { RandomEvent, PredefinedEvent } from '../backend/event/event'
 
 describe('EventQueue', () => {
 
@@ -78,5 +78,33 @@ describe('EventQueue', () => {
 function removeNEvents(eventQueue: EventQueue, n: number): void {
   for (n; n > 0; n--) {
     eventQueue.getNextEvent();
+  }
+}
+
+describe('EventQueueBuilder', () => {
+
+  let builder = new EventQueueBuilder();
+
+  it('should create an EventQueue with length > 0 on build() call', () => {
+    expect(builder.build().length > 0).toBe(true);
+  });
+
+  it('should contain random events', () => {
+    expect(containsType(RandomEvent, builder.build())).toBe(true);
+  });
+
+  it('should contain predefined events', () => {
+    expect(containsType(PredefinedEvent, builder.build())).toBe(true);
+  });
+
+});
+
+function containsType(type: Function, queue: EventQueue): boolean {
+  if (queue.event instanceof type){
+    return true
+  } else if (queue.next === null) {
+    return false;
+  } else {
+    return containsType(type, queue.next);
   }
 }

@@ -77,12 +77,12 @@ export class EventQueueBuilder {
   }
 
   build(): EventQueue {
-    let queue: EventQueue;
-    queue.addEvent(this.randomLoader.getNextEvent());
+    let queue = new EventQueue(this.randomLoader.getNextEvent());
     for (let i = 0; i < NUMBER_RAND_EVENTS; i++) {
       queue.addEvent(this.randomLoader.getNextEvent());
     }
     queue.insert(this.predefinedLoader.getNextEvent(), 2);
+    this.refresh();
     return queue;
   }
 
