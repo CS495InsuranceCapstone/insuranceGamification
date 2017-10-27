@@ -5,32 +5,21 @@ import { Event, RandomEvent, PredefinedEvent } from './event';
 class EventLoader {
   protected data: Object;
 
-  protected positiveEvents: Event[];
-  protected negativeEvents: Event[];
-
-  getNextEvent(isPos: boolean): Event { return null; }
-
-  getPositiveEventList(): Event[] {
-    return this.positiveEvents;
-  }
-
-  getNegativeEventList(): Event[] {
-    return this.negativeEvents;
-  }
+  getNextEvent(): Event { return null; }
 
   protected createEventList(jsonList: Object[]): Event[] {
     return jsonList.map(json =>
       Object.assign(new RandomEvent(null, null, null), json)
     );
   }
-
-  protected setDataLists(): void {
-    this.positiveEvents = this.createEventList((<any>this.data).positiveEvents);
-    this.negativeEvents = this.createEventList((<any>this.data).negativeEvents);
-  }
 }
 
 export class RandomEventLoader extends EventLoader {
+
+  protected positiveEvents: Event[];
+  protected negativeEvents: Event[];
+  private eventGetFunc: (number) => Event;
+  private listLen: number;
 
   constructor() {
     super();
@@ -38,11 +27,8 @@ export class RandomEventLoader extends EventLoader {
     this.setDataLists();
   }
 
-  private eventGetFunc: (number) => Event;
-  private listLen: number;
-
-  getNextEvent(isPos: boolean = Math.floor(Math.random() * 2) === 0): RandomEvent {
-    this.setEventGetFuncAndListLen(isPos ? this.positiveEvents : this.negativeEvents);
+  getNextEvent(): RandomEvent {
+    this.setEventGetFuncAndListLen(Math.floor(Math.random() * 2) === 0 ? this.positiveEvents : this.negativeEvents);
     let rand = Math.floor(Math.random() * this.listLen);
     return this.eventGetFunc(rand);
   }
@@ -94,24 +80,43 @@ export class RandomEventLoader extends EventLoader {
     );
   }
 
+  private setDataLists(): void {
+    this.positiveEvents = this.createEventList((<any>this.data).positiveEvents);
+    this.negativeEvents = this.createEventList((<any>this.data).negativeEvents);
+  }
+
+  getPositiveEventList(): Event[] {
+    return this.positiveEvents;
+  }
+
+  getNegativeEventList(): Event[] {
+    return this.negativeEvents;
+  }
+
 }
 
 export class PredefinedEventLoader extends EventLoader {
 
+  private events: PredefinedEvent[];
+
   constructor() {
     super();
     this.data = predefineddata;
-    this.setDataLists();
+    this.events = this.createEventList((<any>this.data).events);
   }
 
-  getNextEvent(isPos: boolean): PredefinedEvent {
-    return isPos? this.positiveEvents.pop() : this.negativeEvents.pop()
+  getNextEvent(): PredefinedEvent {
+    return this.events.pop();
   }
 
   protected createEventList(jsonList: Object[]): PredefinedEvent[] {
     return jsonList.map(json =>
       Object.assign(new PredefinedEvent(null, null, null), json)
     );
+  }
+
+  getEventList(): PredefinedEvent[] {
+    return this.events;
   }
 
 }

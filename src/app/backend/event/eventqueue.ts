@@ -57,13 +57,14 @@ export class EventQueueBuilder {
     this.refresh();
   }
 
-  refresh(): void {
+  private refresh(): void {
     this.randomLoader = new RandomEventLoader();
     this.predefinedLoader = new PredefinedEventLoader();
   }
 
   build(): EventQueue {
     let queue: EventQueue;
+    queue.addEvent(this.randomLoader.getNextEvent());
 
     return queue;
   }
