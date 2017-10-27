@@ -1,4 +1,5 @@
 import { Event, RandomEvent } from './event'
+import { RandomEventLoader, PredefinedEventLoader } from './eventloader'
 
 export class EventQueue {
   event: Event;
@@ -43,6 +44,22 @@ export class EventQueue {
   private assignNewProperties(): void {
     this.event = this.next.event;
     this.next = this.next.next;
+  }
+
+}
+
+export class EventQueueBuilder {
+
+  private randomLoader: RandomEventLoader;
+  private predefinedLoader: PredefinedEventLoader;
+
+  constructor() {
+    this.refresh();
+  }
+
+  refresh(): void {
+    this.randomLoader = new RandomEventLoader();
+    this.predefinedLoader = new PredefinedEventLoader();
   }
 
 }
