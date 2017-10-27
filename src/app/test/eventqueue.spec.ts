@@ -60,6 +60,19 @@ describe('EventQueue', () => {
     expect(eventQueue.length).toBe(1);
   });
 
+  it('should have a +1 length after inserting', () => {
+    eventQueue.addEvent(event2);
+    eventQueue.insert(event3, 1);
+    expect(eventQueue.length).toBe(3)
+  });
+
+  it('should have event3 at index 1 if it is inserted at index 1', () => {
+    eventQueue.addEvent(event2);
+    eventQueue.insert(event3, 1);
+    eventQueue.getNextEvent();
+    expect(eventQueue.getNextEvent()).toBe(event3);
+  });
+
 });
 
 function removeNEvents(eventQueue: EventQueue, n: number): void {

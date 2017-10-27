@@ -46,6 +46,18 @@ export class EventQueue {
     this.next = this.next.next;
   }
 
+  insert(event: Event, index: number): void {
+    if (index === 0) {
+      let afterNext = this.next;
+      this.next = new EventQueue(event);
+      this.next.length = this.length;
+      this.next.next = afterNext;
+    } else {
+      this.length++;
+      this.insert(event, index - 1);
+    }
+  }
+
 }
 
 export class EventQueueBuilder {
@@ -65,6 +77,9 @@ export class EventQueueBuilder {
   build(): EventQueue {
     let queue: EventQueue;
     queue.addEvent(this.randomLoader.getNextEvent());
+    for (let i = 0; i < 3; i++) {
+      queue.addEvent(this.randomLoader.getNextEvent());
+    }
 
     return queue;
   }
