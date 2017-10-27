@@ -1,5 +1,5 @@
 {
-    "negativeRandomEvents": [
+    "negativeEvents": [
 
         {
             "name": "Car Accident",
@@ -31,7 +31,7 @@
             "img":"https://s3.amazonaws.com/lowres.cartoonstock.com/law-order-thief-burger-robber-sofa-settee-mba0001_low.jpg"
         }
     ],
-    "positiveRandomEvents": [
+    "positiveEvents": [
 
         {
             "name": "Your Bonus Check!",

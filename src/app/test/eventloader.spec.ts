@@ -1,4 +1,4 @@
-import { RandomEventLoader } from '../backend/event/eventloader'
+import { RandomEventLoader, PredefinedEventLoader } from '../backend/event/eventloader'
 import { RandomEvent } from '../backend/event/event'
 
 describe('RandomEventLoader', () => {
@@ -30,5 +30,12 @@ describe('RandomEventLoader', () => {
     expect(eventLoader.getPositiveEventList().includes(event) ||
            eventLoader.getNegativeEventList().includes(event)).toBe(false);
   });
+
+});
+
+
+describe('PredefinedEventLoader', () => {
+
+  let eventLoader = new PredefinedEventLoader();
 
 });

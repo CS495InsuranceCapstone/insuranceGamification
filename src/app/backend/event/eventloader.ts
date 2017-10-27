@@ -1,11 +1,12 @@
 import * as randomdata from './randomevents.json';
-import { Event, RandomEvent } from './event'
+import * as predefineddata from './predefinedevents.json';
+import { Event, RandomEvent } from './event';
 
 export class EventLoader {
-  protected data
+  protected data;
 
-  protected positiveEvents: Event[]
-  protected negativeEvents: Event[]
+  protected positiveEvents: Event[];
+  protected negativeEvents: Event[];
 
   private getEvent(index, eventList) {
     var event = eventList[index];
@@ -44,6 +45,17 @@ export class EventLoader {
   getNegativeEventList() {
     return this.negativeEvents;
   }
+
+  protected createEventList(jsonList) {
+    return jsonList.map(json =>
+      Object.assign(new RandomEvent(null, null, null), json)
+    );
+  }
+
+  protected setDataLists() {
+    this.positiveEvents = this.createEventList((<any>this.data).positiveEvents);
+    this.negativeEvents = this.createEventList((<any>this.data).negativeEvents);
+  }
 }
 
 export class RandomEventLoader extends EventLoader {
@@ -51,18 +63,11 @@ export class RandomEventLoader extends EventLoader {
   constructor() {
     super();
     this.data = randomdata;
-    this.positiveEvents = this.createEventList((<any>this.data).positiveRandomEvents);
-    this.negativeEvents = this.createEventList((<any>this.data).negativeRandomEvents);
+    this.setDataLists();
   }
 
   private eventGetFunc: (number) => Event;
   private listLen: number;
-
-  private createEventList(jsonList) {
-    return jsonList.map(json =>
-      Object.assign(new RandomEvent(null, null, null), json)
-    )
-  }
 
   getRandomEvent() {
     var rand = Math.floor(Math.random() * 2);
@@ -74,6 +79,16 @@ export class RandomEventLoader extends EventLoader {
   private seteventGetFuncAndListLen(eventList) {
     this.eventGetFunc = eventList === this.positiveEvents ? this.getPositiveEvent : this.getNegativeEvent;
     this.listLen = eventList.length;
+  }
+
+}
+
+export class PredefinedEventLoader extends EventLoader {
+
+  constructor() {
+    super();
+    this.data = predefineddata;
+    this.setDataLists();
   }
 
 }
