@@ -25,7 +25,7 @@ export class EventQueue {
   }
 
   getNextEvent(): Event {
-    var retEvent = this.event;
+    let retEvent = this.event;
     this.moveUp();
     return retEvent;
   }

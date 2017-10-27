@@ -65,7 +65,7 @@ export class RandomEventLoader extends EventLoader {
   }
 
   private getEvent(index, eventList): RandomEvent {
-    var event = eventList[index];
+    let event = eventList[index];
     if (eventList === this.positiveEvents) {
       this.removeEventFromPositiveList(eventList, event);
     } else {
