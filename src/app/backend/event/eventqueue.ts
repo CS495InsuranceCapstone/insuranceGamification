@@ -1,6 +1,8 @@
 import { Event, RandomEvent } from './event'
 import { RandomEventLoader, PredefinedEventLoader } from './eventloader'
 
+const NUMBER_RAND_EVENTS = 3;
+
 export class EventQueue {
   event: Event;
   next: EventQueue;
@@ -77,10 +79,10 @@ export class EventQueueBuilder {
   build(): EventQueue {
     let queue: EventQueue;
     queue.addEvent(this.randomLoader.getNextEvent());
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < NUMBER_RAND_EVENTS; i++) {
       queue.addEvent(this.randomLoader.getNextEvent());
     }
-
+    queue.insert(this.predefinedLoader.getNextEvent(), 2);
     return queue;
   }
 
