@@ -26,7 +26,7 @@ describe('RandomEventLoader', () => {
   });
 
   it('should no longer hold random event after it\'s been retrieved', () => {
-    let event = eventLoader.getRandomEvent();
+    let event = eventLoader.getNextEvent();
     expect(eventLoader.getPositiveEventList().includes(event) ||
            eventLoader.getNegativeEventList().includes(event)).toBe(false);
   });
