@@ -1,4 +1,4 @@
-export class Event {
+class Event {
 
   name: string;
   text: string;

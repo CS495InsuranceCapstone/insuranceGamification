@@ -1,5 +1,5 @@
 import { RandomEventLoader, PredefinedEventLoader } from '../backend/event/eventloader'
-import { RandomEvent } from '../backend/event/event'
+import { RandomEvent, PredefinedEvent } from '../backend/event/event'
 
 describe('RandomEventLoader', () => {
 
@@ -36,6 +36,31 @@ describe('RandomEventLoader', () => {
 
 describe('PredefinedEventLoader', () => {
 
-  let eventLoader = new PredefinedEventLoader();
+  let eventLoader: PredefinedEventLoader;
+
+  beforeEach(() => {
+    eventLoader = new PredefinedEventLoader();
+  });
+
+  it('should give a positive event if getNextEvent(true)', () => {
+    expect(JSON.stringify(eventLoader.getNextEvent(true))).toBe(JSON.stringify(new PredefinedEvent(
+      "Sign the Deed",
+      "You just made the biggest purchase of your life!",
+      "null"
+    )));
+  });
+
+  it('should give a positive event if getNextEvent(false)', () => {
+    expect(JSON.stringify(eventLoader.getNextEvent(false))).toBe(JSON.stringify(new PredefinedEvent(
+      "Death in the Family",
+      "A family member has just passed away and you are in charge of taking care of the services.",
+      "null"
+    )));
+  });
+
+  it('should remove an event from the loader after it\'s been returned', () => {
+    let event = eventLoader.getNextEvent(true);
+    expect(eventLoader.getPositiveEventList().includes(event)).toBe(false);
+  });
 
 });
