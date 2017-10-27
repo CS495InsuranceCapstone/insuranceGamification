@@ -1,0 +1,17 @@
+{
+    "negativeDefinedEvents": [
+      {
+        "name": "Death in the Family",
+        "text": "A family member has just passed away and you are in charge of taking care of the services.",
+        "img": "null"
+      }
+    ],
+    "positiveDefinedEvents": [
+      {
+        "name": "Sign the Deed",
+        "text": "You just made the biggest purchase of your life!",
+        "img" : "null"
+      }
+    ]
+
+}
