@@ -75,10 +75,16 @@ export class RandomEventLoader extends EventLoader {
   }
 
   getPositiveEvent(index: number): RandomEvent {
+    if (this.positiveEvents.length === 0) {
+      return this.getNextEvent();
+    }
     return this.getEvent(index, this.positiveEvents);
   }
 
   getNegativeEvent(index: number): RandomEvent {
+    if (this.negativeEvents.length === 0) {
+      return this.getNextEvent();
+    }
     return this.getEvent(index, this.negativeEvents);
   }
 

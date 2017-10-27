@@ -62,4 +62,10 @@ export class EventQueueBuilder {
     this.predefinedLoader = new PredefinedEventLoader();
   }
 
+  build(): EventQueue {
+    let queue: EventQueue;
+
+    return queue;
+  }
+
 }
