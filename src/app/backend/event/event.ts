@@ -2,9 +2,10 @@ export class Event {
 
   name: string;
   text: string;
-  img: HTMLImageElement;
+  img: string;
+  //TODO: Change img type to HTMLImageElement when ready for use
 
-  constructor(name, text, img) {
+  constructor(name: string, text: string, img: string) {
     this.name = name;
     this.text = text;
     this.img = img;

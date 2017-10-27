@@ -5,13 +5,13 @@ export class EventQueue {
   next: EventQueue;
   length: number;
 
-  constructor(event) {
+  constructor(event: Event) {
     this.event = event;
     this.next = null;
     this.length = 1
   }
 
-  addEvent(nextEvent): void {
+  addEvent(nextEvent: Event): void {
     if (this.next == null) {
       this.next = new EventQueue(nextEvent);
     } else {
@@ -20,7 +20,7 @@ export class EventQueue {
     this.length++;
   }
 
-  addEvents(nextEvents): void {
+  addEvents(nextEvents: Event[]): void {
     nextEvents.forEach((event) => this.addEvent(event))
   }
 

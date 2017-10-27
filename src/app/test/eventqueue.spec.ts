@@ -62,7 +62,7 @@ describe('EventQueue', () => {
 
 });
 
-function removeNEvents(eventQueue, n): void {
+function removeNEvents(eventQueue: EventQueue, n: number): void {
   for (n; n > 0; n--) {
     eventQueue.getNextEvent();
   }
