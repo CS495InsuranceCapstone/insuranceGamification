@@ -1,4 +1,7 @@
 import { Event, RandomEvent } from './event'
+import { RandomEventLoader, PredefinedEventLoader } from './eventloader'
+
+const NUMBER_RAND_EVENTS = 3;
 
 export class EventQueue {
   event: Event;
@@ -43,6 +46,44 @@ export class EventQueue {
   private assignNewProperties(): void {
     this.event = this.next.event;
     this.next = this.next.next;
+  }
+
+  insert(event: Event, index: number): void {
+    if (index === 0) {
+      let afterNext = this.next;
+      this.next = new EventQueue(event);
+      this.next.length = this.length;
+      this.next.next = afterNext;
+    } else {
+      this.length++;
+      this.insert(event, index - 1);
+    }
+  }
+
+}
+
+export class EventQueueBuilder {
+
+  private randomLoader: RandomEventLoader;
+  private predefinedLoader: PredefinedEventLoader;
+
+  constructor() {
+    this.refresh();
+  }
+
+  private refresh(): void {
+    this.randomLoader = new RandomEventLoader();
+    this.predefinedLoader = new PredefinedEventLoader();
+  }
+
+  build(): EventQueue {
+    let queue = new EventQueue(this.randomLoader.getNextEvent());
+    for (let i = 0; i < NUMBER_RAND_EVENTS; i++) {
+      queue.addEvent(this.randomLoader.getNextEvent());
+    }
+    queue.insert(this.predefinedLoader.getNextEvent(), 2);
+    this.refresh();
+    return queue;
   }
 
 }

@@ -1,7 +1,13 @@
-{    
-    "negativePredefinedEvents": [
 
-        {
+{
+    "events": [
+      {
+        "name": "Sign the Deed",
+        "text": "You just made the biggest purchase of your life!",
+        "img" : "null"
+      },
+
+      {
             "name":"Losing Someone Close, is Hard to Get Passed",
             "text":"Today has been a bad day for everyone in your family. Your mother has just passed away within her sleep. So many tears are flowing through your eyes, but you have to stay strong because it is up to you to plan the funeral. Do you have any money put away for times like this?",
             "img":"https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAIlAAAAJDQ4OGU1YTdkLWI2MjktNGFmNy1iODE3LTEyODJhYWQyOTc1Nw.jpg"
@@ -30,9 +36,7 @@
             "name":"Total Wreck",
             "text":"You have been having your car for 5 years now, and now all of a sudden it just stopped running. It's basically a wreck, but you have spent so much money on your car. Now all that will go to waste, unless you figure something out.",
             "img":"http://toonclips.com/600/cartoon-beater-car-with-bandages-and-flat-tire-by-toonaday-4123.jpg"
-        }
-    ],
-    "positivePredefinedEvents": [
+        },
         
         {
             "name":"The New Guy/Girl",
@@ -63,7 +67,7 @@
             "name":"Keep Your Legacy Going",
             "text":"You are getting much older now, and you are unable to do the things that you want to do in life. It's ok, because you have accomplished so much within your lifetime. It would be great if there was a way to set up a financial legacy.",
             "img":"https://www.iris.xyz/sites/default/files/styles/largest/public/field/image/legacy.jpg?itok=NVU-FQ4l"
-        }
+      }
     ]
 
 }
