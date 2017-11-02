@@ -1,0 +1,69 @@
+{    
+    "negativePredefinedEvents": [
+
+        {
+            "name": "",
+            "text":"",
+            "img":""
+
+        },
+
+        {
+            "name":"",
+            "text":"",
+            "img":""
+        },
+
+        {
+            "name":"",
+            "text":"",
+            "img":""
+        },
+
+        {
+            "name":"",
+            "text":"",
+            "img":""
+        },
+
+        {
+            "name":"",
+            "text":"",
+            "img":""
+        }
+    ],
+    "positivePredefinedEvents": [
+        
+        {
+            "name": "The New Guy/Girl",
+            "text":"You have just graduated, and now you are starting your very first corporate job. Everything is moving extremely fast for you. Your still filling out paperwork at work, and you came across them asking",
+            "img":""
+        
+        },
+
+        {
+            "name":"",
+            "text":"",
+            "img":""
+        },
+
+        {
+            "name":"",
+            "text":"",
+            "img":""
+        },
+
+        {
+            "name":"",
+            "text":"",
+            "img":""
+        },
+
+        {
+            "name":"",
+            "text":"",
+            "img":""
+        }
+    ]
+
+}
