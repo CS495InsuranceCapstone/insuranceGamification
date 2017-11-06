@@ -102,7 +102,7 @@ export class PredefinedEventLoader extends EventLoader {
   constructor() {
     super();
     this.data = predefineddata;
-    this.events = this.createEventList((<any>this.data).events);
+    this.events = this.createEventList((<any>this.data).events).reverse();
   }
 
   getNextEvent(): PredefinedEvent {
