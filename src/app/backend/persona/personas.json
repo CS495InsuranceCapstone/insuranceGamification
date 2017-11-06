@@ -1,0 +1,13 @@
+{
+  "personas": [
+    {
+      "name": "Mary Taylor",
+      "sex": "F",
+      "age": "36",
+      "maritalStatus": "married",
+      "dependents": "2",
+      "profession": "banker",
+      "salary": "42000"
+    }
+  ]
+}
