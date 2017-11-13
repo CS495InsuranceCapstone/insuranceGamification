@@ -6,6 +6,7 @@ describe('Persona Loader', () => {
   let personaLoader: PersonaLoader;
   let personas: Persona[];
 
+
   beforeEach(() => {
     personaLoader = new PersonaLoader();
     personas = personaLoader.getPersonas();
