@@ -14,9 +14,8 @@ export class PredefinedEventLoader extends EventLoader {
   private events: PredefinedEvent[];
 
   constructor() {
-    super();
-    this.data = predefineddata;
-    this.events = this.createEventList((<any>this.data).events).reverse() as
+    super(predefineddata);
+    this.events = this.createObjectList((<any>this.data).events).reverse() as
       PredefinedEvent[];
   }
 
@@ -42,14 +41,13 @@ export class RandomEventLoader extends EventLoader {
   private listLen: number;
 
   constructor() {
-    super();
-    this.data = randomdata;
+    super(randomdata);
     this.setDataLists();
   }
 
   private setDataLists(): void {
-    this.positiveEvents = this.createEventList((<any>this.data).positiveEvents) as RandomEvent[];
-    this.negativeEvents = this.createEventList((<any>this.data).negativeEvents) as RandomEvent[];
+    this.positiveEvents = this.createObjectList((<any>this.data).positiveEvents) as RandomEvent[];
+    this.negativeEvents = this.createObjectList((<any>this.data).negativeEvents) as RandomEvent[];
   }
 
   getNextEvent(): RandomEvent {
