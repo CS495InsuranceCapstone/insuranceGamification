@@ -1,5 +1,5 @@
 export class Persona {
-    
+
       name: string;
       sex: string;
       age: string;
@@ -7,9 +7,15 @@ export class Persona {
       dependents: string;
       profession: string;
       salary: string;
-      
-    
-      constructor(name: string,sex: string,age: string,maritalStatus: string,dependents: string,profession: string,salary: string) {
+
+
+      constructor(name: string,
+                  sex: string,
+                  age: string,
+                  maritalStatus: string,
+                  dependents: string,
+                  profession: string,
+                  salary: string) {
         this.name = name;
         this.sex = sex;
         this.age = age;
@@ -18,5 +24,5 @@ export class Persona {
         this.profession = profession;
         this.salary = salary;
       }
-    
+
     }
