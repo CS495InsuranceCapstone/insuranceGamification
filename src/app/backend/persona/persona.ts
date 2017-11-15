@@ -1,15 +1,24 @@
 export class Persona {
-    
+
       name: string;
       sex: string;
-      age: string;
+      age: number;
       maritalStatus: string;
-      dependents: string;
+      dependents: number;
       profession: string;
-      salary: string;
-      
-    
-      constructor(name: string,sex: string,age: string,maritalStatus: string,dependents: string,profession: string,salary: string) {
+      salary: number;
+      avatar: HTMLImageElement;
+      //TODO: Get avatars for each avatar and create associations for them in JSON
+
+      // + operator converts string to number
+      constructor(name: string,
+                  sex: string,
+                  age: number,
+                  maritalStatus: string,
+                  dependents: number,
+                  profession: string,
+                  salary: number,
+                  avatar: HTMLImageElement = null) {
         this.name = name;
         this.sex = sex;
         this.age = age;
@@ -17,6 +26,14 @@ export class Persona {
         this.dependents = dependents;
         this.profession = profession;
         this.salary = salary;
+        this.avatar = avatar;
       }
-    
+
+      convertFieldsFromJSON(): void {
+        this.age = +this.age;
+        this.dependents = +this.dependents;
+        this.salary = +this.salary;
+        this.avatar = null;
+      }
+
     }

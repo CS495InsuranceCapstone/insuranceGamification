@@ -7,7 +7,96 @@
       "maritalStatus": "married",
       "dependents": "2",
       "profession": "banker",
-      "salary": "42000"
+      "salary": "42000",
+      "avatar": "null"
+    },
+
+    {
+      "name": "Peter Pierce",
+      "sex": "M",
+      "age": "22",
+      "maritalStatus": "single",
+      "dependents": "0",
+      "profession": "software engineer",
+      "salary": "55000",
+      "avatar": "null"
+    },
+
+    {
+      "name": "Reed Stafford",
+      "sex": "M",
+      "age": "44",
+      "maritalStatus": "divorced",
+      "dependents": "1",
+      "profession": "construction manager",
+      "salary": "82500",
+      "avatar": "null"
+    },
+
+    {
+      "name": "Reed Stafford",
+      "sex": "M",
+      "age": "44",
+      "maritalStatus": "single",
+      "dependents": "1",
+      "profession": "construction manager",
+      "salary": "82500",
+      "avatar": "null"
+    },
+
+    {
+      "name": "Kiara Birch",
+      "sex": "F",
+      "age": "29",
+      "maritalStatus": "single",
+      "dependents": "0",
+      "profession": "journalist",
+      "salary": "49700",
+      "avatar": "null"
+    },
+
+    {
+      "name": "Kate Butler",
+      "sex": "F",
+      "age": "56",
+      "maritalStatus": "married",
+      "dependents": "4",
+      "profession": "sales associate",
+      "salary": "24000",
+      "avatar": "null"
+    },
+
+    {
+      "name": "Jonathon Powell",
+      "sex": "M",
+      "age": "61",
+      "maritalStatus": "married",
+      "dependents": "2",
+      "profession": "CEO",
+      "salary": "140000",
+      "avatar": "null"
+    },
+
+    {
+      "name": "Nathan Holland",
+      "sex": "M",
+      "age": "35",
+      "maritalStatus": "married",
+      "dependents": "1",
+      "profession": "nurse",
+      "salary": "87500",
+      "avatar": "null"
+    },
+
+    {
+      "name": "Eli Paul",
+      "sex": "M",
+      "age": "39",
+      "maritalStatus": "married",
+      "dependents": "0",
+      "profession": "teacher",
+      "salary": "55000",
+      "avatar": "null"
     }
   ]
 }

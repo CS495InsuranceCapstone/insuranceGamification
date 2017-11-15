@@ -1,17 +1,36 @@
 import * as randomdata from './randomevents.json';
 import * as predefineddata from './predefinedevents.json';
 import { Event, RandomEvent, PredefinedEvent } from './event';
+import { Loader } from '../util/loader'
 
-class EventLoader {
-  protected data: Object;
+class EventLoader extends Loader {
 
   getNextEvent(): Event { return null; }
 
-  protected createEventList(jsonList: Object[]): Event[] {
-    return jsonList.map(json =>
-      Object.assign(new RandomEvent(null, null, null), json)
-    );
+}
+
+export class PredefinedEventLoader extends EventLoader {
+
+  private events: PredefinedEvent[];
+
+  constructor() {
+    super(predefineddata);
+    this.events = this.createObjectList((<any>this.data).events).reverse() as
+      PredefinedEvent[];
   }
+
+  getNextEvent(): PredefinedEvent {
+    return this.events.pop();
+  }
+
+  getEventList(): PredefinedEvent[] {
+    return this.events;
+  }
+
+  protected createObject(): PredefinedEvent {
+    return new PredefinedEvent(null, null, null);
+  }
+
 }
 
 export class RandomEventLoader extends EventLoader {
@@ -22,9 +41,13 @@ export class RandomEventLoader extends EventLoader {
   private listLen: number;
 
   constructor() {
-    super();
-    this.data = randomdata;
+    super(randomdata);
     this.setDataLists();
+  }
+
+  private setDataLists(): void {
+    this.positiveEvents = this.createObjectList((<any>this.data).positiveEvents) as RandomEvent[];
+    this.negativeEvents = this.createObjectList((<any>this.data).negativeEvents) as RandomEvent[];
   }
 
   getNextEvent(): RandomEvent {
@@ -38,16 +61,23 @@ export class RandomEventLoader extends EventLoader {
     this.listLen = eventList.length;
   }
 
-  private removeEventFromList(eventList: RandomEvent[], event: RandomEvent): RandomEvent[] {
-    return eventList.filter(ev => ev !== event);
-  }
-
   removeEventFromPositiveList(eventList: RandomEvent[], event: RandomEvent): void {
     this.positiveEvents = this.removeEventFromList(eventList, event);
   }
 
   removeEventFromNegativeList(eventList: RandomEvent[], event: RandomEvent): void {
     this.negativeEvents = this.removeEventFromList(eventList, event);
+  }
+
+  private removeEventFromList(eventList: RandomEvent[], event: RandomEvent): RandomEvent[] {
+    return eventList.filter(ev => ev !== event);
+  }
+
+  getPositiveEvent(index: number): RandomEvent {
+    if (this.positiveEvents.length === 0) {
+      return this.getNextEvent();
+    }
+    return this.getEvent(index, this.positiveEvents);
   }
 
   private getEvent(index: number, eventList: RandomEvent[]): RandomEvent {
@@ -60,29 +90,11 @@ export class RandomEventLoader extends EventLoader {
     return event;
   }
 
-  getPositiveEvent(index: number): RandomEvent {
-    if (this.positiveEvents.length === 0) {
-      return this.getNextEvent();
-    }
-    return this.getEvent(index, this.positiveEvents);
-  }
-
   getNegativeEvent(index: number): RandomEvent {
     if (this.negativeEvents.length === 0) {
       return this.getNextEvent();
     }
     return this.getEvent(index, this.negativeEvents);
-  }
-
-  protected createEventList(jsonList: Object[]): RandomEvent[] {
-    return jsonList.map(json =>
-      Object.assign(new RandomEvent(null, null, null), json)
-    );
-  }
-
-  private setDataLists(): void {
-    this.positiveEvents = this.createEventList((<any>this.data).positiveEvents);
-    this.negativeEvents = this.createEventList((<any>this.data).negativeEvents);
   }
 
   getPositiveEventList(): Event[] {
@@ -93,30 +105,8 @@ export class RandomEventLoader extends EventLoader {
     return this.negativeEvents;
   }
 
-}
-
-export class PredefinedEventLoader extends EventLoader {
-
-  private events: PredefinedEvent[];
-
-  constructor() {
-    super();
-    this.data = predefineddata;
-    this.events = this.createEventList((<any>this.data).events).reverse();
-  }
-
-  getNextEvent(): PredefinedEvent {
-    return this.events.pop();
-  }
-
-  protected createEventList(jsonList: Object[]): PredefinedEvent[] {
-    return jsonList.map(json =>
-      Object.assign(new PredefinedEvent(null, null, null), json)
-    );
-  }
-
-  getEventList(): PredefinedEvent[] {
-    return this.events;
+  protected createObject(): RandomEvent {
+    return new RandomEvent(null, null, null);
   }
 
 }
