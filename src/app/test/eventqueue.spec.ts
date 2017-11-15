@@ -1,5 +1,7 @@
 import { EventQueue, EventQueueBuilder } from '../backend/event/eventqueue'
 import { RandomEvent, PredefinedEvent } from '../backend/event/event'
+import { Persona } from '../backend/persona/persona'
+import { PersonaLoader } from '../backend/persona/personaloader'
 
 describe('EventQueue', () => {
 
@@ -8,6 +10,7 @@ describe('EventQueue', () => {
   let event3 : RandomEvent;
   let remainingEvents : RandomEvent[];
   let eventQueue : EventQueue;
+  let testPersona: Persona = new PersonaLoader().getPersonas()[0]
 
   beforeEach(() => {
     event1 = new RandomEvent('Event 1', 'Event 1 has happened', null);
@@ -33,30 +36,30 @@ describe('EventQueue', () => {
 
   it('should return event1 after getNextEvent() is called once', () => {
     eventQueue.addEvents(remainingEvents);
-    expect(eventQueue.getNextEvent()).toBe(event1);
+    expect(eventQueue.getNextEvent(testPersona)).toBe(event1);
   });
 
   it('should return event2 after getNextEvent() is called twice', () => {
     eventQueue.addEvents(remainingEvents);
-    removeNEvents(eventQueue, 1);
-    expect(eventQueue.getNextEvent()).toBe(event2);
+    removeNEvents(eventQueue, 1, testPersona);
+    expect(eventQueue.getNextEvent(testPersona)).toBe(event2);
   });
 
   it('should return event3 after getNextEvent() is called thrice', () => {
     eventQueue.addEvents(remainingEvents);
-    removeNEvents(eventQueue, 2);
-    expect(eventQueue.getNextEvent()).toBe(event3);
+    removeNEvents(eventQueue, 2, testPersona);
+    expect(eventQueue.getNextEvent(testPersona)).toBe(event3);
   });
 
   it('should have a length of 2 after adding all events and removing 1', () => {
     eventQueue.addEvents(remainingEvents);
-    removeNEvents(eventQueue, 1);
+    removeNEvents(eventQueue, 1, testPersona);
     expect(eventQueue.length).toBe(2);
   });
 
   it('should have a length of 1 after adding all events and removing 2', () => {
     eventQueue.addEvents(remainingEvents);
-    removeNEvents(eventQueue, 2);
+    removeNEvents(eventQueue, 2, testPersona);
     expect(eventQueue.length).toBe(1);
   });
 
@@ -69,15 +72,21 @@ describe('EventQueue', () => {
   it('should have event3 at index 1 if it is inserted at index 1', () => {
     eventQueue.addEvent(event2);
     eventQueue.insert(event3, 1);
-    eventQueue.getNextEvent();
-    expect(eventQueue.getNextEvent()).toBe(event3);
+    eventQueue.getNextEvent(testPersona);
+    expect(eventQueue.getNextEvent(testPersona)).toBe(event3);
+  });
+
+  it('should push back an event if it isn\'t approved', () => {
+    event1.flags = {'age': x => x <= 25};
+    eventQueue.addEvents(remainingEvents);
+    expect(eventQueue.getNextEvent(testPersona)).toBe(event2);
   });
 
 });
 
-function removeNEvents(eventQueue: EventQueue, n: number): void {
+function removeNEvents(eventQueue: EventQueue, n: number, testPersona: Persona): void {
   for (n; n > 0; n--) {
-    eventQueue.getNextEvent();
+    eventQueue.getNextEvent(testPersona);
   }
 }
 

@@ -3,16 +3,16 @@ import { Persona } from '../persona/persona'
 
 export class EventApprover {
 
-  private persona: Persona;
+  private event: Event;
 
-  constructor(persona) {
-    this.persona = persona;
+  constructor(event) {
+    this.event = event;
   }
 
-  approve(event: Event): boolean {
+  approve(persona: Persona): boolean {
     let approved = true;
-    for (let flag in event.flags) {
-      approved = approved && event.flags[flag](eval('persona.' + flag))
+    for (let flag in this.event.flags) {
+      approved = approved && this.event.flags[flag](eval('persona.' + flag))
     }
     return approved;
   }
