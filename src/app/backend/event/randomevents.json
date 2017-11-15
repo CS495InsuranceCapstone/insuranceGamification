@@ -5,14 +5,14 @@
             "name": "Car Accident",
             "text":"You have gotten into a car accident, that has left your car completely damaged! How will you handle this terrible situation?",
             "img":"https://familydoctor.org/wp-content/uploads/2000/09/24611539_l-705x470.jpg",
-            "flags":{"age":"<  25","salary":"<  60000"}
+            "flags":{"age":"< 25","salary":"< 60000"}
         },
 
         {
             "name":"Medical Emergency",
             "text":"You just found out that your daughter slipped off the road, while driving, and hit a tree. She is in stable condition, but you are now filled with hospital fees. What do you do now?",
             "img":"http://images.clipartpanda.com/ultrasound-clipart-hospital_bed.gif",
-            "flags":{"age":">  35","salary":"> 65000","dependents":">= 1"}
+            "flags":{"age":"> 35","salary":"> 65000","dependents":">= 1"}
         },
 
         {
