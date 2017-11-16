@@ -1,15 +1,20 @@
-import { Event, RandomEvent } from './event'
-import { RandomEventLoader, PredefinedEventLoader } from './eventloader'
+import { Event, RandomEvent } from './event';
+import { EventApprover } from './eventapprover';
+import { RandomEventLoader, PredefinedEventLoader } from './eventloader';
 
 const NUMBER_RAND_EVENTS = 3;
 
 export class EventQueue {
+
+  private approver: EventApprover;
+
   event: Event;
   next: EventQueue;
   length: number;
 
   constructor(event: Event) {
     this.event = event;
+    this.approver = new EventApprover(event);
     this.next = null;
     this.length = 1
   }
@@ -27,10 +32,17 @@ export class EventQueue {
     nextEvents.forEach((event) => this.addEvent(event))
   }
 
-  getNextEvent(): Event {
-    let retEvent = this.event;
-    this.moveUp();
-    return retEvent;
+  getNextEvent(persona): Event {
+    if (this.approver.approve(persona)) {
+      let retEvent = this.event;
+      this.moveUp();
+      return retEvent;
+    } else {
+      let moveEvent = this.event;
+      this.moveUp();
+      this.addEvent(moveEvent);
+      return this.getNextEvent(persona);
+    }
   }
 
   private moveUp(): void {
@@ -45,6 +57,7 @@ export class EventQueue {
 
   private assignNewProperties(): void {
     this.event = this.next.event;
+    this.approver = this.next.approver;
     this.next = this.next.next;
   }
 

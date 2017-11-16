@@ -7,6 +7,21 @@ class EventLoader extends Loader {
 
   getNextEvent(): Event { return null; }
 
+  static convertFlags(data): void { return null; }
+
+  static convertEventFlags(event): void {
+    for (let flag in event.flags) {
+      let boolText = event.flags[flag].split(' ');
+      let op = boolText[0], num = boolText[1];
+      switch(op) {
+        case '<': event.flags[flag] = x => x < num; break;
+        case '<=': event.flags[flag] = x => x < num; break;
+        case '>': event.flags[flag] = x => x < num; break;
+        case '>=': event.flags[flag] = x => x < num; break;
+      }
+    }
+  }
+
 }
 
 export class PredefinedEventLoader extends EventLoader {
@@ -29,6 +44,12 @@ export class PredefinedEventLoader extends EventLoader {
 
   protected createObject(): PredefinedEvent {
     return new PredefinedEvent(null, null, null);
+  }
+
+  static convertFlags(data): void {
+    for (let event of (<any>data).events) {
+      PredefinedEventLoader.convertEventFlags(event);
+    }
   }
 
 }
@@ -109,4 +130,16 @@ export class RandomEventLoader extends EventLoader {
     return new RandomEvent(null, null, null);
   }
 
+  static convertFlags(data): void {
+    for (let event of (<any>data).positiveEvents) {
+      RandomEventLoader.convertEventFlags(event);
+    }
+    for (let event of (<any>data).negativeEvents) {
+      RandomEventLoader.convertEventFlags(event);
+    }
+  }
+
 }
+
+RandomEventLoader.convertFlags(randomdata);
+PredefinedEventLoader.convertFlags(predefineddata)
