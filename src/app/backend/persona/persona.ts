@@ -1,3 +1,5 @@
+import { CheckingAccount, SavingsAccount } from '../bank/bank_accounts'
+
 export class Persona {
 
       name: string;
@@ -9,6 +11,9 @@ export class Persona {
       salary: number;
       avatar: HTMLImageElement;
       //TODO: Get avatars for each avatar and create associations for them in JSON
+
+      checkingAccount: CheckingAccount;
+      savingsAccount: SavingsAccount;
 
       // + operator converts string to number
       constructor(name: string,
