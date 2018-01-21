@@ -19,6 +19,7 @@ export class PersonaLoader extends Loader {
                        null,
                        null,
                        null,
+                       null,
                        null);
   }
 

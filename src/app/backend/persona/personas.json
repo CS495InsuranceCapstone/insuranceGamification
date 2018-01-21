@@ -8,6 +8,7 @@
       "dependents": "2",
       "profession": "banker",
       "salary": "42000",
+      "health": ".75",
       "avatar": "null"
     },
 
@@ -19,6 +20,7 @@
       "dependents": "0",
       "profession": "software engineer",
       "salary": "55000",
+      "health": ".75",
       "avatar": "null"
     },
 
@@ -30,6 +32,7 @@
       "dependents": "1",
       "profession": "construction manager",
       "salary": "82500",
+      "health": ".75",
       "avatar": "null"
     },
 
@@ -41,6 +44,7 @@
       "dependents": "1",
       "profession": "construction manager",
       "salary": "82500",
+      "health": ".75",
       "avatar": "null"
     },
 
@@ -52,6 +56,7 @@
       "dependents": "0",
       "profession": "journalist",
       "salary": "49700",
+      "health": ".75",
       "avatar": "null"
     },
 
@@ -63,6 +68,7 @@
       "dependents": "4",
       "profession": "sales associate",
       "salary": "24000",
+      "health": ".75",
       "avatar": "null"
     },
 
@@ -74,6 +80,7 @@
       "dependents": "2",
       "profession": "CEO",
       "salary": "140000",
+      "health": ".89",
       "avatar": "null"
     },
 
@@ -85,6 +92,7 @@
       "dependents": "1",
       "profession": "nurse",
       "salary": "87500",
+      "health": ".75",
       "avatar": "null"
     },
 
@@ -96,6 +104,7 @@
       "dependents": "0",
       "profession": "teacher",
       "salary": "55000",
+      "health": ".75",
       "avatar": "null"
     }
   ]
