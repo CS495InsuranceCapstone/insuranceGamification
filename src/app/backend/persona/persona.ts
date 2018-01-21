@@ -36,6 +36,7 @@ export class Persona {
         this.age = +this.age;
         this.dependents = +this.dependents;
         this.salary = +this.salary;
+        this.health = +this.health;
         this.avatar = null;
       }
 

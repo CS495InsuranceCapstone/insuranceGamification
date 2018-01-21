@@ -20,7 +20,8 @@ describe('Persona Loader', () => {
                                  'married',
                                  0,
                                  'teacher',
-                                 55000))
+                                 55000,
+                                 .75))
       );
   });
 
@@ -33,7 +34,8 @@ describe('Persona Loader', () => {
                                  'married',
                                  1,
                                  'nurse',
-                                 87500))
+                                 87500,
+                                 .75))
       );
   });
 
