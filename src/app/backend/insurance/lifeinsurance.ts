@@ -6,8 +6,9 @@ export abstract class LifeInsurancePolicy {
   protected deathPayOut: number;
   protected premium: number;
 
-  constructor(persona: Persona) {
+  constructor(persona: Persona, desiredDeathPayOut: number) {
     this.persona = persona;
+    this.deathPayOut = desiredDeathPayOut;
     this.definePolicy();
   }
 
