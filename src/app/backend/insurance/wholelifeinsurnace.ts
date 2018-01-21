@@ -12,7 +12,19 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
   }
 
   protected definePolicy(): void {
-    // TODO: Use passed persona to calculate policy pieces
+    this.setPrewriteClass();
+  }
+
+  private setPrewriteClass(): void {
+    if (this.persona.health < .25) {
+      this.prewriteClass = PrewriteClass.Bad
+    } else if (this.persona.health >= .25 && this.persona.health < .5) {
+      this.prewriteClass = PrewriteClass.Okay;
+    } else if (this.persona.health >= .5 && this.persona.health < .75) {
+      this.prewriteClass = PrewriteClass.NotSoPreferred;
+    } else {
+      this.prewriteClass = PrewriteClass.Preferred;
+    }
   }
 
 }
