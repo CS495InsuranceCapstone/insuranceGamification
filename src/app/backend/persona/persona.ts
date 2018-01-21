@@ -7,6 +7,7 @@ export class Persona {
       dependents: number;
       profession: string;
       salary: number;
+      health: number;
       avatar: HTMLImageElement;
       //TODO: Get avatars for each avatar and create associations for them in JSON
 
@@ -18,6 +19,7 @@ export class Persona {
                   dependents: number,
                   profession: string,
                   salary: number,
+                  health: number,
                   avatar: HTMLImageElement = null) {
         this.name = name;
         this.sex = sex;
@@ -26,6 +28,7 @@ export class Persona {
         this.dependents = dependents;
         this.profession = profession;
         this.salary = salary;
+        this.health = health;
         this.avatar = avatar;
       }
 
