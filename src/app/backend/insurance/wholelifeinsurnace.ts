@@ -17,6 +17,14 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
 
   protected definePolicy(): void {
     this.setPrewriteClass();
+    this.setPremium();
+  }
+
+  private setPremium() {
+    let sexMult = this.persona.sex == 'M' ? 1.5 : 1;
+    let ageMult = (this.persona.age / 100) ** 2
+    let classMult = this.prewriteClass / 2;
+    this.premium = 1000 * sexMult * ageMult * classMult;
   }
 
   private setPrewriteClass(): void {
@@ -33,6 +41,10 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
 
   payPremium(): void {
     super.payPremium();
+    this.updatePolicy();
+  }
+
+  private updatePolicy(): void {
     this.appreciate();
     this.policyAge++;
     if (this.persona.age >= this.agePremiumPaidTo) {
