@@ -5,10 +5,14 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
 
   private agePremiumPaidTo: number;
   private prewriteClass: PrewriteClass;
+  private cashValue: number;
+  private policyAge: number;
 
   constructor(persona: Persona, desiredDeathPayOut: number, agePremiumPaidTo: number) {
     super(persona, desiredDeathPayOut);
     this.agePremiumPaidTo = agePremiumPaidTo;
+    this.cashValue = 0;
+    this.policyAge = 1;
   }
 
   protected definePolicy(): void {
@@ -25,6 +29,19 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
     } else {
       this.prewriteClass = PrewriteClass.Preferred;
     }
+  }
+
+  payPremium(): void {
+    super.payPremium();
+    this.appreciate();
+    this.policyAge++;
+    if (this.persona.age >= this.agePremiumPaidTo) {
+      this.premium = 0;
+    }
+  }
+
+  private appreciate(): void {
+    this.cashValue = (this.cashValue + this.premium) ** (this.policyAge / 50);
   }
 
 }
