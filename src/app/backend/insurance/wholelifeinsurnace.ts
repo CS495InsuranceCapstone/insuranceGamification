@@ -56,6 +56,10 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
     this.cashValue = (this.cashValue + this.premium) ** (this.policyAge / 50);
   }
 
+  getDividend(): number {
+    return Math.random() / 10 * this.cashValue;
+  }
+
 }
 
 enum PrewriteClass {
