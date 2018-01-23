@@ -1,50 +1,126 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<style>
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Open Sans", sans-serif
+  }
+</style>
 
-<div class="w3-display-container" style="text-align:center">
-  <img src="/assets/mountain.jpg" alt="background" style="max-width:100%">
-  <div class="w3-panel w3-blue w3-card-4 w3-display-topmiddle w3-col s6 m6 l6">
-    <h1>Welcome to {{title}}!</h1>
-
-  </div>
-  <div id="persona" class="w3-panel w3-blue w3-card-4 w3-display-topleft w3-blue w3-col s2 m2 l2" style="text-align:left">
-    <h4 id="personaName" >Name: </h4>
-    <h4 id="personaAge" >Age: </h4>
-    <h4 id="personaGender" >Gender: </h4>
-    <h4 id="personaMarried" >Married: </h4>
-    <h4 id="personaDependents" >Dependents: </h4>
-    <h4 id="personaProfession" >Profession: </h4>
-    <h4 id="personaSalary" >Salary: </h4>
-  </div>
-
-  <div id="inventory" class="w3-panel w3-blue w3-card-4 w3-display-left w3-blue w3-col s2 m2 l2">
-    <h2>Inventory</h2>
-  </div>
-
-  <div id="bank" class="w3-panel w3-blue w3-card-4 w3-display-bottomleft w3-blue w3-col s2 m2 l2">
-    <h2>Bank</h2>
-  </div>
-
-  <div id="settings" class="w3-panel w3-blue w3-card-4 w3-display-bottomright w3-blue w3-col s2 m2 l2">
-    <h2>Settings</h2>
-  </div>
-  <div class="w3-display-container w3-display-middle w3-col s6 m6 l6">
-    <div id="avatar" class="w3-panel w3-green w3-card-4 w3-display-bottomleft w3-col s3 m3 l3">
-      <img src="/assets/avatars.png" alt="avatars" style="max-width:100%">
-    </div>
-    <div id="issueArea" class="w3-panel w3-blue w3-card-4 w3-display-bottommiddle w3-col s6 m6 l6">
-      <h1>Text area</h1>
-    </div>
-    <div id="issueimage" class="w3-panel w3-blue w3-card-4 w3-display-topmiddle w6-col s9 m6 l9">
-      <h1>issue image</h1>
+<body class="w3-theme-l5">
+  <div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+      <h2>Welcome to the Game of Insurance presented by OneAmerica</h2>
     </div>
   </div>
 
-  <div class="w3-display-container w3-display-bottommiddle w3-col s6 m6 l6">
-    <button id="button1" class="w3-btn w3-round-xlarge w3-display-bottomleft w3-khaki w3-medium">Button 1</button>
-    <button id="button2" class="w3-btn w3-round-xlarge w3-display-bottommiddle w3-khaki w3-medium">Button 2</button>
-    <button id="button3" class="w3-btn w3-round-xlarge w3-display-bottomright w3-khaki w3-medium">Button 3</button>
+  <!-- Page Container -->
+  <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <!-- The Grid -->
+    <div class="w3-row">
+      <!-- Left Column -->
+      <div class="w3-col m3">
+        <!-- Persona -->
+        <div class="w3-card w3-round w3-white">
+          <div class="w3-container">
+            <h4 class="w3-center">Persona</h4>
+            <p class="w3-center">
+              <img src="/assets/avatars.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
+            </p>
+            <hr>
+            <h4 id="personaName" class="w3-margin-right w3-text-theme">Name: </h4>
+            <h4 id="personaAge" class="w3-margin-right w3-text-theme">Age: </h4>
+            <h4 id="personaGender" class="w3-margin-right w3-text-theme">Gender: </h4>
+            <h4 id="personaMarried" class="w3-margin-right w3-text-theme">Married: </h4>
+            <h4 id="personaDependents" class="w3-margin-right w3-text-theme">Dependents: </h4>
+            <h4 id="personaProfession" class="w3-margin-right w3-text-theme">Profession: </h4>
+            <h4 id="personaSalary" class="w3-margin-right w3-text-theme">Salary: </h4>
+          </div>
+        </div>
+        <br>
+
+        <!-- Inventory -->
+        <div class="w3-card w3-round w3-white w3-hide-small">
+          <div class="w3-container">
+            <p>Inventory</p>
+            <p>
+              <span class="w3-tag w3-small w3-theme-d5">News</span>
+
+            </p>
+          </div>
+        </div>
+        <br>
+        <!-- End Left Column -->
+      </div>
+
+      <!-- Middle Column -->
+      <div class="w3-col m7">
+
+        <div class="w3-row-padding">
+          <div class="w3-col m12">
+            <div class="w3-card w3-round w3-white">
+              <div class="w3-container w3-padding">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w3-container w3-card w3-white w3-round w3-margin">
+          
+        </div>
+
+        <!-- End Middle Column -->
+      </div>
+
+      <!-- Right Column -->
+      <div class="w3-col m2">
+        <div class="w3-card w3-round w3-white w3-center">
+          <!-- Bank -->
+          <div class="w3-container">
+            <h4 class="w3-center">Bank</h4>
+          </div>
+        </div>
+        <br>
+        <div class="w3-container">
+            <button id="settings" onclick="document.getElementById('id01').style.display='block'" class="w3-card w3-round w3-white w3-center">
+                <h2>Settings</h2>
+              </button>
+          </div>
+
+
+        <!-- End Right Column -->
+      </div>
+
+      <!-- End Grid -->
+    </div>
+
+    <!-- End Page Container -->
   </div>
+  <br>
 
+  <!-- Footer -->
+  <footer class="w3-container w3-theme-d3 w3-padding-16">
+    <h5>Footer</h5>
+  </footer>
 
-</div>
+  <footer class="w3-container w3-theme-d5">
+    <p>Powered by
+      <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+    </p>
+  </footer>
+
+</body>
+
+</html>
