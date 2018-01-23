@@ -23,6 +23,8 @@ export class Game{
         
     }
 
+    //document.body.innerHTML = start();
+
     private presentEvent(event: Event): void{
         if(this.queue == null){
             this.end();            
