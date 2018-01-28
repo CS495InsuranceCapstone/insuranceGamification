@@ -13,7 +13,8 @@
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  h6 {
     font-family: "Open Sans", sans-serif
   }
 </style>
@@ -22,6 +23,11 @@
   <div class="w3-top w3-hide-small w3-hide-medium">
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large ">
       <h2>Welcome to the Game of Insurance presented by OneAmerica</h2>
+    </div>
+  </div>
+  <div class="w3-top w3-hide-large">
+    <div class="w3-bar w3-theme-d2 w3-left-align w3-large ">
+      <h2>Game of Insurance</h2>
     </div>
   </div>
 
@@ -39,15 +45,13 @@
               <img id="avatar" src="/assets/avatars.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
             </p>
             <hr>
-            <h4 class="w3-margin-right w3-text-theme">Name: </h4>
-            <p id="personaName">Name</p>
-            <h4 class="w3-margin-right w3-text-theme">Age: </h4>
-            <p id="personaAge">Age</p>
-            <h4 id="personaGender" class="w3-margin-right w3-text-theme">Gender: </h4>
-            <h4 id="personaMarried" class="w3-margin-right w3-text-theme">Married: </h4>
-            <h4 id="personaDependents" class="w3-margin-right w3-text-theme">Dependents: </h4>
-            <h4 id="personaProfession" class="w3-margin-right w3-text-theme">Profession: </h4>
-            <h4 id="personaSalary" class="w3-margin-right w3-text-theme">Salary: </h4>
+            <h6 class="w3-margin-right w3-text-theme">Name:</h6>
+            <h6 class="w3-margin-right w3-text-theme">Age:</h6>
+            <h6 class="w3-margin-right w3-text-theme">Gender:</h6>
+            <h6 class="w3-margin-right w3-text-theme">Married:</h6>
+            <h6 class="w3-margin-right w3-text-theme">Dependents:</h6>
+            <h6 class="w3-margin-right w3-text-theme">Profession:</h6>
+            <h6 class="w3-margin-right w3-text-theme">Salary:</h6>
           </div>
         </div>
         <br>
@@ -61,7 +65,6 @@
           <div class="w3-col m12">
             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
-                <p>Scenario Image</p>
                 <img id="scenarioImage" src="/assets/mountain.jpg" style="height:100%;width:100%" class="w3-rounded">
               </div>
             </div>
@@ -110,7 +113,7 @@
         </div>
         <br>
         <div class="w3-container">
-          <button id="settings" onclick="document.getElementById('id01').style.display='block'" class="w3-card w3-round w3-white w3-center">
+          <button id="settings" onclick="document.getElementById('id01').style.display='block'" class="w3-mobile w3-card w3-round w3-white w3-center">
             <h2>Settings</h2>
           </button>
         </div>
