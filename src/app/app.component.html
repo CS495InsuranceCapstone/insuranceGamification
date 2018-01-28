@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Insuarance Game</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -19,8 +19,8 @@
 </style>
 
 <body class="w3-theme-l5">
-  <div class="w3-top">
-    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <div class="w3-top w3-hide-small w3-hide-medium">
+    <div class="w3-bar w3-theme-d2 w3-left-align w3-large ">
       <h2>Welcome to the Game of Insurance presented by OneAmerica</h2>
     </div>
   </div>
@@ -30,34 +30,24 @@
     <!-- The Grid -->
     <div class="w3-row">
       <!-- Left Column -->
-      <div class="w3-col m3">
+      <div class="w3-col m3 w3-hide-small">
         <!-- Persona -->
         <div class="w3-card w3-round w3-white">
           <div class="w3-container">
             <h4 class="w3-center">Persona</h4>
             <p class="w3-center">
-              <img src="/assets/avatars.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
+              <img id="avatar" src="/assets/avatars.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
             </p>
             <hr>
-            <h4 id="personaName" class="w3-margin-right w3-text-theme">Name: </h4>
-            <h4 id="personaAge" class="w3-margin-right w3-text-theme">Age: </h4>
+            <h4 class="w3-margin-right w3-text-theme">Name: </h4>
+            <p id="personaName">Name</p>
+            <h4 class="w3-margin-right w3-text-theme">Age: </h4>
+            <p id="personaAge">Age</p>
             <h4 id="personaGender" class="w3-margin-right w3-text-theme">Gender: </h4>
             <h4 id="personaMarried" class="w3-margin-right w3-text-theme">Married: </h4>
             <h4 id="personaDependents" class="w3-margin-right w3-text-theme">Dependents: </h4>
             <h4 id="personaProfession" class="w3-margin-right w3-text-theme">Profession: </h4>
             <h4 id="personaSalary" class="w3-margin-right w3-text-theme">Salary: </h4>
-          </div>
-        </div>
-        <br>
-
-        <!-- Inventory -->
-        <div class="w3-card w3-round w3-white w3-hide-small">
-          <div class="w3-container">
-            <p>Inventory</p>
-            <p>
-              <span class="w3-tag w3-small w3-theme-d5">News</span>
-
-            </p>
           </div>
         </div>
         <br>
@@ -71,14 +61,29 @@
           <div class="w3-col m12">
             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
-                
+                <p>Scenario Image</p>
+                <img id="scenarioImage" src="/assets/mountain.jpg" style="height:100%;width:100%" class="w3-rounded">
+              </div>
+            </div>
+            <br>
+            <div class="w3-card w3-round w3-white">
+              <div class="w3-container w3-padding">
+                <p>Current Scenario</p>
+              </div>
+            </div>
+            <br>
+            <div class="w3-card w3-round w3-white">
+              <div class="w3-container w3-padding">
+                <button id="button1" class="w3-btn w3-round-xlarge w3-khaki w3-medium">Button 1</button>
+                <button id="button2" class="w3-btn w3-round-xlarge w3-khaki w3-medium">Button 2</button>
+                <button id="button3" class="w3-btn w3-round-xlarge w3-khaki w3-medium">Button 3</button>
               </div>
             </div>
           </div>
         </div>
 
         <div class="w3-container w3-card w3-white w3-round w3-margin">
-          
+
         </div>
 
         <!-- End Middle Column -->
@@ -93,11 +98,22 @@
           </div>
         </div>
         <br>
-        <div class="w3-container">
-            <button id="settings" onclick="document.getElementById('id01').style.display='block'" class="w3-card w3-round w3-white w3-center">
-                <h2>Settings</h2>
-              </button>
+        <!-- Inventory -->
+        <div class="w3-card w3-round w3-white w3-hide-small">
+          <div class="w3-container">
+            <p>Inventory</p>
+            <p>
+              <span class="w3-tag w3-small w3-theme-d5">News</span>
+
+            </p>
           </div>
+        </div>
+        <br>
+        <div class="w3-container">
+          <button id="settings" onclick="document.getElementById('id01').style.display='block'" class="w3-card w3-round w3-white w3-center">
+            <h2>Settings</h2>
+          </button>
+        </div>
 
 
         <!-- End Right Column -->
@@ -120,6 +136,16 @@
       <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
     </p>
   </footer>
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>Some text in the Modal..</p>
+        <p>Some text in the Modal..</p>
+      </div>
+    </div>
+  </div>
 
 </body>
 
