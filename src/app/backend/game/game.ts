@@ -9,21 +9,16 @@ export class Game{
     event:Event;
     counteract: Game;
     
-
-    
     constructor(event:Event,persona: Persona){
         this.persona = persona;
         this.event = event;
         this.queue = new EventQueue(event);
-        this.start();
-
+        document.body.innerHTML = this.start(persona); 
     }
 
-    start(){
-        
+    start(persona:Persona){
+        return "Welcome, "+ this.persona +" to the Insurance Gamification ";
     }
-
-    //document.body.innerHTML = start();
 
     private presentEvent(event: Event): void{
         if(this.queue == null){
@@ -35,19 +30,14 @@ export class Game{
 
     private end(): void{
         if(this.queue.next.getNextEvent(event) == null){
-            alert("There are no more events to encounter. You have won the game!");
+            console.log("There are no more events to encounter. You have won the game!");
         }else if(this.counteract.counteractEvent == null){
-            alert("You were unabale to counteract the event. Game is over!");
+            console.log("You were unabale to counteract the event. Game is over!");
         }  
     }
 
     private counteractEvent(option:() => void): void{
 
     }
-
-    
-
-
-    
 
 }
