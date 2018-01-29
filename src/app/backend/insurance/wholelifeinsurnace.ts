@@ -7,6 +7,7 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
   private prewriteClass: PrewriteClass;
   private cashValue: number;
   private policyAge: number;
+  private loanAmount: number;
 
   constructor(persona: Persona, desiredDeathPayOut: number, agePremiumPaidTo: number) {
     super(persona, desiredDeathPayOut);
@@ -58,6 +59,26 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
 
   getDividend(): number {
     return Math.random() / 10 * this.cashValue;
+  }
+
+  takeLoan(collateralAmount: number): number {
+    this.loanAmount += collateralAmount;
+    this.cashValue -= this.loanAmount;
+    return collateralAmount
+  }
+
+  payLoan(amountToPay: number): number {
+    this.loanAmount -= amountToPay;
+    if (this.loanAmount < 0) {
+      return this.giveChange();
+    }
+    return 0;
+  }
+
+  private giveChange(): number {
+    let returnAmt = -this.loanAmount;
+    this.loanAmount = 0;
+    return returnAmt;
   }
 
 }
