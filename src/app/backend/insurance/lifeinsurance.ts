@@ -22,4 +22,8 @@ export abstract class LifeInsurancePolicy {
     this.persona.checkingAccount.withdraw(this.premium);
   }
 
+  getPremium(): number {
+    return this.premium;
+  }
+
 }

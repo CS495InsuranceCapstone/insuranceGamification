@@ -1,13 +1,13 @@
 import { LifeInsurancePolicy } from './lifeinsurance'
 import { Persona } from '../persona/persona'
 
-class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
+export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
 
   private agePremiumPaidTo: number;
   private prewriteClass: PrewriteClass;
   private cashValue: number;
   private policyAge: number;
-  private loanAmount: number;
+  private loanAmount: number = 0;
 
   constructor(persona: Persona, desiredDeathPayOut: number, agePremiumPaidTo: number) {
     super(persona, desiredDeathPayOut);
@@ -23,7 +23,7 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
 
   private setPremium() {
     let sexMult = this.persona.sex == 'M' ? 1.5 : 1;
-    let ageMult = (this.persona.age / 100) ** 2
+    let ageMult = (this.persona.age / 10) ** 2
     let classMult = this.prewriteClass / 2;
     this.premium = 1000 * sexMult * ageMult * classMult;
   }
@@ -54,7 +54,13 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
   }
 
   private appreciate(): void {
-    this.cashValue = (this.cashValue + this.premium) ** (this.policyAge / 50);
+    let ageMult = this.policyAge <= 1 ? 0 : 1
+    this.cashValue = (this.premium / 3 + this.cashValue * 1.01) * ageMult;
+  }
+
+  payOut(): number {
+    console.log(this.cashValue, this.deathPayOut)
+    return this.cashValue * 3.2 + this.deathPayOut;
   }
 
   getDividend(): number {
@@ -81,11 +87,23 @@ class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
     return returnAmt;
   }
 
+  getCashValue(): number {
+    return this.cashValue;
+  }
+
+  getPrewriteClass(): PrewriteClass {
+    return this.prewriteClass;
+  }
+
+  getLoanAmount(): number {
+    return this.loanAmount;
+  }
+
 }
 
-enum PrewriteClass {
-  Preferred,
-  NotSoPreferred,
-  Okay,
-  Bad
+export enum PrewriteClass {
+  Preferred = 1,
+  NotSoPreferred = 2,
+  Okay = 3,
+  Bad = 4
 }
