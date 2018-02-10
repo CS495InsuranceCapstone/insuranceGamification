@@ -1,16 +1,11 @@
-import {LifeInsurancePolicy} from '../insurance/lifeinsurance';
+import { LifeInsurancePolicy } from '../insurance/lifeinsurance';
 
-
-
-export class inventory{
+export class Inventory{
 
     protected lifeInsurance: LifeInsurancePolicy;
 
-
-
     constructor(insurance: LifeInsurancePolicy){
         this.lifeInsurance = insurance;
-
     }
 
     get insurance(): LifeInsurancePolicy{
@@ -20,6 +15,5 @@ export class inventory{
     set insurance(insurances: LifeInsurancePolicy){
         this.lifeInsurance = insurances;
     }
-
 
 }

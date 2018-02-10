@@ -45,13 +45,13 @@
               <img id="avatar" src="/assets/avatars.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
             </p>
             <hr>
-            <h6 class="w3-margin-right w3-text-theme">Name:</h6>
-            <h6 class="w3-margin-right w3-text-theme">Age:</h6>
-            <h6 class="w3-margin-right w3-text-theme">Gender:</h6>
-            <h6 class="w3-margin-right w3-text-theme">Married:</h6>
-            <h6 class="w3-margin-right w3-text-theme">Dependents:</h6>
-            <h6 class="w3-margin-right w3-text-theme">Profession:</h6>
-            <h6 class="w3-margin-right w3-text-theme">Salary:</h6>
+            <h6 class="w3-margin-right w3-text-theme">Name: {{ persona.name }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Age: {{ persona.age }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Gender: {{ persona.sex == "F" ? "Female" : "Male" }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Marital Status: {{ persona.maritalStatus | capitalize }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Dependents: {{ persona.dependents }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Profession: {{ persona.profession | capitalize }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Salary: {{ persona.salary | commafy }}</h6>
           </div>
         </div>
         <br>

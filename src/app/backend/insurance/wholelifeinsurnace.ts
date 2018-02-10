@@ -1,7 +1,7 @@
 import { LifeInsurancePolicy } from './lifeinsurance'
 import { Persona } from '../persona/persona'
 
-class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
+export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
 
   private agePremiumPaidTo: number;
   private prewriteClass: PrewriteClass;
