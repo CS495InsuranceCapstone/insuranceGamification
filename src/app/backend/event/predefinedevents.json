@@ -2,7 +2,7 @@
     "events": [
         {
             "name": "Sign the Deed",
-            "text": "You just made the biggest purchase of your life!",
+            "text": "You just made the biggest purchase of your life! Congratulations on the purchase of your new house. How will you handle the upcoming costs?",
             "img" : "null",
             "flags":{ }
         },

@@ -71,7 +71,8 @@
             <br>
             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
-                <p>Current Scenario</p>
+                <h2>{{ event.name }}</h2>
+                <p>{{ event.text }}</p>
               </div>
             </div>
             <br>
@@ -104,11 +105,8 @@
         <!-- Inventory -->
         <div class="w3-card w3-round w3-white w3-hide-small">
           <div class="w3-container">
-            <p>Inventory</p>
-            <p>
-              <span class="w3-tag w3-small w3-theme-d5">News</span>
-
-            </p>
+            <h4>Inventory</h4>
+            <ol id="InventoryList"></ol>
           </div>
         </div>
         <br>

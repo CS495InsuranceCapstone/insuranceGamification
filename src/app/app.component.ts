@@ -2,6 +2,8 @@ import { Component, PipeTransform, Pipe } from '@angular/core';
 
 import { Persona } from './backend/persona/persona'
 import { PersonaLoader } from './backend/persona/personaloader'
+import { EventQueue, EventQueueBuilder } from './backend/event/eventqueue'
+import { Event } from './backend/event/event'
 
 @Component({
   selector: 'app-root',
@@ -15,8 +17,14 @@ export class AppComponent {
   readonly personas = new PersonaLoader().getPersonas();
 
   persona = this.personas[0];
+  eventQueue = new EventQueueBuilder().build();
+  event = this.popEvent();
 
   game = null; //new Game();
+
+  private popEvent(): Event {
+    return this.eventQueue.getNextEvent(this.persona);
+  }
 
 }
 
