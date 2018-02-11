@@ -102,11 +102,24 @@
           </div>
         </div>
         <br>
+        <div class="w3-card w3-round w3-white w3-center">
+          <!-- Life Insurance -->
+          <div class="w3-container">
+            <h4 class="w3-center">Life Insurance</h4>
+            <hr>
+            <h6 class="w3-margin-right w3-text-theme">Policy Type: {{ this.persona.insurancePolicy.title }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Payout: {{ this.persona.insurancePolicy.payOut() | commafy }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Policy Age: {{ this.persona.insurancePolicy.age }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Cash Value: {{ this.persona.insurancePolicy.value | commafy }}</h6>
+          </div>
+        </div>
+        <br>
         <!-- Inventory -->
         <div class="w3-card w3-round w3-white w3-hide-small">
           <div class="w3-container">
             <h4>Inventory</h4>
-            <ol id="InventoryList"></ol>
+            <ol id="InventoryList">
+            </ol>
           </div>
         </div>
         <br>

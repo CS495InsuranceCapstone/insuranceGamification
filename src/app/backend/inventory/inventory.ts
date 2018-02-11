@@ -1,19 +1,18 @@
 import { LifeInsurancePolicy } from '../insurance/lifeinsurance';
+import { WholeLifeInsurancePolicy } from '../insurance/wholelifeinsurance';
+import { TermLifeInsurancePolicy } from '../insurance/termlife';
 
 export class Inventory{
 
-    protected lifeInsurance: LifeInsurancePolicy;
+    private items: InventoryItem[] = [];
 
-    constructor(insurance: LifeInsurancePolicy){
-        this.lifeInsurance = insurance;
+    constructor(){
     }
 
-    get insurance(): LifeInsurancePolicy{
-        return this.lifeInsurance;
-    }
+}
 
-    set insurance(insurances: LifeInsurancePolicy){
-        this.lifeInsurance = insurances;
-    }
+export interface InventoryItem {
+  name: String;
 
+  getInfo(): string;
 }

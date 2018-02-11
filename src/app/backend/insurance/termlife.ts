@@ -1,16 +1,14 @@
 import { LifeInsurancePolicy } from './lifeinsurance'
 import { Persona } from '../persona/persona'
 
-class TermLifeInsurancePolicy extends LifeInsurancePolicy {
+export class TermLifeInsurancePolicy extends LifeInsurancePolicy {
 
   premium: number;
-  private policyAge: number;
   term: number;
   persona: Persona;
 
   constructor(persona: Persona, desiredDeathPayOut: number) {
     super(persona, desiredDeathPayOut);
-    this.policyAge = 1;
   }
 
   premiumChoice(): void{
@@ -32,9 +30,9 @@ class TermLifeInsurancePolicy extends LifeInsurancePolicy {
       if(this.persona.age >=20 && this.persona.age <= 55){
         this.premium++;
       }else{
-        this.premium = 0;      
+        this.premium = 0;
       }
-    }  
+    }
   }
 
   setPremium(){
@@ -53,12 +51,18 @@ class TermLifeInsurancePolicy extends LifeInsurancePolicy {
 
   payPremium(): void {
     super.payPremium();
-    this.premiumChoice();  
+    this.premiumChoice();
   }
 
   protected definePolicy(): void {
+    this.title = 'Term';
     // TODO: Use passed persona to calculate policy pieces
     this.setPremium();
     this.endPremium();
   }
+
+  get value(): number {
+    return this.deathPayOut;
+  }
+
 }

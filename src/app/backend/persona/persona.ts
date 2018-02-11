@@ -1,6 +1,6 @@
 import { CheckingAccount, SavingsAccount } from '../bank/bank_accounts'
 import { Inventory } from '../inventory/inventory'
-import { WholeLifeInsurancePolicy } from '../insurance/wholelifeinsurnace'
+import { LifeInsurancePolicy } from '../insurance/lifeinsurance'
 
 export class Persona {
 
@@ -14,6 +14,7 @@ export class Persona {
       health: number;
       avatar: HTMLImageElement;
       inventory: Inventory;
+      insurancePolicy: LifeInsurancePolicy;
       //TODO: Get avatars for each avatar and create associations for them in JSON
 
       checkingAccount: CheckingAccount;
@@ -38,7 +39,7 @@ export class Persona {
         this.salary = salary;
         this.health = health;
         this.avatar = avatar;
-        this.inventory = new Inventory(new WholeLifeInsurancePolicy(this, 1000000, 100));
+        this.inventory = new Inventory();
       }
 
       convertFieldsFromJSON(): void {

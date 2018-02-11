@@ -4,6 +4,8 @@ import { Persona } from './backend/persona/persona'
 import { PersonaLoader } from './backend/persona/personaloader'
 import { EventQueue, EventQueueBuilder } from './backend/event/eventqueue'
 import { Event } from './backend/event/event'
+import { WholeLifeInsurancePolicy } from './backend/insurance/wholelifeinsurance'
+import { TermLifeInsurancePolicy } from './backend/insurance/termlife'
 
 @Component({
   selector: 'app-root',
@@ -21,6 +23,11 @@ export class AppComponent {
   event = this.popEvent();
 
   game = null; //new Game();
+
+  constructor() {
+    this.persona.insurancePolicy = new WholeLifeInsurancePolicy(this.persona, 1000000, 100);
+    console.log(this.persona.insurancePolicy)
+  }
 
   private popEvent(): Event {
     return this.eventQueue.getNextEvent(this.persona);

@@ -6,16 +6,15 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
   private agePremiumPaidTo: number;
   private prewriteClass: PrewriteClass;
   private cashValue: number;
-  private policyAge: number;
 
   constructor(persona: Persona, desiredDeathPayOut: number, agePremiumPaidTo: number) {
     super(persona, desiredDeathPayOut);
     this.agePremiumPaidTo = agePremiumPaidTo;
     this.cashValue = 0;
-    this.policyAge = 1;
   }
 
   protected definePolicy(): void {
+    this.title = "Whole Life";
     this.setPrewriteClass();
     this.setPremium();
   }
@@ -58,6 +57,10 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
 
   getDividend(): number {
     return Math.random() / 10 * this.cashValue;
+  }
+
+  get value(): number {
+    return this.cashValue;
   }
 
 }
