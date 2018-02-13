@@ -11,16 +11,13 @@ export class Game{
     counteract: Game;
     myPersona: PersonaLoader;
     
-    constructor(event:Event,persona: Persona){
-        this.persona = persona;
-        this.start(persona); 
-        this.event = event;
-        this.queue = new EventQueue(event);
+    constructor(persona: Persona){
+        this.persona = persona; 
+        this.start();
     }
 
-    start(persona:Persona){
-        
-        return this.myPersona.getPersonas();
+    start(): void{
+        this.queue = new EventQueue(this.event);
     }
 
     
