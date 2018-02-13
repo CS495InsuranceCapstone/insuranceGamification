@@ -67,3 +67,10 @@ export class CommafyPipe implements PipeTransform {
       return returnString;
   }
 }
+
+@Pipe({name:'round'})
+export class RoundPipe implements PipeTransform{
+  transform(value:number): string{
+    return value.toFixed(2);
+  }
+}
