@@ -13,9 +13,9 @@ export class Game{
     
     constructor(event:Event,persona: Persona){
         this.persona = persona;
+        this.start(persona); 
         this.event = event;
         this.queue = new EventQueue(event);
-        this.start(persona); 
     }
 
     start(persona:Persona){
@@ -24,8 +24,7 @@ export class Game{
     }
 
     
-    isEmpty(nextQueue:Event){
-        
+    isEmpty(nextQueue:Event){  
         for(var x in nextQueue){
             if(nextQueue == null){
                 return true;
