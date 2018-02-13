@@ -84,8 +84,6 @@ class TermLifeInsurancePolicy extends LifeInsurancePolicy {
     }
   }
 
-  
-
   protected definePolicy(): void {
     // TODO: Use passed persona to calculate policy pieces
     this.setPremium();
