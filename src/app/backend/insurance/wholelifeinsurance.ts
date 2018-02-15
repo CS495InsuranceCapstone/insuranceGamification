@@ -6,6 +6,11 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
   private agePremiumPaidTo: number;
   private prewriteClass: PrewriteClass;
   private cashValue: number;
+<<<<<<< HEAD:src/app/backend/insurance/wholelifeinsurance.ts
+=======
+  private policyAge: number;
+  private loanAmount: number = 0;
+>>>>>>> insurance:src/app/backend/insurance/wholelifeinsurnace.ts
 
   constructor(persona: Persona, desiredDeathPayOut: number, agePremiumPaidTo: number) {
     super(persona, desiredDeathPayOut);
@@ -21,7 +26,7 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
 
   private setPremium() {
     let sexMult = this.persona.sex == 'M' ? 1.5 : 1;
-    let ageMult = (this.persona.age / 100) ** 2
+    let ageMult = (this.persona.age / 10) ** 2
     let classMult = this.prewriteClass / 2;
     this.premium = 1000 * sexMult * ageMult * classMult;
   }
@@ -52,22 +57,63 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
   }
 
   private appreciate(): void {
-    this.cashValue = (this.cashValue + this.premium) ** (this.policyAge / 50);
+    let ageMult = this.policyAge <= 1 ? 0 : 1
+    this.cashValue = (this.premium / 3 + this.cashValue * 1.01) * ageMult;
+  }
+
+  payOut(): number {
+    console.log(this.cashValue, this.deathPayOut)
+    return this.cashValue * 3.2 + this.deathPayOut;
   }
 
   getDividend(): number {
     return Math.random() / 10 * this.cashValue;
   }
 
+<<<<<<< HEAD:src/app/backend/insurance/wholelifeinsurance.ts
   get value(): number {
     return this.cashValue;
   }
 
+=======
+  takeLoan(collateralAmount: number): number {
+    this.loanAmount += collateralAmount;
+    this.cashValue -= this.loanAmount;
+    return collateralAmount
+  }
+
+  payLoan(amountToPay: number): number {
+    this.loanAmount -= amountToPay;
+    if (this.loanAmount < 0) {
+      return this.giveChange();
+    }
+    return 0;
+  }
+
+  private giveChange(): number {
+    let returnAmt = -this.loanAmount;
+    this.loanAmount = 0;
+    return returnAmt;
+  }
+
+  getCashValue(): number {
+    return this.cashValue;
+  }
+
+  getPrewriteClass(): PrewriteClass {
+    return this.prewriteClass;
+  }
+
+  getLoanAmount(): number {
+    return this.loanAmount;
+  }
+
+>>>>>>> insurance:src/app/backend/insurance/wholelifeinsurnace.ts
 }
 
-enum PrewriteClass {
-  Preferred,
-  NotSoPreferred,
-  Okay,
-  Bad
+export enum PrewriteClass {
+  Preferred = 1,
+  NotSoPreferred = 2,
+  Okay = 3,
+  Bad = 4
 }

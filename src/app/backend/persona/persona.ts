@@ -50,4 +50,8 @@ export class Persona {
         this.avatar = null;
       }
 
+      setCheckingAccount(account: CheckingAccount): void {
+        this.checkingAccount = account;
+      }
+
     }

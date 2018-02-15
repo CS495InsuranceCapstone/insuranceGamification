@@ -33,4 +33,8 @@ export abstract class LifeInsurancePolicy {
     return 0;
   }
 
+  getPremium(): number {
+    return this.premium;
+  }
+
 }
