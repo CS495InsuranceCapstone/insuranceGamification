@@ -6,6 +6,8 @@ import { EventQueue, EventQueueBuilder } from './backend/event/eventqueue'
 import { Event } from './backend/event/event'
 import { WholeLifeInsurancePolicy } from './backend/insurance/wholelifeinsurance'
 import { TermLifeInsurancePolicy } from './backend/insurance/termlife'
+import { CheckingAccount } from './backend/bank/bank_accounts'
+import { SavingsAccount } from './backend/bank/bank_accounts'
 
 @Component({
   selector: 'app-root',
@@ -21,12 +23,17 @@ export class AppComponent {
   persona = this.personas[0];
   eventQueue = new EventQueueBuilder().build();
   event = this.popEvent();
-
+   
+  checkingAccount: CheckingAccount;
+  savingsAccount: SavingsAccount; 
+ 
   game = null; //new Game();
 
   constructor() {
     this.persona.insurancePolicy = new WholeLifeInsurancePolicy(this.persona, 1000000, 100);
     console.log(this.persona.insurancePolicy)
+    this.persona.checkingAccount = this.checkingAccount;
+    this.persona.savingsAccount = this.savingsAccount;
   }
 
   private popEvent(): Event {
@@ -58,5 +65,12 @@ export class CommafyPipe implements PipeTransform {
         currLen++;
       }
       return returnString;
+  }
+}
+
+@Pipe({name:'round'})
+export class RoundPipe implements PipeTransform{
+  transform(value:number): string{
+    return value.toFixed(2);
   }
 }
