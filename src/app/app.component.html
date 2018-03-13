@@ -103,8 +103,8 @@
           <div class="w3-container">
             <h4 class="w3-center">Bank</h4>
             <hr>
-            <h6 class="w3-margin-right w3-text-theme">Checking Account: {{ this.persona.checkingAccount.getBalance() | round | commafy }}</h6>
-            <h6 class="w3-margin-right w3-text-theme">Savings Account: {{ (this.persona.savingsAccount == null) ? "No account" : this.persona.savingsAccount.getBalance() | round | commafy }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Checking Account: {{ this.persona.checkingAccount.getBalance() | round | commafy }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Savings Account: {{ (this.persona.savingsAccount == null) ? "No account" : this.persona.savingsAccount.getBalance() | round | commafy }}</h6>
           </div>
         </div>
         <br>
@@ -113,24 +113,21 @@
           <div class="w3-container">
             <h4 class="w3-center">Life Insurance</h4>
             <hr>
-            <h6 class="w3-margin-right w3-text-theme">Policy Type: {{ this.persona.insurancePolicy.title }}</h6>
-            <h6 class="w3-margin-right w3-text-theme">Payout: {{ this.persona.insurancePolicy.payOut() | commafy }}</h6>
-            <h6 class="w3-margin-right w3-text-theme">Policy Age: {{ this.persona.insurancePolicy.age }}</h6>
-            <h6 class="w3-margin-right w3-text-theme">Cash Value: {{ this.persona.insurancePolicy.value | commafy }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Policy Type: {{ this.persona.insurancePolicy.title }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Payout: {{ this.persona.insurancePolicy.payOut() | commafy }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Policy Age: {{ this.persona.insurancePolicy.age }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Cash Value: {{ this.persona.insurancePolicy.value | commafy }}</h6>
           </div>
         </div>
         <br>
         <!-- Inventory -->
         <div class="w3-card w3-round w3-white w3-hide-small">
           <div class="w3-container">
-            <h4>Inventory</h4>
-            <div id="inventory">
-              <ul>
-                <li>Auto</li>
-                <li>Homeowner's</li>
-                <li>Health</li>
-              </ul>
-            </div>
+            <h4 class="w3-center">Inventory</h4>
+            <hr>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Auto</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Homeowner's</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Health</h6>
           </div>
         </div>
 
