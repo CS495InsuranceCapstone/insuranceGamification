@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent, CapitalizePipe, CommafyPipe } from './app.component';
+import { AppComponent, CapitalizePipe, CommafyPipe, RoundPipe } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CapitalizePipe,
-    CommafyPipe
+    CommafyPipe,
+    RoundPipe
   ],
   imports: [
     BrowserModule

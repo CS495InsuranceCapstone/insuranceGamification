@@ -103,8 +103,8 @@
           <div class="w3-container">
             <h4 class="w3-center">Bank</h4>
             <hr>
-            <h6 class="w3-margin-right w3-text-theme">Checking Account: {{ this.persona.checkingAccount.getBalance() | commafy }}</h6>
-            <h6 class="w3-margin-right w3-text-theme">Savings Account: {{ (this.persona.savingsAccount == null) ? "No account" : this.persona.savingsAccount.getBalance() | commafy }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Checking Account: {{ this.persona.checkingAccount.getBalance() | round | commafy }}</h6>
+            <h6 class="w3-margin-right w3-text-theme">Savings Account: {{ (this.persona.savingsAccount == null) ? "No account" : this.persona.savingsAccount.getBalance() | round | commafy }}</h6>
           </div>
         </div>
         <br>
