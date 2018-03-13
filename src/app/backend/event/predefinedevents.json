@@ -1,70 +1,70 @@
 {
-    "events": [
-        {
-            "name": "Sign the Deed",
-            "text": "You just made the biggest purchase of your life! Congratulations on the purchase of your new house. How will you handle the upcoming costs?",
-            "img" : "null",
-            "flags":{ }
-        },
-        {
-            "name":"Losing Someone Close, is Hard to Get Passed",
-            "text":"Today has been a bad day for everyone in your family. Your mother has just passed away within her sleep. So many tears are flowing through your eyes, but you have to stay strong because it is up to you to plan the funeral. Do you have any money put away for times like this?",
-            "img":"https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAIlAAAAJDQ4OGU1YTdkLWI2MjktNGFmNy1iODE3LTEyODJhYWQyOTc1Nw.jpg",
-            "flags":{ "age":"> 25", "salary":"< 20000"}
-        },
-        {
-            "name":"Late To Many Times",
-            "text":"Your late on your mortgage again. Normally, you are able to pay it at a later time. This time the tables have turned, and you were told to pay your mortagage by the end of the week or you will be forced to leave. Are you going to just let yourself get kicked out or will you do something about it?",
-            "img":"http://blog.officezilla.com/wp-content/uploads/2013/02/LATE.jpg",
-            "flags":{"age":"> 18","salary":"> 30000" }
-        },
-        {
-            "name":"Taxes are Due",
-            "text":"For the passed two years, you have not paid your taxes. You have been struggling to keep up with them, and now you have a limited time to pay them or you will lose the things you have worked so hard for.",
-            "img":"https://doughroller-wpengine.netdna-ssl.com/wp-content/uploads/2010/08/Taxes.jpg",
-            "flags":{"age":"< 65","salary":"> 10400"}
-        },
-        {
-            "name":"DEBT",
-            "text":"So many of your bills are passed due. You cannot find anyone who can personally help you out. ",
-            "img":"https://www.worldbank.org/content/dam/Worldbank/Feature%20Story/Debt/Debt_Ladder-400X269.jpg",
-            "flags":{"age":"> 18","salary":"> 10000"}
-        },
-        {
-            "name":"Total Wreck",
-            "text":"You have been having your car for 5 years now, and now all of a sudden it just stopped running. It's basically a wreck, but you have spent so much money on your car. Now all that will go to waste, unless you figure something out.",
-            "img":"http://toonclips.com/600/cartoon-beater-car-with-bandages-and-flat-tire-by-toonaday-4123.jpg",
-            "flags":{"age":"< 25","salary":"> 30000"}
-        },
-        {
-            "name":"The New Guy/Girl",
-            "text":"You have just graduated, and now you are starting your very first corporate job. Everything is moving extremely fast for you. Your still filling out paperwork at work, and you came across them asking do you have a secure insurance plan for yourself. Realizing that you don't have one at all what should you do about it?",
-            "img":"https://cdn.pixabay.com/photo/2016/03/15/09/05/job-1257204_960_720.jpg",
-            "flags":{"age":"> 21","salary":"> 40000"}
-        },
-        {
-            "name":"Wedding Bells!",
-            "text":"Wedding Bells are RINGING! You have just got married, and now your moving into a new house with the one you love. But shouldn't your new house, and everything in it be insured?",
-            "img":"http://www.simplystamps.com/images/product-images/holiday_245_large.png",
-            "flags":{"age":"> 17","salary":"> 20000"}
-        },
-        {
-            "name":"Retirement",
-            "text":"You have been working at your job about 10 years now, and you enjoy your job. Your boss asked you if you have a retirement plan. Realizing that you do not have a plan at all, what should you do about this situation?",
-            "img":"http://images.wisegeek.com/retirement-plan-with-pen-and-glasses.jpg",
-            "flags":{"age":"> 30","salary":"> 50000"}
-        },
-        {
-            "name":"Is School For You?",
-            "text":"Every since you graduated from high school, you have not been sure if you would like to continue your education. Your parents did not have the money for you to go, but now that your older you take care of yourself. You feel like you just do not have the funds to afford to go to the college that you desire to attend. Do not give up, because there should be something that can come in handy.",
-            "img":"https://cdn.pixabay.com/photo/2014/03/24/17/15/school-295210_960_720.png",
-            "flags":{"age":"> 17","salary":"> 10000"}
-        },
-        {
-            "name":"Keep Your Legacy Going",
-            "text":"You are getting much older now, and you are unable to do the things that you want to do in life. It's ok, because you have accomplished so much within your lifetime. It would be great if there was a way to set up a financial legacy.",
-            "img":"https://www.iris.xyz/sites/default/files/styles/largest/public/field/image/legacy.jpg?itok=NVU-FQ4l",
-            "flags":{"age":"> 55","salary":"55000","dependents":">= 1"}
-        }
-    ]
+  "events": [
+      {
+          "name": "Sign the Deed",
+          "text": "You just made the biggest purchase of your life! Congratulations on the purchase of your new house. How will you handle the upcoming costs?",
+          "img" : "null",
+          "flags":{ }
+      },
+      {
+          "name":"Losing Someone Close, is Hard to Get Passed",
+          "text":"Today has been a bad day for everyone in your family. Your mother has just passed away within her sleep. So many tears are flowing through your eyes, but you have to stay strong because it is up to you to plan the funeral. Do you have any money put away for times like this?",
+          "img":"https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAIlAAAAJDQ4OGU1YTdkLWI2MjktNGFmNy1iODE3LTEyODJhYWQyOTc1Nw.jpg",
+          "flags":{ "age":"> 25", "salary":"< 20000"}
+      },
+      {
+          "name":"Late To Many Times",
+          "text":"Your late on your mortgage again. Normally, you are able to pay it at a later time. This time the tables have turned, and you were told to pay your mortagage by the end of the week or you will be forced to leave. Are you going to just let yourself get kicked out or will you do something about it?",
+          "img":"http://blog.officezilla.com/wp-content/uploads/2013/02/LATE.jpg",
+          "flags":{"age":"> 18","salary":"> 30000" }
+      },
+      {
+          "name":"Taxes are Due",
+          "text":"For the passed two years, you have not paid your taxes. You have been struggling to keep up with them, and now you have a limited time to pay them or you will lose the things you have worked so hard for.",
+          "img":"https://doughroller-wpengine.netdna-ssl.com/wp-content/uploads/2010/08/Taxes.jpg",
+          "flags":{"age":"< 65","salary":"> 10400"}
+      },
+      {
+          "name":"DEBT",
+          "text":"So many of your bills are passed due. You cannot find anyone who can personally help you out. ",
+          "img":"https://www.worldbank.org/content/dam/Worldbank/Feature%20Story/Debt/Debt_Ladder-400X269.jpg",
+          "flags":{"age":"> 18","salary":"> 10000"}
+      },
+      {
+          "name":"Total Wreck",
+          "text":"You have been having your car for 5 years now, and now all of a sudden it just stopped running. It's basically a wreck, but you have spent so much money on your car. Now all that will go to waste, unless you figure something out.",
+          "img":"http://toonclips.com/600/cartoon-beater-car-with-bandages-and-flat-tire-by-toonaday-4123.jpg",
+          "flags":{"age":"< 25","salary":"> 30000"}
+      },
+      {
+          "name":"The New Guy/Girl",
+          "text":"You have just graduated, and now you are starting your very first corporate job. Everything is moving extremely fast for you. Your still filling out paperwork at work, and you came across them asking do you have a secure insurance plan for yourself. Realizing that you don't have one at all what should you do about it?",
+          "img":"https://cdn.pixabay.com/photo/2016/03/15/09/05/job-1257204_960_720.jpg",
+          "flags":{"age":"> 21","salary":"> 40000"}
+      },
+      {
+          "name":"Wedding Bells!",
+          "text":"Wedding Bells are RINGING! You have just got married, and now your moving into a new house with the one you love. But shouldn't your new house, and everything in it be insured?",
+          "img":"http://www.simplystamps.com/images/product-images/holiday_245_large.png",
+          "flags":{"age":"> 17","salary":"> 20000"}
+      },
+      {
+          "name":"Retirement",
+          "text":"You have been working at your job about 10 years now, and you enjoy your job. Your boss asked you if you have a retirement plan. Realizing that you do not have a plan at all, what should you do about this situation?",
+          "img":"http://images.wisegeek.com/retirement-plan-with-pen-and-glasses.jpg",
+          "flags":{"age":"> 30","salary":"> 50000"}
+      },
+      {
+          "name":"Is School For You?",
+          "text":"Every since you graduated from high school, you have not been sure if you would like to continue your education. Your parents did not have the money for you to go, but now that your older you take care of yourself. You feel like you just do not have the funds to afford to go to the college that you desire to attend. Do not give up, because there should be something that can come in handy.",
+          "img":"https://cdn.pixabay.com/photo/2014/03/24/17/15/school-295210_960_720.png",
+          "flags":{"age":"> 17","salary":"> 10000"}
+      },
+      {
+          "name":"Keep Your Legacy Going",
+          "text":"You are getting much older now, and you are unable to do the things that you want to do in life. It's ok, because you have accomplished so much within your lifetime. It would be great if there was a way to set up a financial legacy.",
+          "img":"https://www.iris.xyz/sites/default/files/styles/largest/public/field/image/legacy.jpg?itok=NVU-FQ4l",
+          "flags":{"age":"> 55","salary":"55000","dependents":">= 1"}
+      }
+  ]
 }

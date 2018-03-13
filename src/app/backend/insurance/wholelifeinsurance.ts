@@ -67,10 +67,6 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
     return Math.random() / 10 * this.cashValue;
   }
 
-  get value(): number {
-    return this.cashValue;
-  }
-
   takeLoan(collateralAmount: number): number {
     this.loanAmount += collateralAmount;
     this.cashValue -= this.loanAmount;
