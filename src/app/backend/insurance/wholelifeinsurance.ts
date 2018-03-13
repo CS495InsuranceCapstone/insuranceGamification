@@ -6,11 +6,8 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
   private agePremiumPaidTo: number;
   private prewriteClass: PrewriteClass;
   private cashValue: number;
-<<<<<<< HEAD:src/app/backend/insurance/wholelifeinsurance.ts
-=======
-  private policyAge: number;
+  protected policyAge: number;
   private loanAmount: number = 0;
->>>>>>> insurance:src/app/backend/insurance/wholelifeinsurnace.ts
 
   constructor(persona: Persona, desiredDeathPayOut: number, agePremiumPaidTo: number) {
     super(persona, desiredDeathPayOut);
@@ -57,7 +54,7 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
   }
 
   private appreciate(): void {
-    let ageMult = this.policyAge <= 1 ? 0 : 1
+    let ageMult = this.policyAge <= 1 ? 0 : 1;
     this.cashValue = (this.premium / 3 + this.cashValue * 1.01) * ageMult;
   }
 
@@ -70,12 +67,10 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
     return Math.random() / 10 * this.cashValue;
   }
 
-<<<<<<< HEAD:src/app/backend/insurance/wholelifeinsurance.ts
   get value(): number {
     return this.cashValue;
   }
 
-=======
   takeLoan(collateralAmount: number): number {
     this.loanAmount += collateralAmount;
     this.cashValue -= this.loanAmount;
@@ -108,7 +103,6 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
     return this.loanAmount;
   }
 
->>>>>>> insurance:src/app/backend/insurance/wholelifeinsurnace.ts
 }
 
 export enum PrewriteClass {

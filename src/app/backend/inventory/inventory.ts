@@ -4,15 +4,32 @@ import { TermLifeInsurancePolicy } from '../insurance/termlife';
 
 export class Inventory{
 
-    private items: InventoryItem[] = [];
+    private hasAutoInsurance: Boolean;
+    private hasHealthInsurance: Boolean;
+    private hasHomeOwnersInsurance: Boolean;
 
-    constructor(){
+    get autoInsurnace(): Boolean {
+      return this.hasAutoInsurance;
     }
 
-}
+    get healthInsurnace(): Boolean {
+      return this.hasHealthInsurance;
+    }
 
-export interface InventoryItem {
-  name: String;
+    get homeOwnersInsurance(): Boolean {
+      return this.hasHomeOwnersInsurance;
+    }
 
-  getInfo(): string;
+    set autoInsurnace(hasAutoInsurance: Boolean) {
+      this.hasAutoInsurance = hasAutoInsurance;
+    }
+
+    set healthInsurnace(hasHealthInsurance: Boolean) {
+      this.hasHealthInsurance = hasHealthInsurance
+    }
+
+    set homeOwnersInsurance(hasHomeOwnersInsurance: Boolean) {
+      this.hasHomeOwnersInsurance = hasHomeOwnersInsurance;
+    }
+
 }

@@ -23,17 +23,11 @@ export class AppComponent {
   persona = this.personas[0];
   eventQueue = new EventQueueBuilder().build();
   event = this.popEvent();
-   
-  checkingAccount: CheckingAccount;
-  savingsAccount: SavingsAccount; 
- 
+
   game = null; //new Game();
 
   constructor() {
     this.persona.insurancePolicy = new WholeLifeInsurancePolicy(this.persona, 1000000, 100);
-    console.log(this.persona.insurancePolicy)
-    this.persona.checkingAccount = this.checkingAccount;
-    this.persona.savingsAccount = this.savingsAccount;
   }
 
   private popEvent(): Event {
@@ -68,9 +62,9 @@ export class CommafyPipe implements PipeTransform {
   }
 }
 
-@Pipe({name:'round'})
+@Pipe({name: 'round'})
 export class RoundPipe implements PipeTransform{
-  transform(value:number): string{
-    return value.toFixed(2);
+  transform(value: number): number{
+    return +value.toFixed(2);
   }
 }

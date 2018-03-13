@@ -15,8 +15,6 @@ export class Persona {
       avatar: HTMLImageElement;
       inventory: Inventory;
       insurancePolicy: LifeInsurancePolicy;
-      //TODO: Get avatars for each avatar and create associations for them in JSON
-
       checkingAccount: CheckingAccount;
       savingsAccount: SavingsAccount;
 
@@ -40,6 +38,7 @@ export class Persona {
         this.health = health;
         this.avatar = avatar;
         this.inventory = new Inventory();
+        this.checkingAccount = new CheckingAccount();
       }
 
       convertFieldsFromJSON(): void {

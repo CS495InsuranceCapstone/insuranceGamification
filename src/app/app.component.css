@@ -1,0 +1,7 @@
+#inventory ul {
+  list-style: none;
+}
+
+#inventory li {
+  display: inline;
+}
