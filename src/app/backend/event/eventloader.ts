@@ -39,9 +39,13 @@ export class PredefinedEventLoader extends EventLoader {
 
   constructor(persona: Persona) {
     super(predefineddata, persona);
-    this.events = this.createObjectList((<any>this.data).events).reverse() as
-      PredefinedEvent[];
-    this.events.forEach((event) => event.counteractions.forEach(counteraction => counteraction.personaInstance = this.persona));
+    this.events = this.createObjectList((<any>this.data).events).reverse() as PredefinedEvent[];
+    for (let event of this.events) {
+      for (let counteraction of event.counteractions) {
+        counteraction.personaInstance = this.persona;
+        counteraction.counter = eval(counteraction.counteractionString);
+      }
+    }
   }
 
   getNextEvent(): PredefinedEvent {
@@ -53,7 +57,7 @@ export class PredefinedEventLoader extends EventLoader {
   }
 
   protected createObject(): PredefinedEvent {
-    return new PredefinedEvent(null, null, null);
+    return new PredefinedEvent(null, null, null, null);
   }
 
   static convertFlags(data): void {
@@ -78,9 +82,22 @@ export class RandomEventLoader extends EventLoader {
 
   private setDataLists(): void {
     this.positiveEvents = this.createObjectList((<any>this.data).positiveEvents) as RandomEvent[];
-    this.positiveEvents.forEach((event) => event.counteractions.forEach(counteraction => counteraction.personaInstance = this.persona));
+    for (let event of this.positiveEvents) {
+      for (let counteraction of event.counteractions) {
+        counteraction.personaInstance = this.persona;
+        counteraction.counter = eval(counteraction.counteractionString);
+      }
+    }
+    console.log(this.positiveEvents);
     this.negativeEvents = this.createObjectList((<any>this.data).negativeEvents) as RandomEvent[];
-    this.negativeEvents.forEach((event) => event.counteractions.forEach(counteraction => counteraction.personaInstance = this.persona));
+    for (let event of this.negativeEvents) {
+      console.log(event);
+      for (let counteraction of event.counteractions) {
+        counteraction.personaInstance = this.persona;
+        counteraction.counter = eval(counteraction.counteractionString);
+      }
+    }
+    console.log(this.negativeEvents);
   }
 
   getNextEvent(): RandomEvent {
@@ -139,7 +156,7 @@ export class RandomEventLoader extends EventLoader {
   }
 
   protected createObject(): RandomEvent {
-    return new RandomEvent(null, null, null);
+    return new RandomEvent(null, null, null, null);
   }
 
   static convertFlags(data): void {

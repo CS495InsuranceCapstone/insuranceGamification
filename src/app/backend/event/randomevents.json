@@ -5,35 +5,60 @@
             "name": "Car Accident",
             "text":"You have gotten into a car accident, that has left your car completely damaged! How will you handle this terrible situation?",
             "img":"https://familydoctor.org/wp-content/uploads/2000/09/24611539_l-705x470.jpg",
-            "flags":{"age":"< 25","salary":"< 60000"}
+            "flags":{"age":"< 25","salary":"< 60000"},
+            "counteractions": [
+              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"}
+            ]
         },
 
         {
             "name":"Medical Emergency",
             "text":"You just found out that your daughter slipped off the road, while driving, and hit a tree. She is in stable condition, but you are now filled with hospital fees. What do you do now?",
             "img":"http://images.clipartpanda.com/ultrasound-clipart-hospital_bed.gif",
-            "flags":{"age":"> 35","salary":"> 65000","dependents":">= 1"}
+            "flags":{"age":"> 35","salary":"> 65000","dependents":">= 1"},
+            "counteractions": [
+              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"}
+            ]
         },
 
         {
             "name":"You're Fired!",
             "text":"You have just been laid off! Hopefully, you have a backup plan for a situation like this.",
             "img":"https://thumbs.dreamstime.com/z/fired-man-cartoon-illustration-concept-unhappy-dismissed-34674921.jpg",
-            "flags":{"age":"> 55","salary":"> 65000"}
+            "flags":{"age":"> 55","salary":"> 65000"},
+            "counteractions": [
+              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"}
+            ]
         },
 
         {
             "name":"Parents Can Become Sick Too!",
             "text":"Your mother has been very sick recently. She has been in and out of the hospital all week. Since she does not have any insurance, her bills are extremely expensive. You need to do something.",
             "img":"http://library.timelesstruths.org/library/texts/S/Songs_and_Stories_Book_1/05_bed.jpg",
-            "flags":{"age":"> 55","salary":"> 50000","dependents":">= 1"}
+            "flags":{"age":"> 55","salary":"> 50000","dependents":">= 1"},
+            "counteractions": [
+              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"}
+            ]
         },
 
         {
             "name":"The Robbery",
             "text":"You have been ROBBED! Your most valuable possessions were taken, did you have everything covered?",
             "img":"https://s3.amazonaws.com/lowres.cartoonstock.com/law-order-thief-burger-robber-sofa-settee-mba0001_low.jpg",
-            "flags":{"age":"> 25","salary":"> 20000"}
+            "flags":{"age":"> 25","salary":"> 20000"},
+            "counteractions": [
+              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"}
+            ]
         }
     ],
     "positiveEvents": [
@@ -42,35 +67,60 @@
             "name": "Your Bonus Check!",
             "text":"You have just gotten a 10% bonus from work. How will you handle the extra money you have just recieved?",
             "img":"https://www.wikihow.com/images/c/c7/Raise-Money-Step-30.jpg",
-            "flags":{"age":"> 25","salary":"> 40000"}
+            "flags":{"age":"> 25","salary":"> 40000"},
+            "counteractions": [
+              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"}
+            ]
         },
 
         {
             "name":"Charity",
             "text":"Your favorite charity needs money raised to supply those who are in need with some regular day by day supplies in order to live. You know you would feel bad if you did not do anything to help. So, how will you help them out?",
             "img":"https://www.oldnational.com/images/default-source/hero-images/special-landing-pages/chooseyourcharity2016.jpg?sfvrsn=ef4964a_4",
-            "flags":{"age":"> 55","salary":"> 60000"}
+            "flags":{"age":"> 55","salary":"> 60000"},
+            "counteractions": [
+              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"}
+            ]
         },
 
         {
             "name":"Graduation Day",
             "text":"You just graduated from college, and you now need to figure out your financial plan.",
             "img":"https://thumb1.shutterstock.com/display_pic_with_logo/109564/640254667/stock-vector-graduating-students-of-pupil-hands-in-gown-throwing-graduation-caps-in-the-air-vector-illustration-640254667.jpg",
-            "flags":{"age":"< 30","salary":"> 20000"}
+            "flags":{"age":"< 30","salary":"> 20000"},
+            "counteractions": [
+              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"}
+            ]
         },
 
         {
             "name":"Your Very Own Business",
             "text":"Your sibiling has been telling you about a great opportunity that they had in mind. They want to start a business with you, and is asking that you put up the start up money. A new business adventure can be a great opportunity for you. So what will you do? ",
             "img":"http://www.businessnewsdaily.com/images/i/000/007/874/original/free-business-plan-templates.jpg?1421856207",
-            "flags":{"age":"> 25","salary":"> 20000"}
+            "flags":{"age":"> 25","salary":"> 20000"},
+            "counteractions": [
+              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"}
+            ]
         },
 
         {
             "name":"New Born Baby",
             "text":"You have just witness the birth of your new adorable baby boy! He already bringing you a lot of joy into your life, but what if something happens?",
             "img":"https://i.ytimg.com/vi/t732Tzc52Wk/hqdefault.jpg",
-            "flags":{"age":"< 50","salary":"> 10000","dependents":">= 1"}
+            "flags":{"age":"< 50","salary":"> 10000","dependents":">= 1"},
+            "counteractions": [
+              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"},
+              {"name": "", "counteractionString": "() => this.persona.name;"}
+            ]
         }
     ]
 
