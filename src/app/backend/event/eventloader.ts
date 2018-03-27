@@ -31,6 +31,15 @@ class EventLoader extends Loader {
     }
   }
 
+  static evaluateCounteractions(eventList: Event[], persona: Persona) {
+    for (let event of eventList) {
+      for (let counteraction of event.counteractions) {
+        counteraction.personaInstance = persona;
+        counteraction.counter = eval(counteraction.counteractionString);
+      }
+    }
+  }
+
 }
 
 export class PredefinedEventLoader extends EventLoader {
@@ -40,12 +49,7 @@ export class PredefinedEventLoader extends EventLoader {
   constructor(persona: Persona) {
     super(predefineddata, persona);
     this.events = this.createObjectList((<any>this.data).events).reverse() as PredefinedEvent[];
-    for (let event of this.events) {
-      for (let counteraction of event.counteractions) {
-        counteraction.personaInstance = this.persona;
-        counteraction.counter = eval(counteraction.counteractionString);
-      }
-    }
+    EventLoader.evaluateCounteractions(this.events, this.persona);
   }
 
   getNextEvent(): PredefinedEvent {
@@ -82,22 +86,9 @@ export class RandomEventLoader extends EventLoader {
 
   private setDataLists(): void {
     this.positiveEvents = this.createObjectList((<any>this.data).positiveEvents) as RandomEvent[];
-    for (let event of this.positiveEvents) {
-      for (let counteraction of event.counteractions) {
-        counteraction.personaInstance = this.persona;
-        counteraction.counter = eval(counteraction.counteractionString);
-      }
-    }
-    console.log(this.positiveEvents);
+    EventLoader.evaluateCounteractions(this.positiveEvents, this.persona)
     this.negativeEvents = this.createObjectList((<any>this.data).negativeEvents) as RandomEvent[];
-    for (let event of this.negativeEvents) {
-      console.log(event);
-      for (let counteraction of event.counteractions) {
-        counteraction.personaInstance = this.persona;
-        counteraction.counter = eval(counteraction.counteractionString);
-      }
-    }
-    console.log(this.negativeEvents);
+    EventLoader.evaluateCounteractions(this.negativeEvents, this.persona)
   }
 
   getNextEvent(): RandomEvent {
