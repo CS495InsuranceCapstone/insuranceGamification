@@ -1,6 +1,7 @@
 import { Event, RandomEvent } from './event';
 import { EventApprover } from './eventapprover';
 import { RandomEventLoader, PredefinedEventLoader } from './eventloader';
+import { Persona } from '../persona/persona';
 
 const NUMBER_RAND_EVENTS = 3;
 
@@ -79,14 +80,16 @@ export class EventQueueBuilder {
 
   private randomLoader: RandomEventLoader;
   private predefinedLoader: PredefinedEventLoader;
+  private persona: Persona;
 
-  constructor() {
+  constructor(persona: Persona) {
     this.refresh();
+    this.persona = persona;
   }
 
   private refresh(): void {
-    this.randomLoader = new RandomEventLoader();
-    this.predefinedLoader = new PredefinedEventLoader();
+    this.randomLoader = new RandomEventLoader(this.persona);
+    this.predefinedLoader = new PredefinedEventLoader(this.persona);
   }
 
   build(): EventQueue {

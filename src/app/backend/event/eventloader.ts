@@ -2,8 +2,17 @@ import * as randomdata from './randomevents.json';
 import * as predefineddata from './predefinedevents.json';
 import { Event, RandomEvent, PredefinedEvent } from './event';
 import { Loader } from '../util/loader'
+import { Persona } from '../persona/persona'
+import { Counteraction } from './counteraction'
 
 class EventLoader extends Loader {
+
+  protected persona: Persona;
+
+  constructor(data: Object, persona: Persona) {
+    super(data);
+    this.persona = persona;
+  }
 
   getNextEvent(): Event { return null; }
 
@@ -28,10 +37,11 @@ export class PredefinedEventLoader extends EventLoader {
 
   private events: PredefinedEvent[];
 
-  constructor() {
-    super(predefineddata);
+  constructor(persona: Persona) {
+    super(predefineddata, persona);
     this.events = this.createObjectList((<any>this.data).events).reverse() as
       PredefinedEvent[];
+    this.events.forEach((event) => event.counteractions.forEach(counteraction => counteraction.personaInstance = this.persona));
   }
 
   getNextEvent(): PredefinedEvent {
@@ -61,14 +71,16 @@ export class RandomEventLoader extends EventLoader {
   private eventGetFunc: (number) => Event;
   private listLen: number;
 
-  constructor() {
-    super(randomdata);
+  constructor(persona: Persona) {
+    super(randomdata, persona);
     this.setDataLists();
   }
 
   private setDataLists(): void {
     this.positiveEvents = this.createObjectList((<any>this.data).positiveEvents) as RandomEvent[];
+    this.positiveEvents.forEach((event) => event.counteractions.forEach(counteraction => counteraction.personaInstance = this.persona));
     this.negativeEvents = this.createObjectList((<any>this.data).negativeEvents) as RandomEvent[];
+    this.negativeEvents.forEach((event) => event.counteractions.forEach(counteraction => counteraction.personaInstance = this.persona));
   }
 
   getNextEvent(): RandomEvent {
@@ -141,5 +153,6 @@ export class RandomEventLoader extends EventLoader {
 
 }
 
+// Statically convert flags
 RandomEventLoader.convertFlags(randomdata);
 PredefinedEventLoader.convertFlags(predefineddata)

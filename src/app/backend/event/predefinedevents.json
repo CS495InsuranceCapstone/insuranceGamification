@@ -4,7 +4,10 @@
           "name": "Sign the Deed",
           "text": "You just made the biggest purchase of your life! Congratulations on the purchase of your new house. How will you handle the upcoming costs?",
           "img" : "null",
-          "flags":{ }
+          "flags":{ },
+          "counteractions": [
+            {"name": "Placeholder", "counteraction": "() => continue"}
+          ]
       },
       {
           "name":"Losing Someone Close, is Hard to Get Passed",

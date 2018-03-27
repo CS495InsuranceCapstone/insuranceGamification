@@ -21,7 +21,7 @@ export class AppComponent {
   readonly personas = new PersonaLoader().getPersonas();
 
   persona = this.personas[0];
-  eventQueue = new EventQueueBuilder().build();
+  eventQueue = new EventQueueBuilder(this.persona).build();
   event = this.popEvent();
 
   game = null; //new Game();
