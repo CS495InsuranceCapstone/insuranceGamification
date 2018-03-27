@@ -104,7 +104,8 @@
             <h4 class="w3-center">Bank</h4>
             <hr>
             <h6 class="w3-margin-right w3-left-align w3-text-theme">Checking Account: {{ this.persona.checkingAccount.getBalance() | round | commafy }}</h6>
-            <h6 class="w3-margin-right w3-left-align w3-text-theme">Savings Account: {{ (this.persona.savingsAccount == null) ? "No account" : this.persona.savingsAccount.getBalance() | round | commafy }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Savings Account: {{ (this.persona.savingsAccount == null) ? "No account" : this.persona.savingsAccount.getBalance()
+              | round | commafy }}</h6>
           </div>
         </div>
         <br>
@@ -156,8 +157,31 @@
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <p>Some text in the Modal..</p>
-        <p>Some text in the Modal..</p>
+        <form>
+          <h6 class="w3-margin-right w3-text-theme">Name:
+            <input name="nameInput" type="text" class="w3-margin-right w3-text-theme">
+          </h6>
+          <h6 class="w3-margin-right w3-text-theme">Age:
+            <input name="ageInput" type="number" class="w3-margin-right w3-text-theme">
+          </h6>
+          <h6 class="w3-margin-right w3-text-theme">Gender:
+            <input type="radio" name="gender" value="male" class="w3-text-theme">Male
+            <input type="radio" name="gender" value="female" class="w3-text-theme">Female</h6>
+          <h6 class="w3-margin-right w3-text-theme">Marital Status:
+            <input type="radio" name="maritalStatus" value="married" class="w3-text-theme">Married
+            <input type="radio" name="maritalStatus" value="notMarried" class="w3-text-theme">Not Married</h6>
+          <h6 class="w3-margin-right w3-text-theme">Dependents:
+            <input name="dependentsInput" type="number" class="w3-margin-right w3-text-theme">
+          </h6>
+          <h6 class="w3-margin-right w3-text-theme">Profession:
+            <input name="professionInput" type="text" class="w3-margin-right w3-text-theme">
+          </h6>
+          <h6 class="w3-margin-right w3-text-theme">Salary:
+            <input name="salaryinput" type="number" class="w3-margin-right w3-text-theme">
+          </h6>
+          <input type="submit" value="Save" class="w3-margin-right w3-text-theme">
+        </form>
+
       </div>
     </div>
   </div>
