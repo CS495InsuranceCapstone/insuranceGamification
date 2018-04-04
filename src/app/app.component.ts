@@ -35,6 +35,8 @@ export class AppComponent {
 
   counteract(buttonIndex) {
     this.event.counteractions[buttonIndex].counteraction();
+    this.persona.checkingAccount.deposit(this.persona.salary);
+    this.persona.age++;
     this.presentEvent();
   }
 
