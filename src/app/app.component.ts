@@ -22,16 +22,29 @@ export class AppComponent {
 
   persona = this.personas[0];
   eventQueue = new EventQueueBuilder(this.persona).build();
-  event = this.popEvent();
-
-  game = null; //new Game();
+  event: Event;
 
   constructor() {
     this.persona.insurancePolicy = new WholeLifeInsurancePolicy(this.persona, 1000000, 100);
+    this.presentEvent();
   }
 
   private popEvent(): Event {
     return this.eventQueue.getNextEvent(this.persona);
+  }
+
+  counteract(buttonIndex) {
+    this.event.counteractions[buttonIndex].counteraction();
+    this.presentEvent();
+  }
+
+  presentEvent() {
+    console.log(this.eventQueue);
+    if (this.eventQueue.isEmpty(this.persona)) {
+      console.log("Win!");
+    } else {
+      this.event = this.popEvent();
+    }
   }
 
 }

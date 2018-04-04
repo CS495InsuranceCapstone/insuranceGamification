@@ -74,6 +74,16 @@ export class EventQueue {
     }
   }
 
+  isEmpty(persona: Persona): boolean {
+    if (this.next == null && !this.approver.approve(persona)) {
+      return true;
+    } else if (!this.approver.approve(persona)) {
+      return this.next.isEmpty(persona);
+    } else {
+      return false;
+    }
+  }
+
 }
 
 export class EventQueueBuilder {

@@ -6,9 +6,9 @@
           "img" : "null",
           "flags":{ },
           "counteractions": [
+            {"name": "Placeholder", "counteractionString": "() => this.persona.checkingAccount.deposit(4200)"},
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -18,8 +18,8 @@
           "flags":{ "age":"> 25", "salary":"< 20000"},
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -29,8 +29,8 @@
           "flags":{"age":"> 18","salary":"> 30000" },
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -40,8 +40,8 @@
           "flags":{"age":"< 65","salary":"> 10400"},
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -51,8 +51,8 @@
           "flags":{"age":"> 18","salary":"> 10000"},
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -62,8 +62,8 @@
           "flags":{"age":"< 25","salary":"> 30000"},
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -73,8 +73,8 @@
           "flags":{"age":"> 21","salary":"> 40000"},
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -84,8 +84,8 @@
           "flags":{"age":"> 17","salary":"> 20000"},
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -95,8 +95,8 @@
           "flags":{"age":"> 30","salary":"> 50000"},
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -106,8 +106,8 @@
           "flags":{"age":"> 17","salary":"> 10000"},
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -117,8 +117,8 @@
           "flags":{"age":"> 55","salary":"55000","dependents":">= 1"},
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"},
-            {"name": "", "counteractionString": "() => this.persona.name;"}
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
+            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
       }
   ]

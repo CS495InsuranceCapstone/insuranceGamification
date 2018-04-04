@@ -4,13 +4,15 @@ export class Counteraction {
 
   name: string
   counteractionString: string;
+  persona: Persona
+  counteraction: () => void;
 
-  set personaInstance(persona: Persona) {
-    persona;
+  evaluate() {
+    this.counteraction = eval(this.counteractionString);
   }
 
-  set counter(counteraction: () => void) {
-    counteraction;
+  test() {
+    console.log("test");
   }
 
 }

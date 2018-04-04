@@ -31,11 +31,10 @@ class EventLoader extends Loader {
     }
   }
 
-  static evaluateCounteractions(eventList: Event[], persona: Persona) {
+  evaluateCounteractions(eventList: Event[], persona: Persona) {
     for (let event of eventList) {
       for (let counteraction of event.counteractions) {
-        counteraction.personaInstance = persona;
-        counteraction.counter = eval(counteraction.counteractionString);
+        counteraction.counteraction = eval(counteraction.counteractionString);
       }
     }
   }
@@ -49,7 +48,7 @@ export class PredefinedEventLoader extends EventLoader {
   constructor(persona: Persona) {
     super(predefineddata, persona);
     this.events = this.createObjectList((<any>this.data).events).reverse() as PredefinedEvent[];
-    EventLoader.evaluateCounteractions(this.events, this.persona);
+    this.evaluateCounteractions(this.events, this.persona);
   }
 
   getNextEvent(): PredefinedEvent {
@@ -86,9 +85,9 @@ export class RandomEventLoader extends EventLoader {
 
   private setDataLists(): void {
     this.positiveEvents = this.createObjectList((<any>this.data).positiveEvents) as RandomEvent[];
-    EventLoader.evaluateCounteractions(this.positiveEvents, this.persona)
+    this.evaluateCounteractions(this.positiveEvents, this.persona)
     this.negativeEvents = this.createObjectList((<any>this.data).negativeEvents) as RandomEvent[];
-    EventLoader.evaluateCounteractions(this.negativeEvents, this.persona)
+    this.evaluateCounteractions(this.negativeEvents, this.persona)
   }
 
   getNextEvent(): RandomEvent {
