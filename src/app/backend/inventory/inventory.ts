@@ -1,35 +1,57 @@
 import { LifeInsurancePolicy } from '../insurance/lifeinsurance';
 import { WholeLifeInsurancePolicy } from '../insurance/wholelifeinsurance';
 import { TermLifeInsurancePolicy } from '../insurance/termlife';
+import { UnusableError } from '../util/loss_exception'
 
 export class Inventory{
 
-    private hasAutoInsurance: Boolean;
-    private hasHealthInsurance: Boolean;
-    private hasHomeOwnersInsurance: Boolean;
+    private autoInsurance = new AutoInsurance();
+    private healthInsurance = new HealthInsurance();
+    private homeOwnersInsurnace = new HomeOwnersInsurance();
 
-    get autoInsurnace(): Boolean {
-      return this.hasAutoInsurance;
+    useAutoInsurance(): void {
+      this.useInsurance(this.autoInsurance);
     }
 
-    get healthInsurnace(): Boolean {
-      return this.hasHealthInsurance;
+    useHealthInsurance(): void {
+      this.useInsurance(this.healthInsurance);
     }
 
-    get homeOwnersInsurance(): Boolean {
-      return this.hasHomeOwnersInsurance;
+    useHomeOwnersInsurance(): void {
+      this.useInsurance(this.homeOwnersInsurnace);
     }
 
-    set autoInsurnace(hasAutoInsurance: Boolean) {
-      this.hasAutoInsurance = hasAutoInsurance;
+    useInsurance(policy: InsurancePolicy): void {
+      if (policy.isEnabled) policy.isEnabled = false;
+      else throw new UnusableError();
     }
 
-    set healthInsurnace(hasHealthInsurance: Boolean) {
-      this.hasHealthInsurance = hasHealthInsurance
+    buyInsurance(policy: InsurancePolicy, checkingAccountBalance: number): number {
+      if (policy.isEnabled || policy.cost > checkingAccountBalance) return 0
+      else {
+        policy.isEnabled = true;
+        return policy.cost;
+      }
     }
 
-    set homeOwnersInsurance(hasHomeOwnersInsurance: Boolean) {
-      this.hasHomeOwnersInsurance = hasHomeOwnersInsurance;
-    }
+}
 
+class InsurancePolicy {
+  isEnabled: Boolean
+  cost: number
+}
+
+class AutoInsurance extends InsurancePolicy {
+  isEnabled = false;
+  cost = 2000;
+}
+
+class HealthInsurance extends InsurancePolicy {
+  isEnabled = false;
+  cost = 20000;
+}
+
+class HomeOwnersInsurance extends InsurancePolicy {
+  isEnabled = false;
+  cost = 25000;
 }
