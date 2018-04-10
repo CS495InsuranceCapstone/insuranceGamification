@@ -17,6 +17,21 @@
   h6 {
     font-family: "Open Sans", sans-serif
   }
+
+  label>input {
+
+    visibility: hidden;
+    position: absolute;
+  }
+
+  label>input+img {
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  label>input:checked+img {
+    border: 2px solid #29a3a3;
+  }
 </style>
 
 <body class="w3-theme-l5">
@@ -156,32 +171,83 @@
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
+
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <h3>Warning: If you modify the persona while playing it will reset progress.</h3>
         <form>
-          <h6 class="w3-margin-right w3-text-theme">Name:
-            <input name="nameInput" type="text" class="w3-margin-right w3-text-theme">
-          </h6>
-          <h6 class="w3-margin-right w3-text-theme">Age:
-            <input name="ageInput" type="number" class="w3-margin-right w3-text-theme">
-          </h6>
-          <h6 class="w3-margin-right w3-text-theme">Gender:
-            <input type="radio" name="gender" value="male" class="w3-text-theme">Male
-            <input type="radio" name="gender" value="female" class="w3-text-theme">Female</h6>
-          <h6 class="w3-margin-right w3-text-theme">Marital Status:
-            <input type="radio" name="maritalStatus" value="married" class="w3-text-theme">Married
-            <input type="radio" name="maritalStatus" value="notMarried" class="w3-text-theme">Not Married</h6>
-          <h6 class="w3-margin-right w3-text-theme">Dependents:
-            <input name="dependentsInput" type="number" class="w3-margin-right w3-text-theme">
-          </h6>
-          <h6 class="w3-margin-right w3-text-theme">Profession:
-            <input name="professionInput" type="text" class="w3-margin-right w3-text-theme">
-          </h6>
-          <h6 class="w3-margin-right w3-text-theme">Salary:
-            <input name="salaryinput" type="number" class="w3-margin-right w3-text-theme">
-          </h6>
+          <div class="w3-col m6">
+
+            <h6 class="w3-margin-right w3-text-theme">Name:
+              <input name="nameInput" type="text" class="w3-margin-right w3-text-theme">
+            </h6>
+            <h6 class="w3-margin-right w3-text-theme">Age:
+              <input name="ageInput" type="number" class="w3-margin-right w3-text-theme">
+            </h6>
+            <h6 class="w3-margin-right w3-text-theme">Gender:
+              <input type="radio" name="gender" value="male" class="w3-text-theme">Male
+              <input type="radio" name="gender" value="female" class="w3-text-theme">Female</h6>
+            <h6 class="w3-margin-right w3-text-theme">Marital Status:
+              <input type="radio" name="maritalStatus" value="married" class="w3-text-theme">Married
+              <input type="radio" name="maritalStatus" value="notMarried" class="w3-text-theme">Not Married</h6>
+            <h6 class="w3-margin-right w3-text-theme">Dependents:
+              <input name="dependentsInput" type="number" class="w3-margin-right w3-text-theme">
+            </h6>
+            <h6 class="w3-margin-right w3-text-theme">Profession:
+              <input name="professionInput" type="text" class="w3-margin-right w3-text-theme">
+            </h6>
+            <h6 class="w3-margin-right w3-text-theme">Salary:
+              <input name="salaryinput" type="number" class="w3-margin-right w3-text-theme">
+            </h6>
+            
+
+          </div>
+          <div class="w3-col m6">
+            <div class="column">
+              <label>
+                <input type="radio" name="avatar" value="boy1">
+                <img src="/assets/boy-1.png" style="width:20%">
+              </label>
+              <label>
+                <input type="radio" name="avatar" value="boy">
+                <img src="/assets/boy.png" style="width:20%">
+              </label>
+              <label>
+                <input type="radio" name="avatar" value="girl1">
+                <img src="/assets/girl-1.png" style="width:20%">
+              </label>
+            </div>
+            <div class="column">
+              <label>
+                <input type="radio" name="avatar" value="girl">
+                <img src="/assets/girl.png" style="width:20%">
+              </label>
+              <label>
+                <input type="radio" name="avatar" value="man1">
+                <img src="/assets/man-1.png" style="width:20%">
+              </label>
+              <label>
+                <input type="radio" name="avatar" value="man2">
+                <img src="/assets/man-2.png" style="width:20%">
+              </label>
+            </div>
+            <div class="column">
+              <label>
+                <input type="radio" name="avatar" value="man3">
+                <img src="/assets/man-3.png" style="width:20%">
+              </label>
+              <label>
+                <input type="radio" name="avatar" value="man">
+                <img src="/assets/man.png" style="width:20%">
+              </label>
+              <label>
+                <input type="radio" name="avatar" value="man4">
+                <img src="/assets/man-4.png" style="width:20%">
+              </label>
+            </div>
+            <h5>Please select an avatar image.</h5>
+          </div>
           <input type="submit" value="Save" class="w3-margin-right w3-text-theme">
         </form>
-
       </div>
     </div>
   </div>

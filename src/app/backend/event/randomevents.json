@@ -7,9 +7,9 @@
             "img":"https://familydoctor.org/wp-content/uploads/2000/09/24611539_l-705x470.jpg",
             "flags":{"age":"< 25","salary":"< 60000"},
             "counteractions": [
-              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"}
+              {"name": "Replace the car, and buy a new car that costs $15,000", "counteractionString": "() => this.persona.checkingAccount.withdraw(15000);"},
+              {"name": "Damages will cost you $8,000 in repairs.", "counteractionString": "() => this.persona.checkingAccount.withdraw(8000);"},
+              {"name": "Use your auto-insurance to get the damages fixed.", "counteractionString": "() => this.inventory.autoInsurance();"}
             ]
         },
 
@@ -19,9 +19,9 @@
             "img":"http://images.clipartpanda.com/ultrasound-clipart-hospital_bed.gif",
             "flags":{"age":"> 35","salary":"> 65000","dependents":">= 1"},
             "counteractions": [
-              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"}
+              {"name": "You have health insurance!", "counteractionString": "() => this.inventory.healthInsurance();"},
+              {"name": "Save your health insurance and pay out of pocket instead. Payment would be $1,050.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1050);"},
+              {"name": "You do not believe that the health insurance will cover the entire medical fees. Take out a loan that is worth $1,050.", "counteractionString": "() => this.persona.name;"}
             ]
         },
 
@@ -31,9 +31,9 @@
             "img":"https://thumbs.dreamstime.com/z/fired-man-cartoon-illustration-concept-unhappy-dismissed-34674921.jpg",
             "flags":{"age":"> 55","salary":"> 65000"},
             "counteractions": [
-              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"}
+              {"name": "You will find a job soon, so use the money you saved to get by. Use $2,000 from savings account.", "counteractionString": "() => this.persona.savingAccount.withdraw(2000);"},
+              {"name": "Take out a loan of $3,500. You do not know when you will find another job.", "counteractionString": "() => this.persona.name;"},
+              {"name": "You have a severance package worth $1,500. Add $1,500 to your account.", "counteractionString": "() => this.persona.checkingAccount.deposit(1500);"}
             ]
         },
 
@@ -43,9 +43,9 @@
             "img":"http://library.timelesstruths.org/library/texts/S/Songs_and_Stories_Book_1/05_bed.jpg",
             "flags":{"age":"> 55","salary":"> 50000","dependents":">= 1"},
             "counteractions": [
-              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"}
+              {"name": "No need in using the health insurance. You have enough money, so you can pay $3,500.", "counteractionString": "() => this.persona.checkingAccount.withdraw(3500);"},
+              {"name": "Your health insurance plan, should be able to cover the most of the costs. You will still have to pay $600.", "counteractionString": "() => this.persona.checkingAccount($600);"},
+              {"name": "Go on a payment plan. Pay $175 a month for 20 months.", "counteractionString": "() => this.persona.checkingAccount.withdraw(175);"}
             ]
         },
 
@@ -55,9 +55,9 @@
             "img":"https://s3.amazonaws.com/lowres.cartoonstock.com/law-order-thief-burger-robber-sofa-settee-mba0001_low.jpg",
             "flags":{"age":"> 25","salary":"> 20000"},
             "counteractions": [
-              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"}
+              {"name": "You do not have health insurance. So the damages will cost you $4,025.", "counteractionString": "() => this.persona.checkingAccount;"},
+              {"name": "Take out a loan for $4,025.", "counteractionString": "() => this.persona.name;"},
+              {"name": "Use your home insurance to cover the damages of your home.", "counteractionString": "() => this.inventory.homeOwnersInsurance();"}
             ]
         }
     ],
@@ -69,9 +69,9 @@
             "img":"https://www.wikihow.com/images/c/c7/Raise-Money-Step-30.jpg",
             "flags":{"age":"> 25","salary":"> 40000"},
             "counteractions": [
-              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"}
+              {"name": "Add the bonus to your checkings account.", "counteractionString": "() => this.persona.checkingAccount.deposit(0.10*40000);"},
+              {"name": "Add the bonus to your savings account.", "counteractionString": "() => this.persona.savingAccount.deposit(0.10*40000);"},
+              {"name": "Add half the bonus to your checkings and savings account.", "counteractionString": "() => this.persona.checkingAccount.deposit(0.10*40000);"}
             ]
         },
 
@@ -81,9 +81,9 @@
             "img":"https://www.oldnational.com/images/default-source/hero-images/special-landing-pages/chooseyourcharity2016.jpg?sfvrsn=ef4964a_4",
             "flags":{"age":"> 55","salary":"> 60000"},
             "counteractions": [
-              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"}
+              {"name": "Go into your savings account and donate $500.", "counteractionString": "() => this.persona.savingAccount.withdraw(500);"},
+              {"name": "Go into your checkings account and donate $500.", "counteractionString": "() => this.persona.checkingAccount.withdraw(500);"},
+              {"name": "Keep your money and donate next time.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"}
             ]
         },
 
@@ -93,9 +93,9 @@
             "img":"https://thumb1.shutterstock.com/display_pic_with_logo/109564/640254667/stock-vector-graduating-students-of-pupil-hands-in-gown-throwing-graduation-caps-in-the-air-vector-illustration-640254667.jpg",
             "flags":{"age":"< 30","salary":"> 20000"},
             "counteractions": [
-              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"}
+              {"name": "Begin using life insurance.", "counteractionString": "() => this.persona.name;"},
+              {"name": "File for health insurance.", "counteractionString": "() => this.persona.inventory.healthInsurance();"},
+              {"name": "Spend $15,000 for a brand new car.", "counteractionString": "() => this.persona.checkingAccount.withdraw(15000);"}
             ]
         },
 
@@ -105,9 +105,9 @@
             "img":"http://www.businessnewsdaily.com/images/i/000/007/874/original/free-business-plan-templates.jpg?1421856207",
             "flags":{"age":"> 25","salary":"> 20000"},
             "counteractions": [
-              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"}
+              {"name": "Turn down the opportunity. You just don't have it right now.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
+              {"name": "Take out a loan and give $6000 to help start the business.", "counteractionString": "() => this.persona.name;"},
+              {"name": "Spend $6000 to help start the business.", "counteractionString": "() => this.persona.checkingAccount.withdraw(6000);"}
             ]
         },
 
@@ -117,9 +117,9 @@
             "img":"https://i.ytimg.com/vi/t732Tzc52Wk/hqdefault.jpg",
             "flags":{"age":"< 50","salary":"> 10000","dependents":">= 1"},
             "counteractions": [
-              {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"},
-              {"name": "", "counteractionString": "() => this.persona.name;"}
+              {"name": "Recieve health insurance.", "counteractionString": "() => this.persona.inventory.healthInsurance();"},
+              {"name": "You have everything that you need, and your new baby will be just fine.", "counteractionString": "() => this.persona.checkingAccount(0);"},
+              {"name": "Put $1,000 into your savings account.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1000);"}
             ]
         }
     ]
