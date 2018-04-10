@@ -6,7 +6,7 @@
           "img" : "null",
           "flags":{ },
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.checkingAccount.deposit(4200)"},
+            {"name": "Deposit $4,200 into your checking account.", "counteractionString": "() => this.persona.checkingAccount.deposit(4200)"},
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
@@ -17,9 +17,9 @@
           "img":"https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAIlAAAAJDQ4OGU1YTdkLWI2MjktNGFmNy1iODE3LTEyODJhYWQyOTc1Nw.jpg",
           "flags":{ "age":"> 25", "salary":"< 20000"},
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {"name": "Go with a simple funeral, and spend $2,500.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2500);"},
+            {"name": "Take out an emergency loan of $5,000.", "counteractionString": "() => this.persona.name;"},
+            {"name": "Go all out for the funeral, and spend $5,000 out of pocket. Your mother deserves the best funeral possible.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5000);"}
           ]
       },
       {
@@ -28,9 +28,9 @@
           "img":"http://blog.officezilla.com/wp-content/uploads/2013/02/LATE.jpg",
           "flags":{"age":"> 18","salary":"> 30000" },
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {"name": "Pay mortgage which is $1,250.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1250);"},
+            {"name": "Move to a less expensive place and pay $700 for rent.", "counteractionString": "() => this.persona.checkingAccount.withdraw(700);"},
+            {"name": "Take out a loan of $1,250, for this month mortgage.", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -39,9 +39,9 @@
           "img":"https://doughroller-wpengine.netdna-ssl.com/wp-content/uploads/2010/08/Taxes.jpg",
           "flags":{"age":"< 65","salary":"> 10400"},
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {"name": "Pay minimum of $2,500 in backpay of your taxes.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2500);"},
+            {"name": "Pay the full amount of $5,000 in backpay of your taxes.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5000);"},
+            {"name": "Go on a payment plan and pay $250 a month. This will take 20 months for you to pay back back your taxes.", "counteractionString": "() => this.persona.checkingAccount.withdraw(250);"}
           ]
       },
       {
@@ -61,9 +61,9 @@
           "img":"http://toonclips.com/600/cartoon-beater-car-with-bandages-and-flat-tire-by-toonaday-4123.jpg",
           "flags":{"age":"< 25","salary":"> 30000"},
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {"name": "Buy a new luxury car at the price of $10,000", "counteractionString": "() => this.persona.checkingAccount.withdraw(10000);"},
+            {"name": "Replace the damages for $6,000", "counteractionString": "() => this.persona.checkingAccount.withdraw(6000);"},
+            {"name": "Use your auto-insurance, to cover your car damages.", "counteractionString": "() => this.persona.inventory.autoInsurance();"}
           ]
       },
       {
@@ -72,9 +72,9 @@
           "img":"https://cdn.pixabay.com/photo/2016/03/15/09/05/job-1257204_960_720.jpg",
           "flags":{"age":"> 21","salary":"> 40000"},
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {"name": "Choose to recieve term life insurance.", "counteractionString": "() => this.persona.name;"},
+            {"name": "Choose to recieve whole life insurance", "counteractionString": "() => this.persona.name;"},
+            {"name": "You will be okay. There is no need for insurance.", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -83,9 +83,9 @@
           "img":"http://www.simplystamps.com/images/product-images/holiday_245_large.png",
           "flags":{"age":"> 17","salary":"> 20000"},
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {"name": "No need for insurance, you will be ok without it.", "counteractionString": "() => this.persona.name;"},
+            {"name": "Get Homeowners insurance, just in case.", "counteractionString": "() => this.persona.inventory.homeOwnersInsurance();"},
+            {"name": "My bat will keep us safe from any home invasion.", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -94,9 +94,9 @@
           "img":"http://images.wisegeek.com/retirement-plan-with-pen-and-glasses.jpg",
           "flags":{"age":"> 30","salary":"> 50000"},
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {"name": "Recieve a Pension at work.", "counteractionString": "() => this.persona.name;"},
+            {"name": "Go for the 401(k).", "counteractionString": "() => this.persona.name;"},
+            {"name": "Apply for an IRA (Individual Retirement Account).", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -105,9 +105,9 @@
           "img":"https://cdn.pixabay.com/photo/2014/03/24/17/15/school-295210_960_720.png",
           "flags":{"age":"> 17","salary":"> 10000"},
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {"name": "Take out a loan of $5,500.", "counteractionString": "() => this.persona.name;"},
+            {"name": "Apply to several grants and recieve $3,000, but pay $2,500 out of pocket.", "counteractionString": "() => this.persona.checkingAccount.withdraw(500);"},
+            {"name": "Quiet your job and just do work study on campus.", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {

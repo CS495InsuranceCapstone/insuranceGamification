@@ -17,7 +17,7 @@ export class Persona {
       insurancePolicy: LifeInsurancePolicy;
       checkingAccount: CheckingAccount;
       savingsAccount: SavingsAccount;
-
+      
       // + operator converts string to number
       constructor(name: string,
                   sex: string,
