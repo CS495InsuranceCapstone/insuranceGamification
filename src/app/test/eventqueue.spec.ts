@@ -92,7 +92,8 @@ function removeNEvents(eventQueue: EventQueue, n: number, testPersona: Persona):
 
 describe('EventQueueBuilder', () => {
 
-  let builder = new EventQueueBuilder();
+  let persona = new Persona('Nick Smith', 'M', 21, 'single', 0, 'student', .78, 12000);
+  let builder = new EventQueueBuilder(persona);
 
   it('should create an EventQueue with length > 0 on build() call', () => {
     expect(builder.build().length > 0).toBe(true);

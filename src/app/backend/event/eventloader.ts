@@ -60,7 +60,7 @@ export class PredefinedEventLoader extends EventLoader {
   }
 
   protected createObject(): PredefinedEvent {
-    return new PredefinedEvent(null, null, null, null);
+    return new PredefinedEvent(null, null, null);
   }
 
   static convertFlags(data): void {
@@ -146,7 +146,7 @@ export class RandomEventLoader extends EventLoader {
   }
 
   protected createObject(): RandomEvent {
-    return new RandomEvent(null, null, null, null);
+    return new RandomEvent(null, null, null);
   }
 
   static convertFlags(data): void {

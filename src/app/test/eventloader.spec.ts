@@ -1,12 +1,15 @@
 import { RandomEventLoader, PredefinedEventLoader } from '../backend/event/eventloader'
 import { RandomEvent, PredefinedEvent } from '../backend/event/event'
+import { Persona } from '../backend/persona/persona'
+import { Counteraction } from '../backend/event/counteraction'
 
 describe('RandomEventLoader', () => {
 
   let eventLoader: RandomEventLoader;
+  let persona = new Persona('Nick Smith', 'M', 21, 'single', 0, 'student', .78, 12000);
 
   beforeEach(() => {
-    eventLoader = new RandomEventLoader();
+    eventLoader = new RandomEventLoader(persona);
   });
 
   it('should get positive event of proper index', () => {
@@ -16,6 +19,11 @@ describe('RandomEventLoader', () => {
       "https://www.wikihow.com/images/c/c7/Raise-Money-Step-30.jpg"
     );
     event.flags = {"age":x => x > 25, "salary": x => x > 40000};
+    event.counteractions = [
+      {"name": "Placeholder", "counteractionString": "() => this.persona.name;"} as Counteraction,
+      {"name": "", "counteractionString": "() => this.persona.name;"} as Counteraction,
+      {"name": "", "counteractionString": "() => this.persona.name;"} as Counteraction
+    ]
     expect(JSON.stringify(eventLoader.getPositiveEvent(0))).toBe(JSON.stringify(event));
   });
 
@@ -26,6 +34,11 @@ describe('RandomEventLoader', () => {
       "https://familydoctor.org/wp-content/uploads/2000/09/24611539_l-705x470.jpg"
     );
     event.flags = {"age": x => x < 25, "salary": x => x < 60000};
+    event.counteractions = [
+      {"name": "Placeholder", "counteractionString": "() => this.persona.name;"} as Counteraction,
+      {"name": "", "counteractionString": "() => this.persona.name;"} as Counteraction,
+      {"name": "", "counteractionString": "() => this.persona.name;"} as Counteraction
+    ]
     expect(JSON.stringify(eventLoader.getNegativeEvent(0))).toBe(JSON.stringify(event));
   });
 
@@ -41,18 +54,24 @@ describe('RandomEventLoader', () => {
 describe('PredefinedEventLoader', () => {
 
   let eventLoader: PredefinedEventLoader;
+  let persona = new Persona('Nick Smith', 'M', 21, 'single', 0, 'student', .78, 12000);
 
   beforeEach(() => {
-    eventLoader = new PredefinedEventLoader();
+    eventLoader = new PredefinedEventLoader(persona);
   });
 
   it('should give a event when getNextEvent() is called', () => {
     let event =new PredefinedEvent(
       "Sign the Deed",
-      "You just made the biggest purchase of your life!",
+      "You just made the biggest purchase of your life! Congratulations on the purchase of your new house. How will you handle the upcoming costs?",
       "null"
     );
     event.flags = {};
+    event.counteractions = [
+      {"name": "Placeholder", "counteractionString": "() => this.persona.checkingAccount.deposit(4200)"} as Counteraction,
+      {"name": "Placeholder", "counteractionString": "() => this.persona.name;"} as  Counteraction,
+      {"name": "Placeholder", "counteractionString": "() => this.persona.name;"} as Counteraction
+    ]
     expect(JSON.stringify(eventLoader.getNextEvent())).toBe(JSON.stringify(event));
   });
 
