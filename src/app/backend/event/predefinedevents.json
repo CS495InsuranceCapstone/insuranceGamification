@@ -6,7 +6,7 @@
           "img" : "null",
           "flags":{ },
           "counteractions": [
-            {"name": "Deposit $4,200 into your checking account.", "counteractionString": "() => this.persona.checkingAccount.deposit(4200)"},
+            {"name": "Deposit $4,200 into your checking account.", "counteractionString": "() => this.persona.checkingAccount.deposit(4200);"},
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
