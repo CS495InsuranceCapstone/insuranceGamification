@@ -81,9 +81,9 @@
             <br>
             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
-                <button id="button1" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(0)">{{ this.event.counteractions[0].name }}</button>
-                <button id="button2" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(1)">{{ this.event.counteractions[1].name }}</button>
-                <button id="button3" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(2)">{{ this.event.counteractions[2].name }}</button>
+                <button id="button1" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(0)" ng-disabled="testCounteraction(0)">{{ this.event.counteractions[0].name }}</button>
+                <button id="button2" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(1)" ng-disabled="testCounteraction(1)">{{ this.event.counteractions[1].name }}</button>
+                <button id="button3" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(2)" ng-disabled="testCounteraction(2)">{{ this.event.counteractions[2].name }}</button>
               </div>
             </div>
           </div>

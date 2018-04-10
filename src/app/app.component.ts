@@ -8,6 +8,7 @@ import { WholeLifeInsurancePolicy } from './backend/insurance/wholelifeinsurance
 import { TermLifeInsurancePolicy } from './backend/insurance/termlife'
 import { CheckingAccount } from './backend/bank/bank_accounts'
 import { SavingsAccount } from './backend/bank/bank_accounts'
+import { UnusableError } from './backend/util/loss_exception'
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,18 @@ export class AppComponent {
 
   private popEvent(): Event {
     return this.eventQueue.getNextEvent(this.persona);
+  }
+
+  testCounteraction(buttonIndex): boolean {
+    const persona = JSON.parse(JSON.stringify(this.persona)) as Persona;
+    let valid = true;
+    try {
+      this.counteract(buttonIndex)
+    } catch (e) {
+      if (e instanceof UnusableError) valid = false;
+    }
+    this.persona = persona;
+    return valid;
   }
 
   counteract(buttonIndex) {
