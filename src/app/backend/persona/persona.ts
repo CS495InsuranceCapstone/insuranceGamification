@@ -17,7 +17,7 @@ export class Persona {
       insurancePolicy: LifeInsurancePolicy;
       checkingAccount: CheckingAccount;
       savingsAccount: SavingsAccount;
-      
+
       // + operator converts string to number
       constructor(name: string,
                   sex: string,
@@ -51,6 +51,13 @@ export class Persona {
 
       setCheckingAccount(account: CheckingAccount): void {
         this.checkingAccount = account;
+      }
+
+      passYear(): void {
+        this.checkingAccount.deposit(this.salary - 10000 * (1 + this.dependents));
+        if (this.savingsAccount) this.savingsAccount.appreciate();
+        this.age++;
+        this.insurancePolicy.payPremium();
       }
 
     }

@@ -4,7 +4,7 @@ class BankAccount {
 
   protected balance: number = 0;
 
-  withdraw(amount: number): number {
+  withdraw(amount: number) {
     if (amount > this.balance || amount <= 0) {
       throw new UnusableError();
     } else {

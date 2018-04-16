@@ -7,12 +7,4 @@ export class Counteraction {
   persona: Persona
   counteraction: () => void;
 
-  evaluate() {
-    this.counteraction = eval(this.counteractionString);
-  }
-
-  test() {
-    console.log("test");
-  }
-
 }

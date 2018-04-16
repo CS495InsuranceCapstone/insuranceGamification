@@ -6,9 +6,21 @@
           "img" : "null",
           "flags":{ },
           "counteractions": [
-            {"name": "Deposit $4,200 into your checking account.", "counteractionString": "() => this.persona.checkingAccount.deposit(4200);"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {
+              "name": "Deposit $4,200 into your checking account.",
+              "counteractionString": "() => this.persona.checkingAccount.withdraw(4200);",
+              "validString": "() => this.persona.checkingAccount.getBalance() >= 4200;"
+            },
+            {
+              "name": "Placeholder",
+              "counteractionString": "() => this.persona.name;",
+              "validString": "() => true;"
+            },
+            {
+              "name": "Placeholder",
+              "counteractionString": "() => this.persona.name;",
+              "validString": "() => true;"
+            }
           ]
       },
       {
@@ -23,7 +35,7 @@
           ]
       },
       {
-          "name":"Late To Many Times",
+          "name":"Late Too Many Times",
           "text":"Your late on your mortgage again. Normally, you are able to pay it at a later time. This time the tables have turned, and you were told to pay your mortagage by the end of the week or you will be forced to leave. Are you going to just let yourself get kicked out or will you do something about it?",
           "img":"http://blog.officezilla.com/wp-content/uploads/2013/02/LATE.jpg",
           "flags":{"age":"> 18","salary":"> 30000" },

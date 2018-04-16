@@ -34,32 +34,31 @@ export class AppComponent {
     return this.eventQueue.getNextEvent(this.persona);
   }
 
-  testCounteraction(buttonIndex): boolean {
-    const persona = JSON.parse(JSON.stringify(this.persona)) as Persona;
-    let valid = true;
-    try {
-      this.counteract(buttonIndex)
-    } catch (e) {
-      if (e instanceof UnusableError) valid = false;
-    }
-    this.persona = persona;
-    return valid;
-  }
-
   counteract(buttonIndex) {
-    this.event.counteractions[buttonIndex].counteraction();
-    this.persona.checkingAccount.deposit(this.persona.salary);
-    this.persona.age++;
-    this.presentEvent();
+    try {
+      this.event.counteractions[buttonIndex].counteraction();
+      this.persona.passYear();
+      this.presentEvent();
+    } catch (e) {
+      console.log(e);
+      alert('You can\'t do that. You do not have the necessary assets.');
+    }
   }
 
   presentEvent() {
-    console.log(this.eventQueue);
     if (this.eventQueue.isEmpty(this.persona)) {
-      console.log("Win!");
+      this.win();
     } else {
       this.event = this.popEvent();
     }
+  }
+
+  win() {
+    alert("You win!");
+  }
+
+  lose() {
+    alert("You lose!");
   }
 
 }
@@ -74,7 +73,12 @@ export class CapitalizePipe implements PipeTransform {
 @Pipe({name: 'commafy'})
 export class CommafyPipe implements PipeTransform {
   transform(value: number): string {
-      let valueString = value.toString().split('').reverse();
+      let valueString: string[];
+      let centString = '';
+      if (value.toString().includes('.')) {
+        valueString = value.toString().split('.')[0].split('').reverse()
+        centString = '.' + value.toString().split('.')[1];
+      } else valueString = value.toString().split('').reverse();
       let returnString = ''
       let currLen = 0;
       for(let char of valueString) {
@@ -86,7 +90,7 @@ export class CommafyPipe implements PipeTransform {
         returnString = char + returnString;
         currLen++;
       }
-      return returnString;
+      return returnString + centString;
   }
 }
 
