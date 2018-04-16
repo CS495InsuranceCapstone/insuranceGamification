@@ -6,21 +6,9 @@
           "img" : "null",
           "flags":{ },
           "counteractions": [
-            {
-              "name": "Deposit $4,200 into your checking account.",
-              "counteractionString": "() => this.persona.checkingAccount.withdraw(4200);",
-              "validString": "() => this.persona.checkingAccount.getBalance() >= 4200;"
-            },
-            {
-              "name": "Placeholder",
-              "counteractionString": "() => this.persona.name;",
-              "validString": "() => true;"
-            },
-            {
-              "name": "Placeholder",
-              "counteractionString": "() => this.persona.name;",
-              "validString": "() => true;"
-            }
+            {"name": "Deposit $4,200 into your checking account.", "counteractionString": "() => this.persona.checkingAccount.deposit(4200);"},
+            {"name": "Spend $2,000 on security.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2000);"},
+            {"name": "Spend $5,100 on new furniture.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5100);"}
           ]
       },
       {
@@ -62,9 +50,9 @@
           "img":"https://www.worldbank.org/content/dam/Worldbank/Feature%20Story/Debt/Debt_Ladder-400X269.jpg",
           "flags":{"age":"> 18","salary":"> 10000"},
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {"name": "Pay off your debt of $3,555.", "counteractionString": "() => this.persona.checkingAccount.withdraw(3555);"},
+            {"name": "Pay off the most expensive debt of $1,202.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1202);"},
+            {"name": "Take out a loan of $4,000.", "counteractionString": "() => this.persona.name;"}
           ]
       },
       {
@@ -132,6 +120,50 @@
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
           ]
-      }
+      },
+      {
+        "name": "Updates on your HOME",
+        "text": "Your driverway has a few cracks and holes in it. This makes it hard for you to pull in and out of your garage. You need your driveway fixed ASAP!",
+        "img" : "null",
+        "flags":{"age":">30", "salary":">=30000", "dependents":">= 1"},
+        "counteractions": [
+          {"name": "Use your homeowners insurance.", "counteractionString": "() => this.inventory.homeOwnersInsurance();"},
+          {"name": "You saved up for things like this. Spend $1,600 from your savings.", "counteractionString": "() => this.persona.savingAccount.withdraw(1600);"},
+          {"name": "Pass up the opportunity.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"}
+        ]
+    },
+    {
+      "name": "Buying a House",
+      "text": "Your family is getting bigger. This apartment is not going to cut it. You need to consider buying a house for your growing family.",
+      "img" : "null",
+      "flags":{"age":"> 25", "salary":"25000", "dependents":">= 1"},
+      "counteractions": [
+        {"name": "Take out a loan of $5,000 for a down payment.", "counteractionString": "() => this.persona.name;"},
+        {"name": "Spend $5,000 as a down payment.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5000);"},
+        {"name": "Let your family cramp in the apartment.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"}
+      ]
+  },
+  {
+    "name": "Inheritance",
+    "text": "You have finally recieved your inheritance of $10,500. What should you do with it?",
+    "img" : "null",
+    "flags":{"age":"> 18", "salary":"> 10000"},
+    "counteractions": [
+      {"name": "Deposit $10,500 into your checking account.", "counteractionString": "() => this.persona.checkingAccount.deposit(10500);"},
+      {"name": "Deposit $10,500 into your saving account.", "counteractionString": "() => this.persona.savingAccount.deposit(10500);"},
+      {"name": "Spend $5,500 on things you deserve.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5500);"}
+    ]
+},
+{
+  "name": "Bills",
+  "text": "Its time to pay your bills, but you do not have enough for all of them. Which bills will you pay?",
+  "img" : "null",
+  "flags":{"age":"> 21", "salary":">=10000"},
+  "counteractions": [
+    {"name": "Phone Bill $120.", "counteractionString": "() => this.persona.checkingAccount.withdraw(120);"},
+    {"name": "Rent $800 and Cable $250.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1050);"},
+    {"name": "Car payment $300.", "counteractionString": "() => this.persona.checkingAccount.withdraw(300);"}
+  ]
+}
   ]
 }
