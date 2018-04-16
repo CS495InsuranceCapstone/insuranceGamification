@@ -21,12 +21,13 @@ class EventLoader extends Loader {
   static convertEventFlags(event): void {
     for (let flag in event.flags) {
       let boolText = event.flags[flag].split(' ');
-      let op = boolText[0], num = boolText[1];
+      let op = boolText[0]
+      let num = boolText[1];
       switch(op) {
         case '<': event.flags[flag] = x => x < num; break;
-        case '<=': event.flags[flag] = x => x < num; break;
-        case '>': event.flags[flag] = x => x < num; break;
-        case '>=': event.flags[flag] = x => x < num; break;
+        case '<=': event.flags[flag] = x => x <= num; break;
+        case '>': event.flags[flag] = x => x > num; break;
+        case '>=': event.flags[flag] = x => x >= num; break;
       }
     }
   }

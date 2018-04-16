@@ -34,6 +34,19 @@ export class Inventory{
       }
     }
 
+    buyAutoInsurance(checkingAccountBalance: number): number {
+      return this.buyInsurance(this.autoInsurance, checkingAccountBalance)
+    }
+
+    buyHealthInsurance(checkingAccountBalance: number): number {
+      return this.buyInsurance(this.healthInsurance, checkingAccountBalance)
+    }
+
+    buyHomeOwnersInsurance(checkingAccountBalance: number): number {
+      return this.buyInsurance(this.homeOwnersInsurnace, checkingAccountBalance)
+    }
+
+
 }
 
 class InsurancePolicy {

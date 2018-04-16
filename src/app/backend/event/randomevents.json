@@ -83,7 +83,7 @@
             "counteractions": [
               {"name": "Go into your savings account and donate $500.", "counteractionString": "() => this.persona.savingAccount.withdraw(500);"},
               {"name": "Go into your checkings account and donate $500.", "counteractionString": "() => this.persona.checkingAccount.withdraw(500);"},
-              {"name": "Keep your money and donate next time.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"}
+              {"name": "Keep your money and donate next time.", "counteractionString": "() => null;"}
             ]
         },
 
@@ -105,7 +105,7 @@
             "img":"http://www.businessnewsdaily.com/images/i/000/007/874/original/free-business-plan-templates.jpg?1421856207",
             "flags":{"age":"> 25","salary":"> 20000"},
             "counteractions": [
-              {"name": "Turn down the opportunity. You just don't have it right now.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
+              {"name": "Turn down the opportunity. You just don't have it right now.", "counteractionString": "() => null;"},
               {"name": "Take out a loan and give $6000 to help start the business.", "counteractionString": "() => this.persona.name;"},
               {"name": "Spend $6000 to help start the business.", "counteractionString": "() => this.persona.checkingAccount.withdraw(6000);"}
             ]
@@ -117,16 +117,16 @@
             "img":"https://i.ytimg.com/vi/t732Tzc52Wk/hqdefault.jpg",
             "flags":{"age":"< 50","salary":"> 10000","dependents":">= 1"},
             "counteractions": [
-              {"name": "Recieve health insurance.", "counteractionString": "() => this.persona.inventory.healthInsurance();"},
-              {"name": "You have everything that you need, and your new baby will be just fine.", "counteractionString": "() => this.persona.checkingAccount(0);"},
-              {"name": "Put $1,000 into your savings account.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1000);"}
+              {"name": "Recieve health insurance.", "counteractionString": "() => this.persona.inventory.buyHealthInsurance(this.persona.checkingAccount.getBalance());"},
+              {"name": "You have everything that you need, and your new baby will be just fine.", "counteractionString": "() => null;"},
+              {"name": "Put $1,000 into your savings account.", "counteractionString": "() => this.persona.savingsAccount.deposit(this.persona.checkingAccount.withdraw(1000));"}
             ]
         },
         {
             "name": "Shopping Time!",
             "text": "Maybe you deserve to spend some money on yourself. So lets go shopping!",
             "img" : "null",
-            "flags":{"age":">18", "salary":">10000"},
+            "flags":{"age":"> 18", "salary":"> 10000"},
             "counteractions": [
               {"name": "Shop until you drop. Spend $10,000.", "counteractionString": "() => this.persona.checkingAccount.withdraw(10000);"},
               {"name": "Shop modestly and spend $1,000.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1000);"},
@@ -137,7 +137,7 @@
           "name": "Buying a new car",
           "text": "You finally get to buy a new car. You have so many different choices. Which car should you buy?",
           "img" : "null",
-          "flags":{"age":">25", "salary":">30000" },
+          "flags":{"age":"> 25", "salary":"> 30000" },
           "counteractions": [
             {"name": "Buy a used car and spend $2,500.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2500);"},
             {"name": "Buy a new car and spend $10,800.", "counteractionString": "() => this.persona.checkingAccount.withdraw(10800);"},
@@ -148,7 +148,7 @@
         "name": "Divorce",
         "text": "Unfortanately, your marriage did not succeed. Getting a divorce is more expensive then getting married.",
         "img" : "null",
-        "flags":{"age":">=40", "salary":"> 60000", "dependents":">= 1"},
+        "flags":{"age":">= 40", "salary":"> 60000", "dependents":">= 1"},
         "counteractions": [
           {"name": "Track your expenses. Don't spend more than $5,000 this month.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5000);"},
           {"name": "Let your ex take everything within the divorce, lose $8,000.", "counteractionString": "() => this.persona.checkingAccount.withdraw(8000);"},
@@ -159,7 +159,7 @@
       "name": "Buy a Vacation Home!",
       "text": "Your probably doing well in life right now. You have been eyeing this beach house for the longest. You think this would be a great vacation home for your family. Maybe you should get the beach house.",
       "img" : "null",
-      "flags":{"age":">=40", "salary":"> 50000", "dependents":">= 1"},
+      "flags":{"age":">= 40", "salary":"> 50000", "dependents":">= 1"},
       "counteractions": [
         {"name": "Update home owners insurance.", "counteractionString": "() => this.inventory.homeOwnersInsurance();"},
         {"name": "Spend $50,000 on your new vacation home.", "counteractionString": "() => this.persona.checkingAccount.withdraw(50000);"},
@@ -170,7 +170,7 @@
       "name": "Relocating to a different state",
       "text": "Your moving to a new state. How will you cover all the expenses?",
       "img" : "null",
-      "flags":{"age":">25", "salary":"> 10000"},
+      "flags":{"age":"> 25", "salary":"> 10000"},
       "counteractions": [
         {"name": "Save up $6,335.", "counteractionString": "() => this.persona.checkingAccount.deposit(6335);"},
         {"name": "Spend $5,630 on moving expenses.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5630);"},

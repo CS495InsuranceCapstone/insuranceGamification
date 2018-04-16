@@ -15,7 +15,7 @@
           "name":"Losing Someone Close, is Hard to Get Passed",
           "text":"Today has been a bad day for everyone in your family. Your mother has just passed away within her sleep. So many tears are flowing through your eyes, but you have to stay strong because it is up to you to plan the funeral. Do you have any money put away for times like this?",
           "img":"https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAIlAAAAJDQ4OGU1YTdkLWI2MjktNGFmNy1iODE3LTEyODJhYWQyOTc1Nw.jpg",
-          "flags":{ "age":"> 25", "salary":"< 20000"},
+          "flags":{ "age":"> 25"},
           "counteractions": [
             {"name": "Go with a simple funeral, and spend $2,500.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2500);"},
             {"name": "Take out an emergency loan of $5,000.", "counteractionString": "() => this.persona.name;"},
@@ -45,7 +45,7 @@
           ]
       },
       {
-          "name":"DEBT",
+          "name":"Debt",
           "text":"So many of your bills are passed due. You cannot find anyone who can personally help you out. ",
           "img":"https://www.worldbank.org/content/dam/Worldbank/Feature%20Story/Debt/Debt_Ladder-400X269.jpg",
           "flags":{"age":"> 18","salary":"> 10000"},
@@ -101,7 +101,7 @@
       },
       {
           "name":"Is School For You?",
-          "text":"Every since you graduated from high school, you have not been sure if you would like to this.persona.name your education. Your parents did not have the money for you to go, but now that your older you take care of yourself. You feel like you just do not have the funds to afford to go to the college that you desire to attend. Do not give up, because there should be something that can come in handy.",
+          "text":"Ever since you graduated from high school, you have not been sure if you would like to this.persona.name your education. Your parents did not have the money for you to go, but now that your older you take care of yourself. You feel like you just do not have the funds to afford to go to the college that you desire to attend. Do not give up, because there should be something that can come in handy.",
           "img":"https://cdn.pixabay.com/photo/2014/03/24/17/15/school-295210_960_720.png",
           "flags":{"age":"> 17","salary":"> 10000"},
           "counteractions": [
@@ -114,7 +114,7 @@
           "name":"Keep Your Legacy Going",
           "text":"You are getting much older now, and you are unable to do the things that you want to do in life. It's ok, because you have accomplished so much within your lifetime. It would be great if there was a way to set up a financial legacy.",
           "img":"https://www.iris.xyz/sites/default/files/styles/largest/public/field/image/legacy.jpg?itok=NVU-FQ4l",
-          "flags":{"age":"> 55","salary":"55000","dependents":">= 1"},
+          "flags":{"age":"> 55","salary":"> 55000","dependents":">= 1"},
           "counteractions": [
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
             {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
@@ -125,7 +125,7 @@
         "name": "Updates on your HOME",
         "text": "Your driverway has a few cracks and holes in it. This makes it hard for you to pull in and out of your garage. You need your driveway fixed ASAP!",
         "img" : "null",
-        "flags":{"age":">30", "salary":">=30000", "dependents":">= 1"},
+        "flags":{"age":"> 30", "salary":">= 30000", "dependents":">= 1"},
         "counteractions": [
           {"name": "Use your homeowners insurance.", "counteractionString": "() => this.inventory.homeOwnersInsurance();"},
           {"name": "You saved up for things like this. Spend $1,600 from your savings.", "counteractionString": "() => this.persona.savingAccount.withdraw(1600);"},
@@ -136,7 +136,7 @@
       "name": "Buying a House",
       "text": "Your family is getting bigger. This apartment is not going to cut it. You need to consider buying a house for your growing family.",
       "img" : "null",
-      "flags":{"age":"> 25", "salary":"25000", "dependents":">= 1"},
+      "flags":{"age":"> 25", "salary":"< 25000", "dependents":">= 1"},
       "counteractions": [
         {"name": "Take out a loan of $5,000 for a down payment.", "counteractionString": "() => this.persona.name;"},
         {"name": "Spend $5,000 as a down payment.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5000);"},
@@ -158,7 +158,7 @@
   "name": "Bills",
   "text": "Its time to pay your bills, but you do not have enough for all of them. Which bills will you pay?",
   "img" : "null",
-  "flags":{"age":"> 21", "salary":">=10000"},
+  "flags":{"age":"> 21", "salary":">= 10000"},
   "counteractions": [
     {"name": "Phone Bill $120.", "counteractionString": "() => this.persona.checkingAccount.withdraw(120);"},
     {"name": "Rent $800 and Cable $250.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1050);"},

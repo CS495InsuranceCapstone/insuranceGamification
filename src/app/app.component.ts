@@ -46,6 +46,7 @@ export class AppComponent {
   }
 
   presentEvent() {
+    console.log(this.eventQueue);
     if (this.eventQueue.isEmpty(this.persona)) {
       this.win();
     } else {
