@@ -52,7 +52,10 @@ export class AppComponent {
       this.event = this.popEvent();
     }
   }
-
+  reloadFunction() {
+    location.reload();
+  }
+  
   win() {
     alert("You win!");
   }

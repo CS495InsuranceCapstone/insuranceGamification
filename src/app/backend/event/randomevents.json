@@ -9,7 +9,7 @@
             "counteractions": [
               {"name": "Replace the car, and buy a new car that costs $15,000", "counteractionString": "() => this.persona.checkingAccount.withdraw(15000);"},
               {"name": "Damages will cost you $8,000 in repairs.", "counteractionString": "() => this.persona.checkingAccount.withdraw(8000);"},
-              {"name": "Use your auto-insurance to get the damages fixed.", "counteractionString": "() => this.inventory.autoInsurance();"}
+              {"name": "Use your auto-insurance to get the damages fixed.", "counteractionString": "() => this.persona.inventory.useAutoInsurance();"}
             ]
         },
 
@@ -19,7 +19,7 @@
             "img":"http://images.clipartpanda.com/ultrasound-clipart-hospital_bed.gif",
             "flags":{"age":"> 35","salary":"> 65000","dependents":">= 1"},
             "counteractions": [
-              {"name": "You have health insurance!", "counteractionString": "() => this.inventory.healthInsurance();"},
+              {"name": "You have health insurance!", "counteractionString": "() => this.persona.inventory.useHealthInsurance();"},
               {"name": "Save your health insurance and pay out of pocket instead. Payment would be $1,050.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1050);"},
               {"name": "You do not believe that the health insurance will cover the entire medical fees. Take out a loan that is worth $1,050.", "counteractionString": "() => this.persona.name;"}
             ]
@@ -44,7 +44,7 @@
             "flags":{"age":"> 55","salary":"> 50000","dependents":">= 1"},
             "counteractions": [
               {"name": "No need in using the health insurance. You have enough money, so you can pay $3,500.", "counteractionString": "() => this.persona.checkingAccount.withdraw(3500);"},
-              {"name": "Your health insurance plan, should be able to cover the most of the costs. You will still have to pay $600.", "counteractionString": "() => this.persona.checkingAccount($600);"},
+              {"name": "Your health insurance plan, should be able to cover the most of the costs. You will still have to pay $600.", "counteractionString": "() => this.persona.checkingAccount.withdraw(600);"},
               {"name": "Go on a payment plan. Pay $175 a month for 20 months.", "counteractionString": "() => this.persona.checkingAccount.withdraw(175);"}
             ]
         },
@@ -55,11 +55,44 @@
             "img":"https://s3.amazonaws.com/lowres.cartoonstock.com/law-order-thief-burger-robber-sofa-settee-mba0001_low.jpg",
             "flags":{"age":"> 25","salary":"> 20000"},
             "counteractions": [
-              {"name": "You do not have health insurance. So the damages will cost you $4,025.", "counteractionString": "() => this.persona.checkingAccount;"},
+              {"name": "You do not have health insurance. So the damages will cost you $4,025.", "counteractionString": "() => this.persona.checkingAccount.withdraw(4025);"},
               {"name": "Take out a loan for $4,025.", "counteractionString": "() => this.persona.name;"},
-              {"name": "Use your home insurance to cover the damages of your home.", "counteractionString": "() => this.inventory.homeOwnersInsurance();"}
+              {"name": "Use your home insurance to cover the damages of your home.", "counteractionString": "() => this.persona.inventory.useHomeOwnersInsurance();"}
             ]
-        }
+        },
+        {
+          "name": "Divorce",
+          "text": "Unfortanately, your marriage did not succeed. Getting a divorce is more expensive then getting married.",
+          "img" : "null",
+          "flags":{"age":">= 40", "salary":"> 60000", "dependents":">= 1"},
+          "counteractions": [
+            {"name": "Track your expenses. Don't spend more than $5,000 this month.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5000);"},
+            {"name": "Let your ex take everything within the divorce, lose $8,000.", "counteractionString": "() => this.persona.checkingAccount.withdraw(8000);"},
+            {"name": "Pay alimony at $2,100 a month.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2100);"}
+          ]
+      },
+      {
+        "name": "Vandalism",
+        "text": "Your car just been vandalised by someone.You cannot just drive around with your car damaged. What shall you do?",
+        "img" : "null",
+        "flags":{ },
+        "counteractions": [
+          {"name": "Spend $20 at a car wash.", "counteractionString": "() => this.persona.checkingAccount.withdraw(20);"},
+          {"name": "Use your auto insurance.", "counteractionString": "() => this.persona.inventory.useAutoInsurance();"},
+          {"name": "Spend $900 for a new paint job.", "counteractionString": "() => this.persona.checkingAccount.withdraw(900);"}
+        ]
+      },
+      {
+        "name": "24/7 Nurse Lines.",
+        "text": "Your baby has been running a fever, and you are doing everything you can to make sure they get well soon. You have so much work to do and do not have a lot of time to take your child to the doctor. Maybe you can get a nurse.",
+        "img" : "null",
+        "flags":{"age":"> 25","salary":"> 40000", "dependents":">= 1"},
+        "counteractions": [
+          {"name": "Spend $1,400 for a week for a nurse.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1400);"},
+          {"name": "You can manage by yourself.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
+          {"name": "Use your health insurnace.", "counteractionString": "() => this.persona.inventory.useHealthInsurance();"}
+        ]
+      }
     ],
     "positiveEvents": [
 
@@ -71,7 +104,7 @@
             "counteractions": [
               {"name": "Add the bonus to your checkings account.", "counteractionString": "() => this.persona.checkingAccount.deposit(0.10*40000);"},
               {"name": "Add the bonus to your savings account.", "counteractionString": "() => this.persona.savingAccount.deposit(0.10*40000);"},
-              {"name": "Add half the bonus to your checkings and savings account.", "counteractionString": "() => this.persona.checkingAccount.deposit(0.10*40000);"}
+              {"name": "Add half the bonus to your checkings and savings account.", "counteractionString": "() => this.persona.checkingAccount.deposit(2000) && this.persona.checkingAccount.deposit(2000);"}
             ]
         },
 
@@ -93,8 +126,8 @@
             "img":"https://thumb1.shutterstock.com/display_pic_with_logo/109564/640254667/stock-vector-graduating-students-of-pupil-hands-in-gown-throwing-graduation-caps-in-the-air-vector-illustration-640254667.jpg",
             "flags":{"age":"< 30","salary":"> 20000"},
             "counteractions": [
-              {"name": "Begin using life insurance.", "counteractionString": "() => this.persona.name;"},
-              {"name": "File for health insurance.", "counteractionString": "() => this.persona.inventory.healthInsurance();"},
+              {"name": "Begin using life insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(wholeLifeInsurance,20000);"},
+              {"name": "File for health insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(healthInsurance,20000);"},
               {"name": "Spend $15,000 for a brand new car.", "counteractionString": "() => this.persona.checkingAccount.withdraw(15000);"}
             ]
         },
@@ -105,7 +138,7 @@
             "img":"http://www.businessnewsdaily.com/images/i/000/007/874/original/free-business-plan-templates.jpg?1421856207",
             "flags":{"age":"> 25","salary":"> 20000"},
             "counteractions": [
-              {"name": "Turn down the opportunity. You just don't have it right now.", "counteractionString": "() => null;"},
+              {"name": "Use insurnace to start business.", "counteractionString": "() => this.persona.inventory.useInsurance(wholeLifeInsurance) || this.persona.inventory.useInsurance(termLifeInsurance);"},
               {"name": "Take out a loan and give $6000 to help start the business.", "counteractionString": "() => this.persona.name;"},
               {"name": "Spend $6000 to help start the business.", "counteractionString": "() => this.persona.checkingAccount.withdraw(6000);"}
             ]
@@ -117,9 +150,9 @@
             "img":"https://i.ytimg.com/vi/t732Tzc52Wk/hqdefault.jpg",
             "flags":{"age":"< 50","salary":"> 10000","dependents":">= 1"},
             "counteractions": [
-              {"name": "Recieve health insurance.", "counteractionString": "() => this.persona.inventory.buyHealthInsurance(this.persona.checkingAccount.getBalance());"},
-              {"name": "You have everything that you need, and your new baby will be just fine.", "counteractionString": "() => null;"},
-              {"name": "Put $1,000 into your savings account.", "counteractionString": "() => this.persona.savingsAccount.deposit(this.persona.checkingAccount.withdraw(1000));"}
+              {"name": "Recieve health insurance.", "counteractionString": "() => this.persona.inventory.useHealthInsurance();"},
+              {"name": "You have everything that you need, and your new baby will be just fine.", "counteractionString": "() => this.persona.checkingAccount(0);"},
+              {"name": "Put $1,000 into your savings account.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1000) && this.persona.savingAccount.deposit(1000);"}
             ]
         },
         {
@@ -175,6 +208,17 @@
         {"name": "Save up $6,335.", "counteractionString": "() => this.persona.checkingAccount.deposit(6335);"},
         {"name": "Spend $5,630 on moving expenses.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5630);"},
         {"name": "New town, new you so spend $5,000 on clothes.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5000);"}
+      ]
+    },
+    {
+      "name": "Pay Day!",
+      "text": "You just got your check of $5,000! Time to cash out.",
+      "img" : "null",
+      "flags":{ },
+      "counteractions": [
+        {"name": "Deposit $5,000 into checking.", "counteractionString": "() => this.persona.checkingAccount.deposit(5000);"},
+        {"name": "Deposit $5,000 into savings.", "counteractionString": "() => this.persona.savingAccount.deposit(5000);"},
+        {"name": "Spend $5,000 on whatever you would like.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"}
       ]
     }
     ]
