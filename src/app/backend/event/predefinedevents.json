@@ -180,7 +180,7 @@
   "name": "Buy Life Insurance!",
   "text": "In life you need to make sure that you are insured in case anything happens.",
   "img" : "null",
-  "flags":{"age":">=21", "salary":"> 20000"},
+  "flags":{"age":">= 21", "salary":"> 20000"},
   "counteractions": [
     {"name": "Buy Term Life Insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(termLifeInsurance,20000);"},
     {"name": "Buy Whole Life Insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(wholeLifeInsurance,20000);"},
@@ -191,7 +191,7 @@
   "name": "Buy Health Insurance!",
   "text": "Anything physically can happen to you. Make sure to have health insurnace.",
   "img" : "null",
-  "flags":{"age":">=21", "salary":"> 20000"},
+  "flags":{"age":">= 21", "salary":"> 20000"},
   "counteractions": [
     {"name": "Buy health insurnace.", "counteractionString": "() => this.persona.inventory.buyHealthInsurance(20000);"},
     {"name": "Buy health insurance another time.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
@@ -202,7 +202,7 @@
   "name": "Buy Auto Insurance!",
   "text": "Anything can happen to your car. Don't you think it is best to have it insured?",
   "img" : "null",
-  "flags":{"age":">=21", "salary":"> 20000"},
+  "flags":{"age":">= 21", "salary":"> 20000"},
   "counteractions": [
     {"name": "Pass up this opportunity.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
     {"name": "Buy auto insurance.", "counteractionString": "() => this.persona.inventory.buyAutoInsurance(20000);"},
@@ -213,7 +213,7 @@
   "name": "Buy HomeOwner's Insurance!",
   "text": "It is always important to keep your home safe.",
   "img" : "null",
-  "flags":{"age":">=21", "salary":"> 20000"},
+  "flags":{"age":">= 21", "salary":"> 20000"},
   "counteractions": [
     {"name": "Buy HomeOwner's Insurance.", "counteractionString": "() => this.persona.inventory.buyHomeOwnersInsurance(homeOwnersInsurance,20000);"},
     {"name": "Maybe another time.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2000);"},
