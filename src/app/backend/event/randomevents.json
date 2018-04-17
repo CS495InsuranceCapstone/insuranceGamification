@@ -138,11 +138,7 @@
             "img":"http://www.businessnewsdaily.com/images/i/000/007/874/original/free-business-plan-templates.jpg?1421856207",
             "flags":{"age":"> 25","salary":"> 20000"},
             "counteractions": [
-<<<<<<< HEAD
               {"name": "Use insurnace to start business.", "counteractionString": "() => this.persona.inventory.useInsurance(wholeLifeInsurance) || this.persona.inventory.useInsurance(termLifeInsurance);"},
-=======
-              {"name": "Turn down the opportunity. You just don't have it right now.", "counteractionString": "() => null;"},
->>>>>>> develop
               {"name": "Take out a loan and give $6000 to help start the business.", "counteractionString": "() => this.persona.name;"},
               {"name": "Spend $6000 to help start the business.", "counteractionString": "() => this.persona.checkingAccount.withdraw(6000);"}
             ]
@@ -154,15 +150,9 @@
             "img":"https://i.ytimg.com/vi/t732Tzc52Wk/hqdefault.jpg",
             "flags":{"age":"< 50","salary":"> 10000","dependents":">= 1"},
             "counteractions": [
-<<<<<<< HEAD
               {"name": "Recieve health insurance.", "counteractionString": "() => this.persona.inventory.useHealthInsurance();"},
               {"name": "You have everything that you need, and your new baby will be just fine.", "counteractionString": "() => this.persona.checkingAccount(0);"},
               {"name": "Put $1,000 into your savings account.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1000) && this.persona.savingAccount.deposit(1000);"}
-=======
-              {"name": "Recieve health insurance.", "counteractionString": "() => this.persona.inventory.buyHealthInsurance(this.persona.checkingAccount.getBalance());"},
-              {"name": "You have everything that you need, and your new baby will be just fine.", "counteractionString": "() => null;"},
-              {"name": "Put $1,000 into your savings account.", "counteractionString": "() => this.persona.savingsAccount.deposit(this.persona.checkingAccount.withdraw(1000));"}
->>>>>>> develop
             ]
         },
         {
@@ -187,8 +177,6 @@
             {"name": "Save your money instead. Save $2,500.", "counteractionString": "() => this.persona.savingAccount.deposit(2500);"}
           ]
       },
-<<<<<<< HEAD
-=======
       {
         "name": "Divorce",
         "text": "Unfortanately, your marriage did not succeed. Getting a divorce is more expensive then getting married.",
@@ -200,7 +188,6 @@
           {"name": "Pay alimony at $2,100 a month.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2100);"}
         ]
     },
->>>>>>> develop
     {
       "name": "Buy a Vacation Home!",
       "text": "Your probably doing well in life right now. You have been eyeing this beach house for the longest. You think this would be a great vacation home for your family. Maybe you should get the beach house.",
