@@ -1,4 +1,4 @@
-import { WholeLifeInsurancePolicy, PrewriteClass } from '../backend/insurance/wholelifeinsurnace'
+import { WholeLifeInsurancePolicy, PrewriteClass } from '../backend/insurance/wholelifeinsurance'
 import { Persona } from '../backend/persona/persona'
 import { CheckingAccount } from '../backend/bank/bank_accounts'
 

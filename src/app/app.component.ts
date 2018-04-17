@@ -8,6 +8,7 @@ import { WholeLifeInsurancePolicy } from './backend/insurance/wholelifeinsurance
 import { TermLifeInsurancePolicy } from './backend/insurance/termlife'
 import { CheckingAccount } from './backend/bank/bank_accounts'
 import { SavingsAccount } from './backend/bank/bank_accounts'
+import { UnusableError } from './backend/util/loss_exception'
 
 @Component({
   selector: 'app-root',
@@ -34,19 +35,31 @@ export class AppComponent {
   }
 
   counteract(buttonIndex) {
-    this.event.counteractions[buttonIndex].counteraction();
-    this.persona.checkingAccount.deposit(this.persona.salary);
-    this.persona.age++;
-    this.presentEvent();
+    try {
+      this.event.counteractions[buttonIndex].counteraction();
+      this.persona.passYear();
+      this.presentEvent();
+    } catch (e) {
+      console.log(e);
+      alert('You can\'t do that. You do not have the necessary assets.');
+    }
   }
 
   presentEvent() {
     console.log(this.eventQueue);
     if (this.eventQueue.isEmpty(this.persona)) {
-      console.log("Win!");
+      this.win();
     } else {
       this.event = this.popEvent();
     }
+  }
+
+  win() {
+    alert("You win!");
+  }
+
+  lose() {
+    alert("You lose!");
   }
 
 }
@@ -61,7 +74,12 @@ export class CapitalizePipe implements PipeTransform {
 @Pipe({name: 'commafy'})
 export class CommafyPipe implements PipeTransform {
   transform(value: number): string {
-      let valueString = value.toString().split('').reverse();
+      let valueString: string[];
+      let centString = '';
+      if (value.toString().includes('.')) {
+        valueString = value.toString().split('.')[0].split('').reverse()
+        centString = '.' + value.toString().split('.')[1];
+      } else valueString = value.toString().split('').reverse();
       let returnString = ''
       let currLen = 0;
       for(let char of valueString) {
@@ -73,7 +91,7 @@ export class CommafyPipe implements PipeTransform {
         returnString = char + returnString;
         currLen++;
       }
-      return returnString;
+      return returnString + centString;
   }
 }
 

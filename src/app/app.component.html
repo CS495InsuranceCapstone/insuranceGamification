@@ -96,9 +96,10 @@
             <br>
             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
-                <button id="button1" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(0)">{{ this.event.counteractions[0].name }}</button>
-                <button id="button2" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(1)">{{ this.event.counteractions[1].name }}</button>
-                <button id="button3" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(2)">{{ this.event.counteractions[2].name }}</button>
+                <button id="button1" ng-model="button" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(0)">{{ this.event.counteractions[0].name }}</button>
+                <button id="button2" ng-model="button" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(1)">{{ this.event.counteractions[1].name }}</button>
+                <button id="button3" ng-model="button" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(2)">{{ this.event.counteractions[2].name }}</button>
+                <button id="bankruptcy-button" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="lose()">Declare Bankruptcy</button>
               </div>
             </div>
           </div>
@@ -130,9 +131,9 @@
             <h4 class="w3-center">Life Insurance</h4>
             <hr>
             <h6 class="w3-margin-right w3-left-align w3-text-theme">Policy Type: {{ this.persona.insurancePolicy.title }}</h6>
-            <h6 class="w3-margin-right w3-left-align w3-text-theme">Payout: {{ this.persona.insurancePolicy.payOut() | commafy }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Payout: {{ this.persona.insurancePolicy.payOut() | round | commafy }}</h6>
             <h6 class="w3-margin-right w3-left-align w3-text-theme">Policy Age: {{ this.persona.insurancePolicy.age }}</h6>
-            <h6 class="w3-margin-right w3-left-align w3-text-theme">Cash Value: {{ this.persona.insurancePolicy.value | commafy }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Cash Value: {{ this.persona.insurancePolicy.value | round | commafy }}</h6>
           </div>
         </div>
         <br>
@@ -198,7 +199,7 @@
             <h6 class="w3-margin-right w3-text-theme">Salary:
               <input name="salaryinput" type="number" class="w3-margin-right w3-text-theme">
             </h6>
-            
+
 
           </div>
           <div class="w3-col m6">

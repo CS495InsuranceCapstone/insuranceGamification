@@ -3,7 +3,7 @@ import { EventApprover } from './eventapprover';
 import { RandomEventLoader, PredefinedEventLoader } from './eventloader';
 import { Persona } from '../persona/persona';
 
-const NUMBER_RAND_EVENTS = 3;
+const NUMBER_RAND_EVENTS = 10;
 
 export class EventQueue {
 
@@ -104,10 +104,10 @@ export class EventQueueBuilder {
 
   build(): EventQueue {
     let queue = new EventQueue(this.randomLoader.getNextEvent());
+    queue.addEvents(this.predefinedLoader.getEventList());
     for (let i = 0; i < NUMBER_RAND_EVENTS; i++) {
       queue.addEvent(this.randomLoader.getNextEvent());
     }
-    queue.insert(this.predefinedLoader.getNextEvent(), 2);
     this.refresh();
     return queue;
   }

@@ -99,6 +99,10 @@ export class WholeLifeInsurancePolicy extends LifeInsurancePolicy {
     return this.loanAmount;
   }
 
+  get value(): number {
+    return this.cashValue;
+  }
+
 }
 
 export enum PrewriteClass {

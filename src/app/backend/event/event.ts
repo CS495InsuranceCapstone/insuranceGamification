@@ -9,11 +9,10 @@ export class Event {
   counteractions: Counteraction[];
   //TODO: Change img type to HTMLImageElement when ready for use
 
-  constructor(name: string, text: string, img: string, counteractions: Counteraction[]) {
+  constructor(name: string, text: string, img: string) {
     this.name = name;
     this.text = text;
     this.img = img;
-    this.counteractions = counteractions;
   }
 
 }

@@ -1,10 +1,12 @@
+import { UnusableError } from '../util/loss_exception'
+
 class BankAccount {
 
   protected balance: number = 0;
 
   withdraw(amount: number): number {
     if (amount > this.balance || amount <= 0) {
-      throw new RangeError();
+      throw new UnusableError();
     } else {
       this.balance -= amount;
       return amount;

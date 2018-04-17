@@ -4,8 +4,8 @@ import { Persona } from '../../app/backend/persona/persona';
 
 describe('Event Approver', () => {
 
-  let randomEventLoader = new RandomEventLoader();
   let persona = new Persona('Nick Smith', 'M', 21, 'single', 0, 'student', .78, 12000);
+  let randomEventLoader = new RandomEventLoader(persona);
   let eventApprover1 = new EventApprover(randomEventLoader.getNegativeEventList()[0]);
   let eventApprover2 = new EventApprover(randomEventLoader.getPositiveEventList()[0]);
   let eventApprover3 = new EventApprover(randomEventLoader.getPositiveEventList()[2]);
