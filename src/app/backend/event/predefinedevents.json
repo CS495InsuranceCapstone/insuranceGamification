@@ -193,7 +193,7 @@
   "img" : "null",
   "flags":{"age":">=21", "salary":"> 20000"},
   "counteractions": [
-    {"name": "Buy health insurnace.", "counteractionString": "() => this.persona.inventory.buyInsurance(healthInsurance,20000);"},
+    {"name": "Buy health insurnace.", "counteractionString": "() => this.persona.inventory.buyHealthInsurance(20000);"},
     {"name": "Buy health insurance another time.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
     {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingAccount.deposit(5800);"}
   ]
@@ -205,7 +205,7 @@
   "flags":{"age":">=21", "salary":"> 20000"},
   "counteractions": [
     {"name": "Pass up this opportunity.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
-    {"name": "Buy auto insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(autoInsurance,20000);"},
+    {"name": "Buy auto insurance.", "counteractionString": "() => this.persona.inventory.buyAutoInsurance(20000);"},
     {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingAccount.deposit(5800);"}
   ]
 },
@@ -215,7 +215,7 @@
   "img" : "null",
   "flags":{"age":">=21", "salary":"> 20000"},
   "counteractions": [
-    {"name": "Buy HomeOwner's Insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(homeOwnersInsurance,20000);"},
+    {"name": "Buy HomeOwner's Insurance.", "counteractionString": "() => this.persona.inventory.buyHomeOwnersInsurance(homeOwnersInsurance,20000);"},
     {"name": "Maybe another time.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2000);"},
     {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingAccount.deposit(5800);"}
   ]
