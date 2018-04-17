@@ -74,12 +74,6 @@
         <button id="settings" onclick="document.getElementById('personaModal').style.display='block'" class="w3-mobile w3-card w3-round w3-white w3-center">
           <h2>Modify Persona</h2>
         </button>
-        <button id="winbutton" onclick="document.getElementById('winModal').style.display='block'" class="w3-mobile w3-card w3-round w3-white w3-center">
-          <h2>winModal</h2>
-        </button>
-        <button id="losebutton" onclick="document.getElementById('loseModal').style.display='block'" class="w3-mobile w3-card w3-round w3-white w3-center">
-          <h2>loseModal</h2>
-        </button>
         <!-- End Left Column -->
       </div>
 
@@ -106,6 +100,7 @@
                 <button id="button1" class="w3-btn w3-round-xlarge w3-blue-grey w3-medium" (click)="counteract(0)">{{ this.event.counteractions[0].name }}</button>
                 <button id="button2" class="w3-btn w3-round-xlarge w3-blue-grey w3-medium" (click)="counteract(1)">{{ this.event.counteractions[1].name }}</button>
                 <button id="button3" class="w3-btn w3-round-xlarge w3-blue-grey w3-medium" (click)="counteract(2)">{{ this.event.counteractions[2].name }}</button>
+                <button id="button4" class="w3-btn w3-round-xlarge w3-blue-grey w3-medium" (click)="lose()">Declare Bankruptcy</button>
               </div>
             </div>
           </div>

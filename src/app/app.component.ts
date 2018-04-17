@@ -57,11 +57,11 @@ export class AppComponent {
   }
   
   win() {
-    alert("You win!");
+    document.getElementById('winModal').style.display='block'
   }
 
   lose() {
-    alert("You lose!");
+    document.getElementById('loseModal').style.display='block'
   }
 
 }
