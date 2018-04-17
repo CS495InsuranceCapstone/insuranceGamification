@@ -63,7 +63,7 @@
           "counteractions": [
             {"name": "Buy a new luxury car at the price of $10,000", "counteractionString": "() => this.persona.checkingAccount.withdraw(10000);"},
             {"name": "Replace the damages for $6,000", "counteractionString": "() => this.persona.checkingAccount.withdraw(6000);"},
-            {"name": "Use your auto-insurance, to cover your car damages.", "counteractionString": "() => this.persona.inventory.autoInsurance();"}
+            {"name": "Use your auto-insurance, to cover your car damages.", "counteractionString": "() => this.persona.inventory.useAutoInsurance();"}
           ]
       },
       {
@@ -72,9 +72,9 @@
           "img":"https://cdn.pixabay.com/photo/2016/03/15/09/05/job-1257204_960_720.jpg",
           "flags":{"age":"> 21","salary":"> 40000"},
           "counteractions": [
-            {"name": "Choose to recieve term life insurance.", "counteractionString": "() => this.persona.name;"},
-            {"name": "Choose to recieve whole life insurance", "counteractionString": "() => this.persona.name;"},
-            {"name": "You will be okay. There is no need for insurance.", "counteractionString": "() => this.persona.name;"}
+            {"name": "Choose to recieve term life insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(termLife,40000);"},
+            {"name": "Choose to recieve whole life insurance", "counteractionString": "() => this.persona.inventory.buyInsurance(wholeLifeInsurance,40000);"},
+            {"name": "You will be okay. There is no need for insurance.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"}
           ]
       },
       {
@@ -83,9 +83,9 @@
           "img":"http://www.simplystamps.com/images/product-images/holiday_245_large.png",
           "flags":{"age":"> 17","salary":"> 20000"},
           "counteractions": [
-            {"name": "No need for insurance, you will be ok without it.", "counteractionString": "() => this.persona.name;"},
-            {"name": "Get Homeowners insurance, just in case.", "counteractionString": "() => this.persona.inventory.homeOwnersInsurance();"},
-            {"name": "My bat will keep us safe from any home invasion.", "counteractionString": "() => this.persona.name;"}
+            {"name": "No need for insurance, you will be ok without it.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
+            {"name": "Get Homeowners insurance, just in case.", "counteractionString": "() => this.persona.inventory.buyInsurance(AutoInsurance,20000);"},
+            {"name": "My bat will keep us safe from any home invasion.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"}
           ]
       },
       {
@@ -94,9 +94,9 @@
           "img":"http://images.wisegeek.com/retirement-plan-with-pen-and-glasses.jpg",
           "flags":{"age":"> 30","salary":"> 50000"},
           "counteractions": [
-            {"name": "Recieve a Pension at work.", "counteractionString": "() => this.persona.name;"},
-            {"name": "Go for the 401(k).", "counteractionString": "() => this.persona.name;"},
-            {"name": "Apply for an IRA (Individual Retirement Account).", "counteractionString": "() => this.persona.name;"}
+            {"name": "Use your whole life insurance.", "counteractionString": "() => this.persona.inventory.useInsurance(wholeLifeInsurance);"},
+            {"name": "Use your term life insurance.", "counteractionString": "() => this.persona.inventory.useInsurance(termLifeInsurance);"},
+            {"name": "Save $50,000", "counteractionString": "() => this.persona.savingAccount.deposit(50000);"}
           ]
       },
       {
@@ -106,8 +106,8 @@
           "flags":{"age":"> 17","salary":"> 10000"},
           "counteractions": [
             {"name": "Take out a loan of $5,500.", "counteractionString": "() => this.persona.name;"},
-            {"name": "Apply to several grants and recieve $3,000, but pay $2,500 out of pocket.", "counteractionString": "() => this.persona.checkingAccount.withdraw(500);"},
-            {"name": "Quiet your job and just do work study on campus.", "counteractionString": "() => this.persona.name;"}
+            {"name": "Apply to several grants and recieve $3,000, but pay $2,500 out of pocket.", "counteractionString": "() => this.persona.checkingAccount.withdraw(500) && this.persona.checkingAccount.deposit(3000);"},
+            {"name": "Work Study, recieve $2,000.", "counteractionString": "() => this.persona.checkingAccount.deposit(2000);"}
           ]
       },
       {
@@ -116,9 +116,9 @@
           "img":"https://www.iris.xyz/sites/default/files/styles/largest/public/field/image/legacy.jpg?itok=NVU-FQ4l",
           "flags":{"age":"> 55","salary":"55000","dependents":">= 1"},
           "counteractions": [
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"},
-            {"name": "Placeholder", "counteractionString": "() => this.persona.name;"}
+            {"name": "Leave money to your favorite donation. Leave $25,000.", "counteractionString": "() => this.persona.checkingAccount.withdraw(25000);"},
+            {"name": "Leave money to your family. Leave $50,000.", "counteractionString": "() => this.persona.checkingAccount.withdraw(50000);"},
+            {"name": "Leave absolute nothing!", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"}
           ]
       },
       {
@@ -127,7 +127,7 @@
         "img" : "null",
         "flags":{"age":">30", "salary":">=30000", "dependents":">= 1"},
         "counteractions": [
-          {"name": "Use your homeowners insurance.", "counteractionString": "() => this.inventory.homeOwnersInsurance();"},
+          {"name": "Use your homeowners insurance.", "counteractionString": "() => this.persona.inventory.useHomeOwnersInsurance();"},
           {"name": "You saved up for things like this. Spend $1,600 from your savings.", "counteractionString": "() => this.persona.savingAccount.withdraw(1600);"},
           {"name": "Pass up the opportunity.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"}
         ]
@@ -151,7 +151,7 @@
     "counteractions": [
       {"name": "Deposit $10,500 into your checking account.", "counteractionString": "() => this.persona.checkingAccount.deposit(10500);"},
       {"name": "Deposit $10,500 into your saving account.", "counteractionString": "() => this.persona.savingAccount.deposit(10500);"},
-      {"name": "Spend $5,500 on things you deserve.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5500);"}
+      {"name": "Spend $5,500 on things you deserve.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5500) && this.persona.checkingAccount.deposit(5000);"}
     ]
 },
 {
@@ -163,6 +163,61 @@
     {"name": "Phone Bill $120.", "counteractionString": "() => this.persona.checkingAccount.withdraw(120);"},
     {"name": "Rent $800 and Cable $250.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1050);"},
     {"name": "Car payment $300.", "counteractionString": "() => this.persona.checkingAccount.withdraw(300);"}
+  ]
+},
+{
+  "name": "Funding for Education.",
+  "text": "Getting money for school is not easy. You did not get all the money you need to pay for school. How will you manage to pay off your education?",
+  "img" : "null",
+  "flags":{ },
+  "counteractions": [
+    {"name": "Take out a loan.", "counteractionString": "() => this.persona.name;"},
+    {"name": "Use your insurance.", "counteractionString": "() => this.persona.inventory.useInsurance(wholeLifeInsurance) || this.persona.inventory.useInsurance(termLifeInsurance);"},
+    {"name": "Spend $4,300.", "counteractionString": "() => this.persona.checkingAccount.withdraw(4300);"}
+  ]
+},
+{
+  "name": "Buy Life Insurance!",
+  "text": "In life you need to make sure that you are insured in case anything happens.",
+  "img" : "null",
+  "flags":{"age":">=21", "salary":"> 20000"},
+  "counteractions": [
+    {"name": "Buy Term Life Insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(termLifeInsurance,20000);"},
+    {"name": "Buy Whole Life Insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(wholeLifeInsurance,20000);"},
+    {"name": "Buy life insurance another time.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"}
+  ]
+},
+{
+  "name": "Buy Health Insurance!",
+  "text": "Anything physically can happen to you. Make sure to have health insurnace.",
+  "img" : "null",
+  "flags":{"age":">=21", "salary":"> 20000"},
+  "counteractions": [
+    {"name": "Buy health insurnace.", "counteractionString": "() => this.persona.inventory.buyInsurance(healthInsurance,20000);"},
+    {"name": "Buy health insurance another time.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
+    {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingAccount.deposit(5800);"}
+  ]
+},
+{
+  "name": "Buy Auto Insurance!",
+  "text": "Anything can happen to your car. Don't you think it is best to have it insured?",
+  "img" : "null",
+  "flags":{"age":">=21", "salary":"> 20000"},
+  "counteractions": [
+    {"name": "Pass up this opportunity.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
+    {"name": "Buy auto insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(autoInsurance,20000);"},
+    {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingAccount.deposit(5800);"}
+  ]
+},
+{
+  "name": "Buy HomeOwner's Insurance!",
+  "text": "It is always important to keep your home safe.",
+  "img" : "null",
+  "flags":{"age":">=21", "salary":"> 20000"},
+  "counteractions": [
+    {"name": "Buy HomeOwner's Insurance.", "counteractionString": "() => this.persona.inventory.buyInsurance(homeOwnersInsurance,20000);"},
+    {"name": "Maybe another time.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2000);"},
+    {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingAccount.deposit(5800);"}
   ]
 }
   ]
