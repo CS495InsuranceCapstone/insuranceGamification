@@ -70,8 +70,14 @@
           </div>
         </div>
         <br>
-        <button id="settings" onclick="document.getElementById('id01').style.display='block'" class="w3-mobile w3-card w3-round w3-white w3-center">
+        <button id="settings" onclick="document.getElementById('personaModal').style.display='block'" class="w3-mobile w3-card w3-round w3-white w3-center">
           <h2>Modify Persona</h2>
+        </button>
+        <button id="winbutton" onclick="document.getElementById('winModal').style.display='block'" class="w3-mobile w3-card w3-round w3-white w3-center">
+          <h2>winModal</h2>
+        </button>
+        <button id="losebutton" onclick="document.getElementById('loseModal').style.display='block'" class="w3-mobile w3-card w3-round w3-white w3-center">
+          <h2>loseModal</h2>
         </button>
         <!-- End Left Column -->
       </div>
@@ -96,10 +102,9 @@
             <br>
             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
-                <button id="button1" ng-model="button" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(0)">{{ this.event.counteractions[0].name }}</button>
-                <button id="button2" ng-model="button" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(1)">{{ this.event.counteractions[1].name }}</button>
-                <button id="button3" ng-model="button" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(2)">{{ this.event.counteractions[2].name }}</button>
-                <button id="bankruptcy-button" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="lose()">Declare Bankruptcy</button>
+                <button id="button1" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(0)">{{ this.event.counteractions[0].name }}</button>
+                <button id="button2" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(1)">{{ this.event.counteractions[1].name }}</button>
+                <button id="button3" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(2)">{{ this.event.counteractions[2].name }}</button>
               </div>
             </div>
           </div>
@@ -131,9 +136,9 @@
             <h4 class="w3-center">Life Insurance</h4>
             <hr>
             <h6 class="w3-margin-right w3-left-align w3-text-theme">Policy Type: {{ this.persona.insurancePolicy.title }}</h6>
-            <h6 class="w3-margin-right w3-left-align w3-text-theme">Payout: {{ this.persona.insurancePolicy.payOut() | round | commafy }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Payout: {{ this.persona.insurancePolicy.payOut() | commafy }}</h6>
             <h6 class="w3-margin-right w3-left-align w3-text-theme">Policy Age: {{ this.persona.insurancePolicy.age }}</h6>
-            <h6 class="w3-margin-right w3-left-align w3-text-theme">Cash Value: {{ this.persona.insurancePolicy.value | round | commafy }}</h6>
+            <h6 class="w3-margin-right w3-left-align w3-text-theme">Cash Value: {{ this.persona.insurancePolicy.value | commafy }}</h6>
           </div>
         </div>
         <br>
@@ -169,11 +174,11 @@
     </p>
   </footer>
 
-  <div id="id01" class="w3-modal">
+  <div id="personaModal" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
 
-        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <span onclick="document.getElementById('personaModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
         <h3>Warning: If you modify the persona while playing it will reset progress.</h3>
         <form>
           <div class="w3-col m6">
@@ -249,6 +254,24 @@
           </div>
           <input type="submit" value="Save" class="w3-margin-right w3-text-theme">
         </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="winModal" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('winModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>You have won! You appear to know how to use insurances to your advantage!</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="loseModal" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('loseModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>You have lost. You appear to not quite know how to use insurances to your advantage.</p>
       </div>
     </div>
   </div>
