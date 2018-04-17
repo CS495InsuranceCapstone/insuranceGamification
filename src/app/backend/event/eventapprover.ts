@@ -14,7 +14,6 @@ export class EventApprover {
     for (let flag in this.event.flags) {
       approved = approved && this.event.flags[flag](eval('persona.' + flag))
     }
-    console.log(approved)
     return approved;
   }
 
