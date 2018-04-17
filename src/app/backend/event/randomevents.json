@@ -44,7 +44,7 @@
             "flags":{"age":"> 55","salary":"> 50000","dependents":">= 1"},
             "counteractions": [
               {"name": "No need in using the health insurance. You have enough money, so you can pay $3,500.", "counteractionString": "() => this.persona.checkingAccount.withdraw(3500);"},
-              {"name": "Your health insurance plan, should be able to cover the most of the costs. You will still have to pay $600.", "counteractionString": "() => this.persona.checkingAccount($600);"},
+              {"name": "Your health insurance plan, should be able to cover the most of the costs. You will still have to pay $600.", "counteractionString": "() => this.persona.checkingAccount.withdraw(600);"},
               {"name": "Go on a payment plan. Pay $175 a month for 20 months.", "counteractionString": "() => this.persona.checkingAccount.withdraw(175);"}
             ]
         },
@@ -55,7 +55,7 @@
             "img":"https://s3.amazonaws.com/lowres.cartoonstock.com/law-order-thief-burger-robber-sofa-settee-mba0001_low.jpg",
             "flags":{"age":"> 25","salary":"> 20000"},
             "counteractions": [
-              {"name": "You do not have health insurance. So the damages will cost you $4,025.", "counteractionString": "() => this.persona.checkingAccount;"},
+              {"name": "You do not have health insurance. So the damages will cost you $4,025.", "counteractionString": "() => this.persona.checkingAccount.withdraw(4025);"},
               {"name": "Take out a loan for $4,025.", "counteractionString": "() => this.persona.name;"},
               {"name": "Use your home insurance to cover the damages of your home.", "counteractionString": "() => this.persona.inventory.useHomeOwnersInsurance();"}
             ]
