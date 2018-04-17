@@ -35,6 +35,7 @@
 </style>
 
 <body class="w3-theme-l5">
+ 
   <div class="w3-top w3-hide-small w3-hide-medium">
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large ">
       <h2>Welcome to the Game of Insurance presented by OneAmerica</h2>
@@ -102,9 +103,9 @@
             <br>
             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
-                <button id="button1" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(0)">{{ this.event.counteractions[0].name }}</button>
-                <button id="button2" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(1)">{{ this.event.counteractions[1].name }}</button>
-                <button id="button3" class="w3-btn w3-round-xlarge w3-khaki w3-medium" (click)="counteract(2)">{{ this.event.counteractions[2].name }}</button>
+                <button id="button1" class="w3-btn w3-round-xlarge w3-blue-grey w3-medium" (click)="counteract(0)">{{ this.event.counteractions[0].name }}</button>
+                <button id="button2" class="w3-btn w3-round-xlarge w3-blue-grey w3-medium" (click)="counteract(1)">{{ this.event.counteractions[1].name }}</button>
+                <button id="button3" class="w3-btn w3-round-xlarge w3-blue-grey w3-medium" (click)="counteract(2)">{{ this.event.counteractions[2].name }}</button>
               </div>
             </div>
           </div>
@@ -262,16 +263,19 @@
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('winModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <p>You have won! You appear to know how to use insurances to your advantage!</p>
+        <h1 class="">You have won! You appear to know how to use insurances to your advantage!</h1>
+        <button id="reset" class="w3-btn w3-round-xlarge w3-blue-grey w3-medium" (click)="reloadFunction()">Reset</button>
       </div>
     </div>
   </div>
+
 
   <div id="loseModal" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('loseModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <p>You have lost. You appear to not quite know how to use insurances to your advantage.</p>
+        <h1>You have lost. You appear to not quite know how to use insurances to your advantage.</h1>
+        <button id="reset" class="w3-btn w3-round-xlarge w3-blue-grey w3-medium" (click)="reloadFunction()">Reset</button>
       </div>
     </div>
   </div>
