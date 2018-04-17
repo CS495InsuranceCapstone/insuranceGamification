@@ -64,7 +64,7 @@
           "name": "Divorce",
           "text": "Unfortanately, your marriage did not succeed. Getting a divorce is more expensive then getting married.",
           "img" : "null",
-          "flags":{"age":">=40", "salary":"> 60000", "dependents":">= 1"},
+          "flags":{"age":">= 40", "salary":"> 60000", "dependents":">= 1"},
           "counteractions": [
             {"name": "Track your expenses. Don't spend more than $5,000 this month.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5000);"},
             {"name": "Let your ex take everything within the divorce, lose $8,000.", "counteractionString": "() => this.persona.checkingAccount.withdraw(8000);"},
@@ -86,7 +86,7 @@
         "name": "24/7 Nurse Lines.",
         "text": "Your baby has been running a fever, and you are doing everything you can to make sure they get well soon. You have so much work to do and do not have a lot of time to take your child to the doctor. Maybe you can get a nurse.",
         "img" : "null",
-        "flags":{"age":">25","salary":"> 40000", "dependents":">= 1"},
+        "flags":{"age":"> 25","salary":"> 40000", "dependents":">= 1"},
         "counteractions": [
           {"name": "Spend $1,400 for a week for a nurse.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1400);"},
           {"name": "You can manage by yourself.", "counteractionString": "() => this.persona.checkingAccount.withdraw(0);"},
