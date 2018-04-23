@@ -18,6 +18,12 @@ import { UnusableError } from './backend/util/loss_exception'
 
 export class AppComponent {
 
+  model = new Persona('Jon', 'male', 32, 'married', 1, 'programmer',32000, 75);
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
   readonly title = 'Insurance Game';
   readonly personas = new PersonaLoader().getPersonas();
 
@@ -55,51 +61,51 @@ export class AppComponent {
   reloadFunction() {
     location.reload();
   }
-  
+
   win() {
-    document.getElementById('winModal').style.display='block'
+    document.getElementById('winModal').style.display = 'block'
   }
 
   lose() {
-    document.getElementById('loseModal').style.display='block'
+    document.getElementById('loseModal').style.display = 'block'
   }
 
 }
 
-@Pipe({name: 'capitalize'})
+@Pipe({ name: 'capitalize' })
 export class CapitalizePipe implements PipeTransform {
   transform(value: string): string {
     return value[0].toUpperCase() + value.substr(1)
   }
 }
 
-@Pipe({name: 'commafy'})
+@Pipe({ name: 'commafy' })
 export class CommafyPipe implements PipeTransform {
   transform(value: number): string {
-      let valueString: string[];
-      let centString = '';
-      if (value.toString().includes('.')) {
-        valueString = value.toString().split('.')[0].split('').reverse()
-        centString = '.' + value.toString().split('.')[1];
-      } else valueString = value.toString().split('').reverse();
-      let returnString = ''
-      let currLen = 0;
-      for(let char of valueString) {
-        if (currLen == 3) {
-          returnString = ',' + returnString;
-          currLen = 0;
-        }
-
-        returnString = char + returnString;
-        currLen++;
+    let valueString: string[];
+    let centString = '';
+    if (value.toString().includes('.')) {
+      valueString = value.toString().split('.')[0].split('').reverse()
+      centString = '.' + value.toString().split('.')[1];
+    } else valueString = value.toString().split('').reverse();
+    let returnString = ''
+    let currLen = 0;
+    for (let char of valueString) {
+      if (currLen == 3) {
+        returnString = ',' + returnString;
+        currLen = 0;
       }
-      return returnString + centString;
+
+      returnString = char + returnString;
+      currLen++;
+    }
+    return returnString + centString;
   }
 }
 
-@Pipe({name: 'round'})
-export class RoundPipe implements PipeTransform{
-  transform(value: number): number{
+@Pipe({ name: 'round' })
+export class RoundPipe implements PipeTransform {
+  transform(value: number): number {
     return +value.toFixed(2);
   }
 }

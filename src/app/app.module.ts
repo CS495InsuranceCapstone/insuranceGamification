@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent, CapitalizePipe, CommafyPipe, RoundPipe } from './app.component';
 
@@ -11,7 +12,8 @@ import { AppComponent, CapitalizePipe, CommafyPipe, RoundPipe } from './app.comp
     RoundPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

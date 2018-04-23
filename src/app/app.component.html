@@ -176,73 +176,74 @@
 
         <span onclick="document.getElementById('personaModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
         <h3>Warning: If you modify the persona while playing it will reset progress.</h3>
-        <form id="persona-form">
-          <div class="w3-col m6">
+        <form id="persona-form" class="form-control" (ngSubmit)="onSubmit()">
+          <div class="w3-col m6 form-group">
 
             <h6 class="w3-margin-right w3-text-theme">Name:
-              <input name="nameInput" type="text" class="w3-margin-right w3-text-theme" ng-model="this.persona.name">
+              <input id="nameInput" type="text" class="w3-margin-right w3-text-theme form-control" required [(ngModel)] ="model.name" name="name">
+              
             </h6>
             <h6 class="w3-margin-right w3-text-theme">Age:
-              <input name="ageInput" type="number" class="w3-margin-right w3-text-theme">
+              <input id="ageInput" type="number" class="w3-margin-right w3-text-theme" required [(ngModel)] ="model.age" name="age">
             </h6>
             <h6 class="w3-margin-right w3-text-theme">Gender:
-              <input type="radio" name="gender" value="male" class="w3-text-theme">Male
-              <input type="radio" name="gender" value="female" class="w3-text-theme">Female</h6>
+              <input type="radio" id="gender" value="male" class="w3-text-theme" [(ngModel)] ="model.gender" name="gender">Male
+              <input type="radio" id="gender" value="female" class="w3-text-theme"[(ngModel)] ="model.gender" name="gender" >Female</h6>
             <h6 class="w3-margin-right w3-text-theme">Marital Status:
-              <input type="radio" name="maritalStatus" value="married" class="w3-text-theme">Married
-              <input type="radio" name="maritalStatus" value="notMarried" class="w3-text-theme">Not Married</h6>
+              <input type="radio" id="maritalStatus" value="married" class="w3-text-theme" [(ngModel)] ="model.married" name="married">Married
+              <input type="radio" id="maritalStatus" value="notMarried" class="w3-text-theme" [(ngModel)] ="model.married" name="married">Not Married</h6>
             <h6 class="w3-margin-right w3-text-theme">Dependents:
-              <input name="dependentsInput" type="number" class="w3-margin-right w3-text-theme">
+              <input id="dependentsInput" type="number" class="w3-margin-right w3-text-theme" [(ngModel)] ="model.dependents" name="dependents" >
             </h6>
             <h6 class="w3-margin-right w3-text-theme">Profession:
-              <input name="professionInput" type="text" class="w3-margin-right w3-text-theme">
+              <input id="professionInput" type="text" class="w3-margin-right w3-text-theme" [(ngModel)] ="model.profession" name="profession">
             </h6>
             <h6 class="w3-margin-right w3-text-theme">Salary:
-              <input name="salaryinput" type="number" class="w3-margin-right w3-text-theme">
+              <input id="salaryinput" type="number" class="w3-margin-right w3-text-theme" [(ngModel)] ="model.salary" name="salary">
             </h6>
 
 
           </div>
-          <div class="w3-col m6">
+          <div class="w3-col m6 form-group">
             <div class="column">
               <label>
-                <input type="radio" name="avatar" value="boy1">
+                <input type="radio" name="avatar" value="boy1" >
                 <img src="/assets/boy-1.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="boy">
+                <input type="radio" name="avatar" value="boy" >
                 <img src="/assets/boy.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="girl1">
+                <input type="radio" name="avatar" value="girl1" >
                 <img src="/assets/girl-1.png" style="width:20%">
               </label>
             </div>
             <div class="column">
               <label>
-                <input type="radio" name="avatar" value="girl">
+                <input type="radio" name="avatar" value="girl" >
                 <img src="/assets/girl.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="man1">
+                <input type="radio" name="avatar" value="man1" >
                 <img src="/assets/man-1.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="man2">
+                <input type="radio" name="avatar" value="man2" >
                 <img src="/assets/man-2.png" style="width:20%">
               </label>
             </div>
             <div class="column">
               <label>
-                <input type="radio" name="avatar" value="man3">
+                <input type="radio" name="avatar" value="man3" >
                 <img src="/assets/man-3.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="man">
+                <input type="radio" name="avatar" value="man" >
                 <img src="/assets/man.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="man4">
+                <input type="radio" name="avatar" value="man4" >
                 <img src="/assets/man-4.png" style="width:20%">
               </label>
             </div>
