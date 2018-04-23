@@ -18,12 +18,6 @@ import { UnusableError } from './backend/util/loss_exception'
 
 export class AppComponent {
 
-  model = new Persona('Jon', 'male', 32, 'married', 1, 'programmer',32000, 75);
-
-  submitted = false;
-
-  onSubmit() { this.submitted = true; }
-
   readonly title = 'Insurance Game';
   readonly personas = new PersonaLoader().getPersonas();
 
@@ -44,6 +38,7 @@ export class AppComponent {
     try {
       this.event.counteractions[buttonIndex].counteraction();
       this.persona.passYear();
+      document.getElementById('settings').style.display = "none";
       this.presentEvent();
     } catch (e) {
       console.log(e);

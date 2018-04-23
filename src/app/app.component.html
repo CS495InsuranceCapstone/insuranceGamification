@@ -35,7 +35,7 @@
 </style>
 
 <body class="w3-theme-l5">
- 
+
   <div class="w3-top w3-hide-small w3-hide-medium">
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large ">
       <h2>Welcome to the Game of Insurance presented by OneAmerica</h2>
@@ -180,26 +180,26 @@
           <div class="w3-col m6 form-group">
 
             <h6 class="w3-margin-right w3-text-theme">Name:
-              <input id="nameInput" type="text" class="w3-margin-right w3-text-theme form-control" required [(ngModel)] ="model.name" name="name">
-              
+              <input id="nameInput" type="text" class="w3-margin-right w3-text-theme form-control" required [(ngModel)] ="persona.name" name="name">
+
             </h6>
             <h6 class="w3-margin-right w3-text-theme">Age:
-              <input id="ageInput" type="number" class="w3-margin-right w3-text-theme" required [(ngModel)] ="model.age" name="age">
+              <input id="ageInput" type="number" class="w3-margin-right w3-text-theme" required [(ngModel)] ="persona.age" name="age">
             </h6>
             <h6 class="w3-margin-right w3-text-theme">Gender:
-              <input type="radio" id="gender" value="male" class="w3-text-theme" [(ngModel)] ="model.gender" name="gender">Male
-              <input type="radio" id="gender" value="female" class="w3-text-theme"[(ngModel)] ="model.gender" name="gender" >Female</h6>
+              <input type="radio" id="gender" value="male" class="w3-text-theme" [(ngModel)] ="persona.gender" name="gender">Male
+              <input type="radio" id="gender" value="female" class="w3-text-theme"[(ngModel)] ="persona.gender" name="gender" >Female</h6>
             <h6 class="w3-margin-right w3-text-theme">Marital Status:
-              <input type="radio" id="maritalStatus" value="married" class="w3-text-theme" [(ngModel)] ="model.married" name="married">Married
-              <input type="radio" id="maritalStatus" value="notMarried" class="w3-text-theme" [(ngModel)] ="model.married" name="married">Not Married</h6>
+              <input type="radio" id="maritalStatus" value="married" class="w3-text-theme" [(ngModel)] ="persona.married" name="married">Married
+              <input type="radio" id="maritalStatus" value="notMarried" class="w3-text-theme" [(ngModel)] ="persona.married" name="married">Not Married</h6>
             <h6 class="w3-margin-right w3-text-theme">Dependents:
-              <input id="dependentsInput" type="number" class="w3-margin-right w3-text-theme" [(ngModel)] ="model.dependents" name="dependents" >
+              <input id="dependentsInput" type="number" class="w3-margin-right w3-text-theme" [(ngModel)] ="persona.dependents" name="dependents" >
             </h6>
             <h6 class="w3-margin-right w3-text-theme">Profession:
-              <input id="professionInput" type="text" class="w3-margin-right w3-text-theme" [(ngModel)] ="model.profession" name="profession">
+              <input id="professionInput" type="text" class="w3-margin-right w3-text-theme" [(ngModel)] ="persona.profession" name="profession">
             </h6>
             <h6 class="w3-margin-right w3-text-theme">Salary:
-              <input id="salaryinput" type="number" class="w3-margin-right w3-text-theme" [(ngModel)] ="model.salary" name="salary">
+              <input id="salaryinput" type="number" class="w3-margin-right w3-text-theme" [(ngModel)] ="persona.salary" name="salary">
             </h6>
 
 
@@ -249,7 +249,6 @@
             </div>
             <h5>Please select an avatar image.</h5>
           </div>
-          <input type="submit" value="Save" class="w3-margin-right w3-text-theme">
         </form>
       </div>
     </div>
