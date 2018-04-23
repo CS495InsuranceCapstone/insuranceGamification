@@ -58,7 +58,7 @@
           <div class="w3-container">
             <h4 class="w3-center">Persona</h4>
             <p class="w3-center">
-              <img id="avatar" src="/assets/avatars.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
+              <img id="avatar" src="{{ this.persona.avatar }}" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
             </p>
             <hr>
             <h6 class="w3-margin-right w3-text-theme">Name: {{ persona.name }}</h6>
@@ -175,7 +175,6 @@
       <div class="w3-container">
 
         <span onclick="document.getElementById('personaModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <h3>Warning: If you modify the persona while playing it will reset progress.</h3>
         <form id="persona-form" class="form-control" (ngSubmit)="onSubmit()">
           <div class="w3-col m6 form-group">
 
@@ -207,43 +206,43 @@
           <div class="w3-col m6 form-group">
             <div class="column">
               <label>
-                <input type="radio" name="avatar" value="boy1" >
+                <input type="radio" name="avatar" value="/assets/boy-1.png" [(ngModel)]="persona.avatar">
                 <img src="/assets/boy-1.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="boy" >
+                <input type="radio" name="avatar" value="/assets/boy.png" [(ngModel)]="persona.avatar">
                 <img src="/assets/boy.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="girl1" >
+                <input type="radio" name="avatar" value="/assets/girl-1.png" [(ngModel)]="persona.avatar">
                 <img src="/assets/girl-1.png" style="width:20%">
               </label>
             </div>
             <div class="column">
               <label>
-                <input type="radio" name="avatar" value="girl" >
+                <input type="radio" name="avatar" value="/assets/girl.png" [(ngModel)]="persona.avatar">
                 <img src="/assets/girl.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="man1" >
+                <input type="radio" name="avatar" value="/assets/man-1.png" [(ngModel)]="persona.avatar">
                 <img src="/assets/man-1.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="man2" >
+                <input type="radio" name="avatar" value="/assets/man-2.png" [(ngModel)]="persona.avatar">
                 <img src="/assets/man-2.png" style="width:20%">
               </label>
             </div>
             <div class="column">
               <label>
-                <input type="radio" name="avatar" value="man3" >
+                <input type="radio" name="avatar" value="/assets/man-3.png" [(ngModel)]="persona.avatar">
                 <img src="/assets/man-3.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="man" >
+                <input type="radio" name="avatar" value="/assets/man.png" [(ngModel)]="persona.avatar">
                 <img src="/assets/man.png" style="width:20%">
               </label>
               <label>
-                <input type="radio" name="avatar" value="man4" >
+                <input type="radio" name="avatar" value="/assets/man-4.png" [(ngModel)]="persona.avatar">
                 <img src="/assets/man-4.png" style="width:20%">
               </label>
             </div>

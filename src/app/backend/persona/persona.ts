@@ -12,7 +12,7 @@ export class Persona {
       profession: string;
       salary: number;
       health: number;
-      avatar: HTMLImageElement;
+      avatar: string;
       inventory: Inventory;
       insurancePolicy: LifeInsurancePolicy;
       checkingAccount: CheckingAccount;
@@ -26,8 +26,7 @@ export class Persona {
                   dependents: number,
                   profession: string,
                   salary: number,
-                  health: number,
-                  avatar: HTMLImageElement = null) {
+                  health: number) {
         this.name = name;
         this.sex = sex;
         this.age = age;
@@ -36,9 +35,9 @@ export class Persona {
         this.profession = profession;
         this.salary = salary;
         this.health = health;
-        this.avatar = avatar;
         this.inventory = new Inventory();
         this.checkingAccount = new CheckingAccount();
+        this.savingsAccount = new SavingsAccount();
       }
 
       convertFieldsFromJSON(): void {
@@ -46,7 +45,6 @@ export class Persona {
         this.dependents = +this.dependents;
         this.salary = +this.salary;
         this.health = +this.health;
-        this.avatar = null;
       }
 
       setCheckingAccount(account: CheckingAccount): void {

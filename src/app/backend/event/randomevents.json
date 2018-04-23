@@ -31,7 +31,7 @@
             "img":"https://thumbs.dreamstime.com/z/fired-man-cartoon-illustration-concept-unhappy-dismissed-34674921.jpg",
             "flags":{"age":"> 55","salary":"> 65000"},
             "counteractions": [
-              {"name": "You will find a job soon, so use the money you saved to get by. Use $2,000 from savings account.", "counteractionString": "() => this.persona.savingAccount.withdraw(2000);"},
+              {"name": "You will find a job soon, so use the money you saved to get by. Use $2,000 from savings account.", "counteractionString": "() => this.persona.savingsAccount.withdraw(2000);"},
               {"name": "Take out a loan of $3,500. You do not know when you will find another job.", "counteractionString": "() => this.persona.name;"},
               {"name": "You have a severance package worth $1,500. Add $1,500 to your account.", "counteractionString": "() => this.persona.checkingAccount.deposit(1500);"}
             ]
@@ -103,7 +103,7 @@
             "flags":{"age":"> 25","salary":"> 40000"},
             "counteractions": [
               {"name": "Add the bonus to your checkings account.", "counteractionString": "() => this.persona.checkingAccount.deposit(0.10*40000);"},
-              {"name": "Add the bonus to your savings account.", "counteractionString": "() => this.persona.savingAccount.deposit(0.10*40000);"},
+              {"name": "Add the bonus to your savings account.", "counteractionString": "() => this.persona.savingsAccount.deposit(0.10*40000);"},
               {"name": "Add half the bonus to your checkings and savings account.", "counteractionString": "() => this.persona.checkingAccount.deposit(2000) && this.persona.checkingAccount.deposit(2000);"}
             ]
         },
@@ -114,7 +114,7 @@
             "img":"https://www.oldnational.com/images/default-source/hero-images/special-landing-pages/chooseyourcharity2016.jpg?sfvrsn=ef4964a_4",
             "flags":{"age":"> 55","salary":"> 60000"},
             "counteractions": [
-              {"name": "Go into your savings account and donate $500.", "counteractionString": "() => this.persona.savingAccount.withdraw(500);"},
+              {"name": "Go into your savings account and donate $500.", "counteractionString": "() => this.persona.savingsAccount.withdraw(500);"},
               {"name": "Go into your checkings account and donate $500.", "counteractionString": "() => this.persona.checkingAccount.withdraw(500);"},
               {"name": "Keep your money and donate next time.", "counteractionString": "() => null;"}
             ]
@@ -152,7 +152,7 @@
             "counteractions": [
               {"name": "Recieve health insurance.", "counteractionString": "() => this.persona.inventory.useHealthInsurance();"},
               {"name": "You have everything that you need, and your new baby will be just fine.", "counteractionString": "() => this.persona.checkingAccount(0);"},
-              {"name": "Put $1,000 into your savings account.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1000) && this.persona.savingAccount.deposit(1000);"}
+              {"name": "Put $1,000 into your savings account.", "counteractionString": "() => this.persona.checkingAccount.withdraw(1000) && this.persona.savingsAccount.deposit(1000);"}
             ]
         },
         {
@@ -174,7 +174,7 @@
           "counteractions": [
             {"name": "Buy a used car and spend $2,500.", "counteractionString": "() => this.persona.checkingAccount.withdraw(2500);"},
             {"name": "Buy a new car and spend $10,800.", "counteractionString": "() => this.persona.checkingAccount.withdraw(10800);"},
-            {"name": "Save your money instead. Save $2,500.", "counteractionString": "() => this.persona.savingAccount.deposit(2500);"}
+            {"name": "Save your money instead. Save $2,500.", "counteractionString": "() => this.persona.savingsAccount.deposit(2500);"}
           ]
       },
       {
@@ -217,7 +217,7 @@
       "flags":{ },
       "counteractions": [
         {"name": "Deposit $5,000 into checking.", "counteractionString": "() => this.persona.checkingAccount.deposit(5000);"},
-        {"name": "Deposit $5,000 into savings.", "counteractionString": "() => this.persona.savingAccount.deposit(5000);"},
+        {"name": "Deposit $5,000 into savings.", "counteractionString": "() => this.persona.savingsAccount.deposit(5000);"},
         {"name": "Spend $5,000 on whatever you would like.", "counteractionString": "() => null;"}
       ]
     }

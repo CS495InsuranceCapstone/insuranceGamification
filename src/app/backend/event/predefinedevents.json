@@ -96,7 +96,7 @@
           "counteractions": [
             {"name": "Use your whole life insurance.", "counteractionString": "() => this.persona.inventory.useInsurance(wholeLifeInsurance);"},
             {"name": "Use your term life insurance.", "counteractionString": "() => this.persona.inventory.useInsurance(termLifeInsurance);"},
-            {"name": "Save $50,000", "counteractionString": "() => this.persona.savingAccount.deposit(50000);"}
+            {"name": "Save $50,000", "counteractionString": "() => this.persona.savingsAccount.deposit(50000);"}
           ]
       },
       {
@@ -128,7 +128,7 @@
         "flags":{"age":"> 30", "salary":">= 30000", "dependents":">= 1"},
         "counteractions": [
           {"name": "Use your homeowners insurance.", "counteractionString": "() => this.persona.inventory.useHomeOwnersInsurance();"},
-          {"name": "You saved up for things like this. Spend $1,600 from your savings.", "counteractionString": "() => this.persona.savingAccount.withdraw(1600);"},
+          {"name": "You saved up for things like this. Spend $1,600 from your savings.", "counteractionString": "() => this.persona.savingsAccount.withdraw(1600);"},
           {"name": "Pass up the opportunity.", "counteractionString": "() => this.persona.name;"}
         ]
     },
@@ -150,7 +150,7 @@
     "flags":{"age":"> 18", "salary":"> 10000"},
     "counteractions": [
       {"name": "Deposit $10,500 into your checking account.", "counteractionString": "() => this.persona.checkingAccount.deposit(10500);"},
-      {"name": "Deposit $10,500 into your saving account.", "counteractionString": "() => this.persona.savingAccount.deposit(10500);"},
+      {"name": "Deposit $10,500 into your saving account.", "counteractionString": "() => this.persona.savingsAccount.deposit(10500);"},
       {"name": "Spend $5,500 on things you deserve.", "counteractionString": "() => this.persona.checkingAccount.withdraw(5500) && this.persona.checkingAccount.deposit(5000);"}
     ]
 },
@@ -195,7 +195,7 @@
   "counteractions": [
     {"name": "Buy health insurnace.", "counteractionString": "() => this.persona.inventory.buyHealthInsurance(20000);"},
     {"name": "Buy health insurance another time.", "counteractionString": "() => this.persona.name;"},
-    {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingAccount.deposit(5800);"}
+    {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingsAccount.deposit(5800);"}
   ]
 },
 {
@@ -206,7 +206,7 @@
   "counteractions": [
     {"name": "Pass up this opportunity.", "counteractionString": "() => this.persona.name;"},
     {"name": "Buy auto insurance.", "counteractionString": "() => this.persona.inventory.buyAutoInsurance(20000);"},
-    {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingAccount.deposit(5800);"}
+    {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingsAccount.deposit(5800);"}
   ]
 },
 {
@@ -217,7 +217,7 @@
   "counteractions": [
     {"name": "Buy HomeOwner's Insurance.", "counteractionString": "() => this.persona.inventory.buyHomeOwnersInsurance(20000);"},
     {"name": "Maybe another time.", "counteractionString": "() => this.persona.name;"},
-    {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingAccount.deposit(5800);"}
+    {"name": "Save $5,800.", "counteractionString": "() => this.persona.savingsAccount.deposit(5800);"}
   ]
 }
   ]
