@@ -187,11 +187,11 @@
               <input id="ageInput" type="number" class="w3-margin-right w3-text-theme" required [(ngModel)] ="persona.age" name="age">
             </h6>
             <h6 class="w3-margin-right w3-text-theme">Gender:
-              <input type="radio" id="gender" value="male" class="w3-text-theme" [(ngModel)] ="persona.gender" name="gender">Male
-              <input type="radio" id="gender" value="female" class="w3-text-theme"[(ngModel)] ="persona.gender" name="gender" >Female</h6>
+              <input type="radio" id="gender" value="M" class="w3-text-theme" [(ngModel)] ="persona.sex" name="gender">Male
+              <input type="radio" id="gender" value="F" class="w3-text-theme"[(ngModel)] ="persona.sex" name="gender" >Female</h6>
             <h6 class="w3-margin-right w3-text-theme">Marital Status:
-              <input type="radio" id="maritalStatus" value="married" class="w3-text-theme" [(ngModel)] ="persona.married" name="married">Married
-              <input type="radio" id="maritalStatus" value="notMarried" class="w3-text-theme" [(ngModel)] ="persona.married" name="married">Not Married</h6>
+              <input type="radio" id="maritalStatus" value="married" class="w3-text-theme" [(ngModel)] ="persona.maritalStatus" name="married">Married
+              <input type="radio" id="maritalStatus" value="single" class="w3-text-theme" [(ngModel)] ="persona.maritalStatus" name="married">Single</h6>
             <h6 class="w3-margin-right w3-text-theme">Dependents:
               <input id="dependentsInput" type="number" class="w3-margin-right w3-text-theme" [(ngModel)] ="persona.dependents" name="dependents" >
             </h6>
